@@ -1,124 +1,224 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
-const canvas = document.getElementById('hero-canvas');
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById("hero-canvas");
 
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.1;
+if (canvas && canvas.parentElement) {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50);
-camera.position.z = 10;
+  let renderer;
 
-const rig = new THREE.Group();
-scene.add(rig);
-
-const QUARTER = Math.PI / 2;
-const GAP = 0.09;
-const SEGMENTS = [
-  { color: 0x17a34a, start: 0 },
-  { color: 0xd7263d, start: QUARTER },
-  { color: 0xdba21e, start: Math.PI },
-  { color: 0x2a6df4, start: Math.PI + QUARTER },
-];
-
-const arc = new THREE.TorusGeometry(1.6, 0.36, 48, 96, QUARTER - GAP);
-
-for (const { color, start } of SEGMENTS) {
-  const material = new THREE.MeshPhysicalMaterial({
-    color,
-    metalness: 0.25,
-    roughness: 0.32,
-    clearcoat: 0.6,
-    clearcoatRoughness: 0.25,
-  });
-  const mesh = new THREE.Mesh(arc, material);
-  mesh.rotation.z = start + GAP / 2;
-  rig.add(mesh);
-}
-
-const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.07 });
-const orbits = [
-  { radius: 2.7, tilt: [0.9, 0.2], speed: 0.0012 },
-  { radius: 3.4, tilt: [-0.6, 0.5], speed: -0.0008 },
-  { radius: 4.2, tilt: [0.3, -0.8], speed: 0.0005 },
-].map(({ radius, tilt, speed }) => {
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.008, 8, 160), orbitMaterial);
-  ring.rotation.set(tilt[0], tilt[1], 0);
-  ring.userData.speed = speed;
-  scene.add(ring);
-  return ring;
-});
-
-scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-
-const key = new THREE.DirectionalLight(0xffffff, 2.4);
-key.position.set(4, 6, 6);
-scene.add(key);
-
-const rim = new THREE.DirectionalLight(0x8fb4ff, 1.6);
-rim.position.set(-6, -3, -4);
-scene.add(rim);
-
-const fill = new THREE.PointLight(0xffffff, 6, 20);
-fill.position.set(-3, 2, 5);
-scene.add(fill);
-
-rig.rotation.x = 0.35;
-
-const pointer = new THREE.Vector2();
-const target = new THREE.Vector2();
-let baseY = 0;
-
-addEventListener('pointermove', (e) => {
-  target.set((e.clientX / innerWidth) * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
-});
-
-function layout() {
-  const { clientWidth: w, clientHeight: h } = canvas.parentElement;
-  renderer.setSize(w, h, false);
-  camera.aspect = w / h;
-  camera.updateProjectionMatrix();
-  baseY = 0;
-  rig.position.set(0, baseY, 0);
-  const scale = Math.min(1.2, (w / h) * 0.9);
-  rig.scale.setScalar(scale);
-  for (const o of orbits) {
-    o.position.copy(rig.position);
-    o.scale.setScalar(scale);
-  }
-}
-
-new ResizeObserver(layout).observe(canvas.parentElement);
-layout();
-
-let t = 0;
-let raf = 0;
-
-function frame() {
-  t += 1;
-  pointer.lerp(target, 0.04);
-
-  rig.rotation.y = t * 0.004 + pointer.x * 0.35;
-  rig.rotation.x = 0.35 - pointer.y * 0.25;
-  rig.position.y = baseY + Math.sin(t * 0.012) * 0.08;
-
-  for (const o of orbits) {
-    o.rotation.z += o.userData.speed;
-    o.rotation.y += o.userData.speed * 0.6;
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true
+    });
+  } catch (error) {
+    console.warn(
+      "GroSuite animation unavailable. The CSS circle will remain visible.",
+      error
+    );
   }
 
-  renderer.render(scene, camera);
-  raf = reduceMotion ? 0 : requestAnimationFrame(frame);
-}
+  if (renderer) {
+    renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio || 1, 2)
+    );
 
-new IntersectionObserver(([entry]) => {
-  if (entry.isIntersecting) {
-    if (!raf) frame();
-  } else {
-    cancelAnimationFrame(raf);
-    raf = 0;
+    // Transparent background preserves the CSS outer circle.
+    renderer.setClearColor(0x000000, 0);
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(
+      32,
+      1,
+      0.1,
+      60
+    );
+
+    camera.position.z = 10;
+
+    /*
+     * INNER 3D RING REMOVED.
+     *
+     * Do not create the coloured segments or the central
+     * TorusGeometry ring here.
+     *
+     * Only the animated orbit lines are retained below.
+     */
+
+    // Animated orbit rings.
+    const orbitMaterial = new THREE.MeshBasicMaterial({
+      color: 0xaec9ff,
+      transparent: true,
+      opacity: 0.12
+    });
+
+    const orbitSettings = [
+      {
+        radius: 2.7,
+        tilt: [0.9, 0.2],
+        speed: 0.0012
+      },
+      {
+        radius: 3.4,
+        tilt: [-0.6, 0.5],
+        speed: -0.0008
+      },
+      {
+        radius: 4.1,
+        tilt: [0.3, -0.8],
+        speed: 0.0005
+      }
+    ];
+
+    const orbits = orbitSettings.map(
+      ({ radius, tilt, speed }) => {
+        const geometry = new THREE.TorusGeometry(
+          radius,
+          0.007,
+          8,
+          160
+        );
+
+        const orbit = new THREE.Mesh(
+          geometry,
+          orbitMaterial
+        );
+
+        orbit.rotation.set(
+          tilt[0],
+          tilt[1],
+          0
+        );
+
+        orbit.userData.speed = speed;
+
+        scene.add(orbit);
+
+        return orbit;
+      }
+    );
+
+    // Mouse interaction.
+    const pointer = new THREE.Vector2();
+    const target = new THREE.Vector2();
+
+    let frameId = 0;
+    let tick = 0;
+    let inView = false;
+
+    // Resize the canvas and maintain the correct camera aspect.
+    function layout() {
+      const width = Math.max(
+        canvas.parentElement.clientWidth,
+        1
+      );
+
+      const height = Math.max(
+        canvas.parentElement.clientHeight,
+        1
+      );
+
+      renderer.setSize(width, height, false);
+
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+
+      const scale = Math.min(
+        1.12,
+        (width / height) * 0.9
+      );
+
+      orbits.forEach((orbit) => {
+        orbit.scale.setScalar(scale);
+      });
+
+      // Draw one static frame for reduced-motion users.
+      if (reduceMotion) {
+        renderer.render(scene, camera);
+      }
+    }
+
+    // Update the mouse position.
+    window.addEventListener(
+      "pointermove",
+      (event) => {
+        target.set(
+          (event.clientX / window.innerWidth) * 2 - 1,
+          -(event.clientY / window.innerHeight) * 2 + 1
+        );
+      },
+      { passive: true }
+    );
+
+    // Animate only the orbit lines.
+    function animate() {
+      frameId = 0;
+
+      if (!inView || reduceMotion) {
+        return;
+      }
+
+      tick += 1;
+
+      pointer.lerp(target, 0.04);
+
+      orbits.forEach((orbit, index) => {
+        const speed = orbit.userData.speed;
+
+        // Continuous rotation.
+        orbit.rotation.z += speed;
+        orbit.rotation.y += speed * 0.6;
+
+        // Subtle mouse interaction.
+        orbit.rotation.x +=
+          (orbitSettings[index].tilt[0] +
+            pointer.y * 0.025 -
+            orbit.rotation.x) * 0.002;
+
+        orbit.rotation.y +=
+          pointer.x * 0.0008;
+      });
+
+      renderer.render(scene, camera);
+
+      frameId = window.requestAnimationFrame(animate);
+    }
+
+    // Start or stop animation safely.
+    function updateAnimation(isVisible) {
+      inView = isVisible;
+
+      if (inView && !reduceMotion) {
+        if (!frameId) {
+          frameId = window.requestAnimationFrame(animate);
+        }
+      } else {
+        if (frameId) {
+          window.cancelAnimationFrame(frameId);
+          frameId = 0;
+        }
+      }
+    }
+
+    // Watch changes to the hero container size.
+    const resizeObserver = new ResizeObserver(layout);
+
+    resizeObserver.observe(canvas.parentElement);
+
+    layout();
+
+    // Pause animation when the hero leaves the viewport.
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        updateAnimation(entry.isIntersecting);
+      }
+    );
+
+    visibilityObserver.observe(canvas);
   }
-}).observe(canvas);
+}

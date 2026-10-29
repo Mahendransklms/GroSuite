@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Careers | GroSuite — Perfect &amp; Prompt</title>
+
+  <meta name="description" content="Explore full-time, part-time, work-from-home and trainee opportunities with GroSuite.">
+  <meta name="theme-color" content="#070b19">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav__row">
+
+    <a class="logo" href="index.html" aria-label="GroSuite home">
+      <span>GR</span>
+      <svg class="logo__ring" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 4 A16 16 0 0 0 4 20"/>
+        <path d="M20 4 A16 16 0 0 1 36 20"/>
+        <path d="M36 20 A16 16 0 0 1 20 36"/>
+        <path d="M4 20 A16 16 0 0 0 20 36"/>
+      </svg>
+      <span>SUITE</span>
+    </a>
+
+    <button class="nav__toggle" aria-controls="menu"
+      aria-expanded="false" aria-label="Open navigation menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav__links" id="menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="career.html" aria-current="page">Careers</a>
+      <a class="nav__cta" href="enquire.html">Enquire <span>↗</span></a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- Career hero -->
+  <section class="page-hero">
+    <div class="section-wrap page-hero__inner">
+
+      <p class="eyebrow">CAREERS AT GROSUITE</p>
+
+      <h1>
+        Build what’s next.<br>
+        <span class="gradient-text">Grow with us.</span>
+      </h1>
+
+      <p>
+        Explore opportunities to learn, contribute and create
+        practical technology that makes a difference.
+      </p>
+
+      <div class="page-hero__links">
+        <a class="btn" href="#opportunities">
+          View opportunities <span>↓</span>
+        </a>
+
+        <a class="btn btn--ghost" href="#apply">Apply now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Job types -->
+  <section class="section tile tile--white" id="opportunities">
+    <div class="section-wrap">
+
+      <p class="eyebrow">OPPORTUNITIES</p>
+
+      <h2>Find a role that fits your journey.</h2>
+
+      <p class="section-lede">
+        We welcome applications for full-time and part-time roles,
+        work-from-home opportunities and internships or trainee positions.
+      </p>
+
+      <div class="career-type-grid">
+
+        <article class="career-type reveal">
+          <span class="career-type__number">01</span>
+          <h3>Full-time</h3>
+          <p>Take ownership of projects and grow with the team.</p>
+        </article>
+
+        <article class="career-type reveal">
+          <span class="career-type__number">02</span>
+          <h3>Part-time</h3>
+          <p>Contribute skills on a part-time schedule.</p>
+        </article>
+
+        <article class="career-type reveal">
+          <span class="career-type__number">03</span>
+          <h3>Work from home</h3>
+          <p>Explore remote-work opportunities where the role allows.</p>
+        </article>
+
+        <article class="career-type reveal">
+          <span class="career-type__number">04</span>
+          <h3>Internships &amp; trainee roles</h3>
+          <p>Learn by working on practical tasks and guided projects.</p>
+        </article>
+
+      </div>
+
+      <div class="role-list">
+
+        <div>
+          <b>Web Developer Trainee</b>
+          <span>Web development · Internship / Trainee</span>
+        </div>
+
+        <div>
+          <b>Android Developer Trainee</b>
+          <span>Mobile application development · Internship / Trainee</span>
+        </div>
+
+        <div>
+          <b>Social Media Marketing Trainee</b>
+          <span>Social media · Digital marketing · Internship / Trainee</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Job application -->
+  <section class="section tile tile--paper" id="apply">
+    <div class="section-wrap form-layout">
+
+      <div class="form-intro">
+        <p class="eyebrow">APPLY NOW</p>
+
+        <h2>Tell us about yourself.</h2>
+
+        <p>
+          Complete the application form and attach your resume as a PDF.
+          Please make sure your contact details are correct so the team
+          can follow up.
+        </p>
+
+        <div class="form-tip">
+          <b>Before submitting</b>
+          <p>
+            PDF only, maximum 10 MB. Select the role and work preference
+            that best matches your application.
+          </p>
+        </div>
+      </div>
+
+      <form class="site-form career-form"
+            data-email-form="careers"
+            action="https://formsubmit.co/support@grosuite.in"
+            method="POST"
+            enctype="multipart/form-data">
+
+        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_subject" value="GroSuite Career Job Application">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="text" name="_honey" class="honeypot"
+               tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <p class="form-demo-notice" hidden>
+          Demo email is configured. Replace it in
+          <code>main.js</code> before accepting applications publicly.
+        </p>
+
+        <div class="form-row">
+          <label for="career-name">Full name <span>*</span></label>
+          <input id="career-name" name="name" type="text"
+                 autocomplete="name" placeholder="Enter your full name"
+                 required>
+        </div>
+
+        <div class="form-grid-2">
+
+          <div class="form-row">
+            <label for="career-phone">Contact number <span>*</span></label>
+            <input id="career-phone" name="phone" type="tel"
+                   autocomplete="tel" inputmode="tel"
+                   pattern="[+0-9() .-]{7,20}"
+                   placeholder="Enter contact number" required>
+          </div>
+
+          <div class="form-row">
+            <label for="career-email">Email address <span>*</span></label>
+            <input id="career-email" name="email" type="email"
+                   autocomplete="email" placeholder="you@example.com"
+                   required>
+          </div>
+
+        </div>
+
+        <div class="form-grid-2">
+
+          <div class="form-row">
+            <label for="career-category">Opportunity type <span>*</span></label>
+            <select id="career-category" name="opportunity_type" required>
+              <option value="" selected disabled>Select type</option>
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Work from home</option>
+              <option>Internship</option>
+              <option>Trainee</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="career-role">Role applying for <span>*</span></label>
+            <select id="career-role" name="role" required>
+              <option value="" selected disabled>Select role</option>
+              <option>Web Developer Trainee</option>
+              <option>Android Developer Trainee</option>
+              <option>Social Media Marketing Trainee</option>
+              <option>Web Developer</option>
+              <option>Android Developer</option>
+              <option>Social Media Marketing</option>
+              <option>Other / General Application</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+          <label for="career-resume">Resume (PDF) <span>*</span></label>
+
+          <input id="career-resume" name="attachment" type="file"
+                 accept="application/pdf,.pdf" required
+                 aria-describedby="resume-help">
+
+          <small id="resume-help" class="field-help">
+            Upload one PDF file, up to 10 MB.
+          </small>
+        </div>
+
+        <div class="form-row">
+          <label for="career-message">
+            Brief introduction <small>(optional)</small>
+          </label>
+
+          <textarea id="career-message" name="message" rows="4"
+                    placeholder="Tell us about your skills, projects or experience."></textarea>
+        </div>
+
+        <button class="btn form-submit" type="submit">
+          Submit application <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="form-privacy">
+          By submitting, you agree that GroSuite may use the information
+          provided to review your application.
+        </p>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-wrap">
+
+    <div class="footer__top">
+
+      <div>
+        <a class="logo" href="index.html" aria-label="GroSuite home">
+          <span>GR</span>
+          <svg class="logo__ring" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 4 A16 16 0 0 0 4 20"/>
+            <path d="M20 4 A16 16 0 0 1 36 20"/>
+            <path d="M36 20 A16 16 0 0 1 20 36"/>
+            <path d="M4 20 A16 16 0 0 0 20 36"/>
+          </svg>
+          <span>SUITE</span>
+        </a>
+
+        <p class="footer__slogan">PERFECT &amp; PROMPT</p>
+        <p class="footer__desc">Technology that builds your business.</p>
+      </div>
+
+      <div class="footer__links">
+        <div>
+          <b>Explore</b>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#solutions">Solutions</a>
+          <a href="partnership.html">Partnership</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        
+        <div>
+          <b>Connect</b>
+          <a href="career.html">Careers</a>
+          <a href="enquire.html">Enquire</a>
+        </div>
+      </div>
+
+      <nav class="footer__social" aria-label="Social media">
+
+        <a href="https://www.instagram.com/grosuite_/"
+           target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r=".8" class="social-fill"/>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/grosuite-hshr-3336a7446?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+             target="_blank" rel="noopener noreferrer"aria-label="LinkedIn">
+             <svg viewBox="0 0 24 24" aria-hidden="true">
+             <rect x="3" y="3" width="18" height="18" rx="0"/>
+             <path d="M7 10v7"/>
+             <circle cx="7" cy="7" r="0.8" class="social-fill"/>
+             <path d="M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>
+            </svg>
+          </a>
+
+        <a href="https://www.youtube.com/@HshrSolutions"
+           target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="5.5" width="18" height="13" rx="3"/>
+            <path d="m10 9 5 3-5 3z"/>
+          </svg>
+        </a>
+
+        <!-- X (Twitter) -->
+          <a href="https://x.com/GroSuite"
+            class="social-x-link" data-social="x" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg class="social-x" viewBox="0 0 24 24" aria-hidden="true">
+             <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.637 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zm-1.291 19.49h2.039L6.486 3.24H4.298z"/>
+            </svg>
+          </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61593358686013"
+           target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 21v-8h3l.5-3H14V8c0-1 .4-1.7 1.8-1.7H18V3.5c-.6-.1-1.5-.2-2.7-.2-2.8 0-4.6 1.7-4.6 4.8V10H8v3h2.7v8z"/>
+          </svg>
+        </a>
+
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> GroSuite. All rights reserved.</span>
+      <span>Perfect &amp; Prompt · Built around your business.</span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
