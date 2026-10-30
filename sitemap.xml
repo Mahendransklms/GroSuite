@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://GroSuite.in/</loc>
+       <lastmod>2026-10-29</lastmod>
+       <priority>1.0</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/index.html</loc>
+       <lastmod>2026-10-29</lastmod>
+       <priority>0.8</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/partnership.html</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.8</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/career.html</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.8</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/enquire.html</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.8</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/enquire.html?interest=Partnership</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.7</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/enquire.html?interest=Referral%20Partner</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.7</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/enquire.html?interest=Business%20Partner</loc>
+       <lastmod>2026-10-30/lastmod>
+       <priority>0.6</priority>
+  </url>
+  <url>
+       <loc>https://GroSuite/enquire.html?interest=Outsource%20Partner</loc>
+       <lastmod>2026-10-30</lastmod>
+       <priority>0.6</priority>
+  </url>
+</urlset>
