@@ -3064,3 +3064,26 @@ p {
   border-color: #1477ff;
   transform: translateY(-3px);
 }
+
+.form-status {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-status.success {
+  color: #16803c;
+}
+
+.form-status.error {
+  color: #dc2626;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
