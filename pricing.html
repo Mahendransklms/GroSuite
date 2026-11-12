@@ -1,0 +1,1780 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pricing Plans &amp; Cost Calculator | GroSuite</title>
+  <meta name="description"
+    content="Transparent, scalable per-user pricing for GroSuite HRMS, ERP, CRM and enterprise custom solutions. Monthly and annual plans with a 15-day free trial.">
+  <meta name="theme-color" content="#070b19">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="nav" id="top">
+    <div class="nav__row">
+
+      <!-- GroSuite Logo with Slogan -->
+      <a class="logo logo--with-slogan" href="index.html" aria-label="GroSuite home">
+        <span class="logo__wordmark">
+          <span>GR</span>
+          <svg class="logo__ring" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" />
+            <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" />
+            <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" />
+            <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" />
+          </svg>
+          <span>SUITE</span>
+        </span>
+        <span class="logo__slogan">PERFECT &amp; PROMPT</span>
+      </a>
+
+      <button class="nav__toggle" aria-controls="menu" aria-expanded="false" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav__links" id="menu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav__item nav__item--dropdown">
+          <a href="index.html#services" class="nav__has-arrow">Services</a>
+          <div class="nav__submenu">
+            <a href="domain-management.html">Domain Management</a>
+            <a href="api-system-integration.html">API &amp; System Integration</a>
+            <a href="ai-chatbot-development.html">AI &amp; Chatbot Development</a>
+            <a href="mobile-app-development.html">Mobile App Development</a>
+            <a href="business-integration.html">Business Integration</a>
+          </div>
+        </div>
+        <div class="nav__item nav__item--dropdown">
+          <a href="index.html#solutions" class="nav__has-arrow">Solutions</a>
+          <div class="nav__submenu">
+            <a href="hrms-solutions.html">HRMS Solutions</a>
+            <a href="erp-solutions.html">ERP Solutions</a>
+            <a href="crm-solutions.html">CRM Solutions</a>
+            <a href="business-automation.html">Business Automation</a>
+            <a href="system-integration.html">System Integration</a>
+          </div>
+        </div>
+        <div class="nav__item nav__item--dropdown">
+          <a href="index.html#industries" class="nav__has-arrow">Industries</a>
+          <div class="nav__submenu">
+            <a href="index.html#industry-construction">Construction &amp; Real Estate</a>
+            <a href="index.html#industry-manufacturing">Manufacturing</a>
+            <a href="index.html#industry-healthcare">Healthcare</a>
+            <a href="index.html#industry-retail">Retail &amp; E-commerce</a>
+            <a href="index.html#industry-logistics">Logistics &amp; Supply Chain</a>
+            <a href="index.html#industry-education">Education &amp; E-Learning</a>
+            <a href="index.html#industry-finance">Banking &amp; Finance</a>
+            <a href="index.html#industry-services">Professional Services</a>
+          </div>
+        </div>
+        <a href="pricing.html" aria-current="page">Pricing</a>
+        <a href="partnership.html">Partnership</a>
+        <div class="nav__item nav__item--dropdown">
+          <a href="resource.html" class="nav__has-arrow">Resources</a>
+          <div class="nav__submenu">
+            <a href="resource.html#webinars">Webinars</a>
+            <a href="resource.html#ppt">Presentations (PPT)</a>
+            <a href="resource.html#videos">Product Videos</a>
+            <a href="resource.html#blog">Blogs &amp; Case Studies</a>
+            <a href="resource.html#featured-hrms-video">HRMS Video Showcase</a>
+          </div>
+        </div>
+        <a href="career.html">Careers</a>
+        <a href="index.html#contact">Contact Us</a>
+        <a class="nav__trial" href="enquire.html">
+          Free Trial <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero">
+      <div class="section-wrap pricing-hero__inner">
+
+        <p class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          TRANSPARENT &amp; SCALABLE PRICING · INSTANT QUOTATION
+        </p>
+
+        <h1>
+          Simple plans that grow with<br>
+          <span class="gradient-text">your business.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Select your country and currency, submit your organization details, and instantly view customized, transparent
+          pricing for your enterprise.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Pricing Gate Section (Country + Currency + Company Details) -->
+    <section class="pricing-gate-section" id="pricingGateSection">
+      <div class="section-wrap">
+
+        <div class="pricing-gate-card">
+          <div class="pricing-gate-card__stripe"></div>
+
+          <div class="pricing-gate-card__body">
+
+            <!-- Step Progress Indicator -->
+            <!-- <div class="pricing-step-progress" id="pricingStepProgress">
+              <div class="pricing-step-item active" id="stepIndicator1">
+                <span class="step-circle" id="circleStep1">1</span>
+                <span class="step-text">1. Choose Country &amp; Currency</span>
+              </div>
+              <div class="pricing-step-line" id="stepLine1"></div>
+              <div class="pricing-step-item" id="stepIndicator2">
+                <span class="step-circle" id="circleStep2">2</span>
+                <span class="step-text">2. Company &amp; Contact Details</span>
+              </div>
+              <div class="pricing-step-line" id="stepLine2"></div>
+              <div class="pricing-step-item" id="stepIndicator3">
+                <span class="step-circle" id="circleStep3">3</span>
+                <span class="step-text">3. Price Details</span>
+              </div>
+            </div> -->
+
+            <!-- The Form -->
+            <form id="pricingGateForm" class="pricing-gate-form" novalidate>
+
+              <!-- STEP 1: Country & Currency Block -->
+              <div id="pricingStep1Block" class="pricing-step-container">
+                <div class="pricing-gate-header">
+                  <!-- <span class="pricing-gate-step-badge">STEP 1 OF 2</span> -->
+                  <h2>Choose Your Country &amp; Currency</h2>
+                  <p>Select your operating country and regional currency to configure personalized subscription rates.
+                  </p>
+                </div>
+
+                <div class="pricing-gate-subblock">
+                  <div class="pricing-gate-grid-2">
+                    <div class="pricing-field-group">
+                      <label for="pricingCountry">Country *</label>
+                      <select id="pricingCountry" name="country" class="pricing-input pricing-select" required>
+                        <option value="IN" selected>🇮🇳 India (IN)</option>
+                        <option value="US">🇺🇸 United States (US)</option>
+                        <option value="GB">🇬🇧 United Kingdom (UK)</option>
+                        <option value="EU">🇪🇺 European Union (EU)</option>
+                        <option value="AE">🇦🇪 United Arab Emirates (UAE)</option>
+                        <option value="SG">🇸🇬 Singapore (SG)</option>
+                        <option value="AU">🇦🇺 Australia (AU)</option>
+                        <option value="CA">🇨🇦 Canada (CA)</option>
+                        <option value="GLOBAL">🌐 Other / International</option>
+                      </select>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingCurrency">Currency *</label>
+                      <select id="pricingCurrency" name="currency" class="pricing-input pricing-select" required>
+                        <option value="INR" selected>INR (₹) - Indian Rupee</option>
+                        <option value="USD">USD ($) - US Dollar</option>
+                        <option value="GBP">GBP (£) - British Pound</option>
+                        <option value="EUR">EUR (€) - Euro</option>
+                        <option value="AED">AED (د.إ) - UAE Dirham</option>
+                        <option value="SGD">SGD (S$) - Singapore Dollar</option>
+                        <option value="AUD">AUD (A$) - Australian Dollar</option>
+                        <option value="CAD">CAD (C$) - Canadian Dollar</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Step 1 Button -->
+                <div class="pricing-gate-actions">
+                  <button type="button" id="btnSubmitStep1" class="btn-pricing-submit">
+                    <span>Submit</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                  </button>
+                  <p class="pricing-gate-privacy">
+                    Step 1 of 2: Country &amp; Currency choice configures your billing rates.
+                  </p>
+                </div>
+              </div>
+
+              <!-- STEP 2: Company & Contact Details Block (Hidden initially) -->
+              <div id="pricingStep2Block" class="pricing-step-container" style="display: none;">
+                <div class="pricing-gate-header">
+                  <!-- <span class="pricing-gate-step-badge">STEP 2 OF 2</span> -->
+                  <h2>Fill Company &amp; Contact Details</h2>
+                  <p>Provide your business and contact information to unlock transparent pricing and receive an official
+                    quotation.</p>
+                </div>
+
+                <!-- Selected Summary Bar -->
+                <div class="step2-selection-bar">
+                  <span>Selected Region: <strong id="step2SelectedRegion">🇮🇳 India · INR (₹)</strong></span>
+                  <button type="button" id="btnBackToStep1" class="btn-step-edit">Change Country / Currency ✎</button>
+                </div>
+
+                <div class="pricing-gate-subblock">
+                  <div class="pricing-gate-grid-2">
+                    <div class="pricing-field-group">
+                      <label for="pricingCompanyName">Company Name *</label>
+                      <input type="text" id="pricingCompanyName" name="company_name" class="pricing-input"
+                        placeholder="e.g. Acme Technologies" required>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingFullName">Your Full Name *</label>
+                      <input type="text" id="pricingFullName" name="full_name" class="pricing-input"
+                        placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingWorkEmail">Work Email *</label>
+                      <input type="email" id="pricingWorkEmail" name="work_email" class="pricing-input"
+                        placeholder="e.g. rahul@company.com" required>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingPhone">Phone / WhatsApp Number *</label>
+                      <input type="tel" id="pricingPhone" name="phone" class="pricing-input"
+                        placeholder="e.g. +91 98765 43210" required>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingTeamSize">Number of Employees *</label>
+                      <select id="pricingTeamSize" name="employee_count" class="pricing-input pricing-select" required>
+                        <option value="" disabled selected>Select employee count</option>
+                        <option value="1-10">1 - 10 Employees</option>
+                        <option value="11-50">11 - 50 Employees</option>
+                        <option value="51-200">51 - 200 Employees</option>
+                        <option value="201-500">201 - 500 Employees</option>
+                        <option value="500+">500+ Employees</option>
+                      </select>
+                    </div>
+
+                    <div class="pricing-field-group">
+                      <label for="pricingInterest">Solution of Interest *</label>
+                      <select id="pricingInterest" name="solution_interest" class="pricing-input pricing-select"
+                        required>
+                        <option value="All GroSuite Solutions">All GroSuite Solutions (HRMS, ERP, CRM)</option>
+                        <option value="HRMS Solutions">HRMS Solutions</option>
+                        <option value="ERP Solutions">ERP Solutions</option>
+                        <option value="CRM Solutions">CRM Solutions</option>
+                        <option value="Business Automation">Business Automation</option>
+                        <option value="System Integration">System Integration</option>
+                        <option value="Cyber Security">Cyber Security</option>
+                        <option value="Custom Architecture">Custom Enterprise Architecture</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Step 2 Button -->
+                <div class="pricing-gate-actions">
+                  <button type="submit" id="pricingSubmitBtn" class="btn-pricing-submit">
+                    <span>Show Price</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                  </button>
+                  <p class="pricing-gate-privacy">
+                    🔒 We respect your privacy. Details will be delivered to your email and our sales desk.
+                  </p>
+                  <div id="pricingFormStatus" class="pricing-form-status" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Success Confirmation Bar (shown after submission) -->
+            <div id="pricingSuccessBanner" class="pricing-success-banner" style="display: none;">
+              <div class="pricing-success-banner__icon">✓</div>
+              <div class="pricing-success-banner__text">
+                <h3>Pricing Unlocked for <span id="summaryCompany">Your Company</span>!</h3>
+                <p>
+                  A formal quotation has been sent to <b id="summaryEmail">email@company.com</b>.
+                  Displaying pricing in <b id="summaryCountry">India</b> (<b id="summaryCurrency">INR - ₹</b>).
+                </p>
+              </div>
+              <div class="pricing-success-banner__actions">
+                <label for="quickCurrencySwitch"
+                  style="font-size: 0.85rem; font-weight: 700; color: #475569;">Currency:</label>
+                <select id="quickCurrencySwitch" class="pricing-select pricing-select--compact"
+                  aria-label="Change currency">
+                  <option value="INR">INR (₹)</option>
+                  <option value="USD">USD ($)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="AED">AED (AED)</option>
+                  <option value="SGD">SGD (S$)</option>
+                  <option value="AUD">AUD (A$)</option>
+                  <option value="CAD">CAD (C$)</option>
+                </select>
+                <button type="button" id="btnEditDetails" class="btn-edit-details">Edit Details ✎</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pricing Details Container (Revealed After Submission) -->
+    <div id="pricingDetailsContainer" class="pricing-details-container" style="display: none;">
+
+      <!-- Billing Cycle Switcher & Currency Indicator -->
+      <section class="pricing-controls-section" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
+        <div class="section-wrap">
+
+          <div class="billing-switcher" role="group" aria-label="Billing cycle selector">
+            <span class="billing-switcher__label active" id="labelMonthly">Monthly Billing</span>
+            <label class="billing-toggle-switch" for="billingToggle" aria-label="Toggle annual billing discount">
+              <input type="checkbox" id="billingToggle">
+              <span class="slider"></span>
+            </label>
+            <span class="billing-switcher__label" id="labelAnnual">Annual Billing</span>
+            <span class="discount-pill">Save 20%</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Pricing Cards Grid -->
+      <section class="pricing-section">
+        <div class="section-wrap">
+
+          <div class="pricing-grid">
+
+            <!-- Plan 1: Starter HR -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Starter HR</h3>
+                <p class="pricing-card__desc">Essential HR directory, leave tracking, and employee self-service for
+                  small
+                  teams.</p>
+              </div>
+
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyStarter">₹</span>
+                <span class="pricing-card__amount" id="cardAmountStarter" data-monthly="60" data-annual="45">60</span>
+                <span class="pricing-card__period">/ user / mo</span>
+              </div>
+              <p class="pricing-card__billing-note" data-monthly-note="Billed monthly (excl. GST)"
+                data-annual-note="Billed annually (Save 20%)">
+                Billed monthly (excl. GST)
+              </p>
+
+              <p class="pricing-card__features-title">What's included:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Centralized employee directory &amp; profiles</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Leave applications &amp; holiday calendars</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Employee Self-Service (ESS) mobile app</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Secure document vault &amp; letters</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Mobile check-in with GPS location</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Email &amp; standard ticket support</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=starter">
+                Start Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Plan 2: Professional (Most Popular) -->
+            <article class="pricing-card pricing-card--popular">
+              <span class="popular-badge">Most Popular</span>
+
+              <div class="pricing-card__header">
+                <h3>Professional</h3>
+                <p class="pricing-card__desc">Complete HRMS with biometric attendance, automated payroll, shifts, and
+                  statutory compliance.</p>
+              </div>
+
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyPro">₹</span>
+                <span class="pricing-card__amount" id="cardAmountPro" data-monthly="100" data-annual="75">100</span>
+                <span class="pricing-card__period">/ user / mo</span>
+              </div>
+              <p class="pricing-card__billing-note" data-monthly-note="Billed monthly (excl. GST)"
+                data-annual-note="Billed annually (Save 20%)">
+                Billed monthly (excl. GST)
+              </p>
+
+              <p class="pricing-card__features-title">Everything in Starter, plus:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Biometric machine sync</b> (ZKTeco, eSSL)</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Automated 1-click payroll &amp; payslips</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Statutory reports (PF, ESI, PT, TDS)</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Shift rosters &amp; overtime calculation</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Geofencing attendance with selfie verification</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>WhatsApp notifications &amp; PDF payslip dispatch</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Priority email &amp; phone onboarding support</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--primary" href="enquire.html?plan=professional">
+                Start 15-Day Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Plan 3: Enterprise Suite -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Enterprise Suite</h3>
+                <p class="pricing-card__desc">For multi-branch companies needing performance reviews, ERP/CRM data sync,
+                  and advanced analytics.</p>
+              </div>
+
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyEnterprise">₹</span>
+                <span class="pricing-card__amount" id="cardAmountEnterprise" data-monthly="180"
+                  data-annual="140">180</span>
+                <span class="pricing-card__period">/ user / mo</span>
+              </div>
+              <p class="pricing-card__billing-note" data-monthly-note="Billed monthly (excl. GST)"
+                data-annual-note="Billed annually (Save 20%)">
+                Billed monthly (excl. GST)
+              </p>
+
+              <p class="pricing-card__features-title">Everything in Professional, plus:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Multi-branch &amp; multi-company</b> support</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Performance appraisals &amp; 360° feedback</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Custom multi-tier approval workflows</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>ERP &amp; CRM data synchronization connectors</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Advanced business analytics &amp; custom dashboard</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Dedicated Technical Account Manager &amp; 99.9% SLA</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=enterprise">
+                Start Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Plan 4: Custom Architecture -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Custom Architecture</h3>
+                <p class="pricing-card__desc">Tailored software engineering, on-premise private cloud, bespoke AI
+                  workflows, and dedicated pods.</p>
+              </div>
+
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__amount" style="font-size: 2.1rem; line-height: 1.2;">Custom Quote</span>
+              </div>
+              <p class="pricing-card__billing-note">Tailored project scope &amp; milestones</p>
+
+              <p class="pricing-card__features-title">Tailored deliverables:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Private Cloud or On-Premise dedicated servers</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Custom ERP/CRM module development</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Bespoke AI assistants, bots &amp; process automations</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Legacy system data migration &amp; custom ETL</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Enterprise security audits &amp; custom compliance</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Dedicated senior engineering pod &amp; 24/7 SLA</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=custom">
+                Contact Architects <span>→</span>
+              </a>
+            </article>
+
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="trust-strip">
+            <div class="trust-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>15-day fully-featured trial</span>
+            </div>
+            <div class="trust-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+              <span>No credit card required to start</span>
+            </div>
+            <div class="trust-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 14 14" />
+              </svg>
+              <span>Upgrade, downgrade, or cancel anytime</span>
+            </div>
+            <div class="trust-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Encrypted cloud backups &amp; 99.9% uptime</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Interactive Pricing Calculator Section -->
+      <section class="calc-section">
+        <div class="section-wrap">
+
+          <div class="calc-box">
+            <p class="eyebrow">ESTIMATE YOUR INVESTMENT</p>
+            <h2 style="margin: 0.5rem 0 1rem;">Interactive Team Size Cost Calculator</h2>
+            <p style="color: var(--on-dark-muted); max-width: 650px; margin-bottom: 2.5rem;">
+              Drag the slider to your team size to estimate monthly and annual subscription fees across each tier.
+            </p>
+
+            <div class="calc-slider-wrap">
+              <div class="calc-slider-header">
+                <b>Number of Active Employees :</b>
+                <div class="calc-employee-count">
+                  <span id="sliderValue">50</span>
+                  <span style="font-size: 1rem; color: var(--on-dark-muted); font-weight: 600;">users</span>
+                </div>
+              </div>
+
+              <input type="range" class="calc-slider" id="employeeSlider" min="5" max="500" step="5" value="50">
+
+              <div class="calc-slider-ticks">
+                <span>5 Users</span>
+                <span>100 Users</span>
+                <span>250 Users</span>
+                <span>500+ Users</span>
+              </div>
+            </div>
+
+            <div class="calc-output-grid">
+              <div class="calc-output-card">
+                <h4>Starter HR</h4>
+                <div class="amount" id="calcStarterCost">₹4,000</div>
+                <small id="calcStarterPeriod">per month (billed monthly)</small>
+              </div>
+
+              <div class="calc-output-card highlight">
+                <h4>Professional (Most Popular)</h4>
+                <div class="amount" id="calcProCost">₹7,500</div>
+                <small id="calcProPeriod">per month (billed monthly)</small>
+              </div>
+
+              <div class="calc-output-card">
+                <h4>Enterprise Suite</h4>
+                <div class="amount" id="calcEnterpriseCost">₹13,000</div>
+                <small id="calcEnterprisePeriod">per month (billed monthly)</small>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Optional Add-ons & Modular Integrations (Reference Zoho & Salesmax) -->
+      <section class="addons-section">
+        <div class="section-wrap">
+
+          <p class="eyebrow">MODULAR ADD-ONS &amp; INTEGRATIONS</p>
+          <h2 style="margin: 0.5rem 0 0.8rem;">Supercharge your workflow with specialized modules.</h2>
+          <p style="color: var(--on-dark-muted); max-width: 680px;">
+            Add targeted automation capabilities to any tier as your operational needs evolve.
+          </p>
+
+          <div class="addons-grid">
+
+            <article class="addon-card">
+              <div class="addon-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+              </div>
+              <h4>WhatsApp Automation Suite</h4>
+              <p>Automate monthly payslip PDF dispatches, leave approvals, and shift change alerts directly to
+                employees'
+                WhatsApp.</p>
+              <div class="addon-price">
+                <span id="addonWhatsappPrice">₹999</span> <small>/ month / organization</small>
+              </div>
+            </article>
+
+            <article class="addon-card">
+              <div class="addon-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+              </div>
+              <h4>Biometric Gateway Bridge</h4>
+              <p>Connect on-premise biometric fingerprint and facial recognition scanners (ZKTeco, eSSL) to real-time
+                cloud attendance.</p>
+              <div class="addon-price">
+                <span id="addonBiometricPrice">₹1,499</span> <small>/ month / location</small>
+              </div>
+            </article>
+
+            <article class="addon-card">
+              <div class="addon-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <h4>AI HR &amp; Policy Copilot</h4>
+              <p>Intelligent assistant answering employee queries on company policy, leave balances, benefits, and
+                statutory guidelines.</p>
+              <div class="addon-price">
+                <span id="addonCopilotPrice">₹1,299</span> <small>/ month / organization</small>
+              </div>
+            </article>
+
+            <article class="addon-card">
+              <div class="addon-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <h4>Cloud Telephony &amp; CRM Call Log</h4>
+              <p>Integrated inbound/outbound call recording, click-to-call, and automated CRM lead interaction tracking.
+              </p>
+              <div class="addon-price">
+                <span id="addonTelephonyPrice">₹1,999</span> <small>/ month / organization</small>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Comprehensive Feature Comparison Table -->
+      <section class="comparison-section">
+        <div class="section-wrap">
+
+          <p class="eyebrow">DETAILED COMPARISON</p>
+          <h2 style="margin: 0.5rem 0 0.8rem;">Compare all plan features side by side.</h2>
+          <p style="color: var(--on-dark-muted); max-width: 680px;">
+            Every plan includes complete data encryption, regular updates, and responsive support.
+          </p>
+
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Features &amp; Capabilities</th>
+                  <th>Starter HR</th>
+                  <th>Professional</th>
+                  <th>Enterprise</th>
+                  <th>Custom</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <!-- Category 1 -->
+                <tr>
+                  <td colspan="5" class="comparison-category">Core Employee Management</td>
+                </tr>
+                <tr>
+                  <td>Employee Database &amp; Directory</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Employee Self-Service (ESS) Mobile App</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Digital Onboarding &amp; Document Vault</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Multi-Branch &amp; Multi-Entity Hierarchy</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+
+                <!-- Category 2 -->
+                <tr>
+                  <td colspan="5" class="comparison-category">Time, Attendance &amp; Leaves</td>
+                </tr>
+                <tr>
+                  <td>Leave Policies, Accrual &amp; Approvals</td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Mobile GPS &amp; Geofence Check-in</td>
+                  <td>Basic GPS</td>
+                  <td>Geofence + Selfie</td>
+                  <td>Geofence + Selfie</td>
+                  <td>Custom Rules</td>
+                </tr>
+                <tr>
+                  <td>Biometric Hardware Integration (IoT)</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Shift Scheduling, Rotations &amp; Overtime</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+
+                <!-- Category 3 -->
+                <tr>
+                  <td colspan="5" class="comparison-category">Payroll &amp; Statutory Compliance</td>
+                </tr>
+                <tr>
+                  <td>Automated Salary Processing &amp; Formulae</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Statutory Deductions (PF, ESI, PT, TDS)</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Automated Payslip Generation &amp; Email/SMS</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Direct Bank Disbursal File Export</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+
+                <!-- Category 4 -->
+                <tr>
+                  <td colspan="5" class="comparison-category">Performance &amp; Enterprise Governance</td>
+                </tr>
+                <tr>
+                  <td>Appraisals, KPI Goals &amp; 360° Reviews</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Custom Approval Chains &amp; Role Permissions</td>
+                  <td>Standard</td>
+                  <td>Multi-Level</td>
+                  <td>Unlimited Custom</td>
+                  <td>Bespoke</td>
+                </tr>
+                <tr>
+                  <td>ERP, CRM &amp; Accounting Connectors</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓</span></td>
+                  <td>Custom APIs</td>
+                </tr>
+                <tr>
+                  <td>Hosting Environment</td>
+                  <td>Shared Cloud</td>
+                  <td>Shared Cloud</td>
+                  <td>Isolated VPC</td>
+                  <td>Private Cloud / On-Prem</td>
+                </tr>
+                <tr>
+                  <td>Support SLA &amp; Onboarding</td>
+                  <td>Standard Email</td>
+                  <td>Priority Email &amp; Phone</td>
+                  <td>Dedicated Account Mgr</td>
+                  <td>24/7 Dedicated Pod</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FAQ Accordion Section -->
+      <section class="pricing-faq">
+        <div class="section-wrap">
+
+          <p class="eyebrow" style="text-align: center;">HAVE QUESTIONS?</p>
+          <h2 style="text-align: center; margin: 0.5rem 0 0.8rem;">Frequently Asked Questions</h2>
+          <p style="text-align: center; color: var(--on-dark-muted); max-width: 600px; margin-inline: auto;">
+            Everything you need to know about GroSuite's billing, trial, and implementation.
+          </p>
+
+          <div class="faq-list">
+
+            <details class="faq-item" open>
+              <summary class="faq-question">
+                <span>How does the 15-day free trial work?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                You get instant access to our fully-featured Professional plan for 15 days without entering any credit
+                card details. You can import employee data, test attendance tracking, run mock payroll calculations, and
+                invite team members. At the end of the trial, you can select the plan that fits your exact needs.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Can we switch between Monthly and Annual billing later?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                Yes, you can upgrade from monthly to annual billing at any point from your admin billing portal to enjoy
+                the 20% discount. If you choose to downgrade from annual to monthly, the change will apply at the end of
+                your prepaid annual cycle.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Which biometric hardware models are supported?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                GroSuite supports leading biometric manufacturers including ZKTeco, eSSL, Realtime, Matrix, and
+                Hikvision
+                devices via our cloud IoT gateway agent. If you already have existing biometric devices installed, our
+                engineering team can configure the sync during onboarding without requiring new hardware.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Are taxes (GST) included in the published prices?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                The prices shown above exclude applicable local taxes (e.g., 18% GST for Indian entities). GST-compliant
+                tax invoices with input tax credit (ITC) are automatically generated and emailed to your billing contact
+                upon every transaction.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What happens if our team size changes mid-month?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                GroSuite calculates charges based on active employees in your system. When you onboard new employees
+                during a billing period, charges are prorated for the remainder of that billing cycle. Inactive or
+                offboarded employees are automatically excluded from subsequent billing runs.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Can we deploy GroSuite on our own private cloud or local server?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                Yes! For organizations with strict compliance, government mandates, or high-security data isolation
+                requirements, our Custom Architecture plan supports on-premise installation, private AWS/Azure VPC
+                deployment, and air-gapped server configurations.
+              </div>
+            </details>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bottom CTA Banner -->
+      <section class="resource-cta-banner">
+        <div class="section-wrap resource-cta-box">
+          <p class="eyebrow" style="justify-content: center;">READY TO GET STARTED?</p>
+          <h2>Experience modern operational clarity.</h2>
+          <p>
+            Join 50+ growing businesses streamlining their HRMS, attendance, payroll, and enterprise operations with
+            GroSuite.
+          </p>
+          <div class="actions">
+            <a class="btn" href="enquire.html">
+              Start 15-Day Free Trial <span>↗</span>
+            </a>
+            <a class="btn btn--secondary" href="enquire.html?mode=demo"
+              style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); color: #fff;">
+              Schedule a Live Demo <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- /#pricingDetailsContainer -->
+
+  </main>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="section-wrap">
+
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a class="footer__logo" href="index.html" aria-label="GroSuite home">
+            <span class="logo__wordmark">
+              <span>GR</span>
+              <svg class="logo__ring" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" />
+                <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" />
+                <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" />
+                <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" />
+              </svg>
+              <span>SUITE</span>
+            </span>
+            <span class="logo__slogan footer__slogan">PERFECT &amp; PROMPT</span>
+          </a>
+          <p class="footer__desc">Technology that builds your business.</p>
+        </div>
+
+        <div class="footer__actions">
+          <nav class="footer__social" aria-label="Social media">
+            <a href="https://wa.me/919942355939?text=Hi%20GroSuite%20Team%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+              target="_blank" rel="noopener noreferrer" class="social-whatsapp-link" aria-label="WhatsApp">
+              <svg class="social-whatsapp" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/grosuite_/" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r=".8" class="social-fill" />
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/grosuite-hshr-3336a7446?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="0" />
+                <path d="M7 10v7" />
+                <circle cx="7" cy="7" r="0.8" class="social-fill" />
+                <path d="M11 17v-7m0 3a3 3 0 0 1 6 0v4" />
+              </svg>
+            </a>
+
+            <a href="https://www.youtube.com/@HshrSolutions" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5.5" width="18" height="13" rx="3" />
+                <path d="m10 9 5 3-5 3z" />
+              </svg>
+            </a>
+
+            <!-- X (Twitter) -->
+            <a href="https://x.com/GroSuite" class="social-x-link" data-social="x" target="_blank"
+              rel="noopener noreferrer" aria-label="X (Twitter)">
+              <svg class="social-x" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.637 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zm-1.291 19.49h2.039L6.486 3.24H4.298z" />
+              </svg>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61593358686013" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 21v-8h3l.5-3H14V8c0-1 .4-1.7 1.8-1.7H18V3.5c-.6-.1-1.5-.2-2.7-.2-2.8 0-4.6 1.7-4.6 4.8V10H8v3h2.7v8z" />
+              </svg>
+            </a>
+
+          </nav>
+          <a href="https://wa.me/919942355939?text=Hi%20GroSuite%20Team%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+            target="_blank" rel="noopener noreferrer" class="footer__whatsapp-cta" aria-label="Message us on WhatsApp">
+            <svg viewBox="0 0 24 24" class="footer__whatsapp-icon" aria-hidden="true" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z" />
+            </svg>
+            <span>Message us on WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Mega Footer Navigation: All Header Categories & Subheadings -->
+      <div class="footer__links">
+
+        <div>
+          <b>Services</b>
+          <a href="domain-management.html">Domain Management</a>
+          <a href="api-system-integration.html">API &amp; System Integration</a>
+          <a href="ai-chatbot-development.html">AI &amp; Chatbot Development</a>
+          <a href="mobile-app-development.html">Mobile App Development</a>
+          <a href="business-integration.html">Business Integration</a>
+        </div>
+
+        <div>
+          <b>Solutions</b>
+          <a href="hrms-solutions.html">HRMS Solutions</a>
+          <a href="erp-solutions.html">ERP Solutions</a>
+          <a href="crm-solutions.html">CRM Solutions</a>
+          <a href="business-automation.html">Business Automation</a>
+          <a href="system-integration.html">System Integration</a>
+        </div>
+
+        <div>
+          <b>Industries</b>
+          <a href="index.html#industry-construction">Construction &amp; Real Estate</a>
+          <a href="index.html#industry-manufacturing">Manufacturing</a>
+          <a href="index.html#industry-healthcare">Healthcare</a>
+          <a href="index.html#industry-retail">Retail &amp; E-commerce</a>
+          <a href="index.html#industry-logistics">Logistics &amp; Supply Chain</a>
+          <a href="index.html#industry-education">Education &amp; E-Learning</a>
+          <a href="index.html#industry-finance">Banking &amp; Finance</a>
+          <a href="index.html#industry-services">Professional Services</a>
+        </div>
+
+        <div>
+          <b>Resources</b>
+          <a href="resource.html#webinars">Webinars</a>
+          <a href="resource.html#ppt">Presentations (PPT)</a>
+          <a href="resource.html#videos">Product Videos</a>
+          <a href="resource.html#blog">Blogs &amp; Case Studies</a>
+          <a href="resource.html#featured-hrms-video">HRMS Video Showcase</a>
+        </div>
+
+        <div>
+          <b>Company</b>
+          <a href="index.html">Home</a>
+          <a href="partnership.html">Partnership</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="career.html">Careers</a>
+          <a href="index.html#contact">Contact Us</a>
+          <a href="enquire.html">Free Trial</a>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> GroSuite. All rights reserved.</span>
+        <span>Perfect &amp; Prompt · Built around your business.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Pricing Calculator & Dynamic Quotation Script -->
+  <script>
+    (function () {
+      const FORM_ENDPOINT = "https://formsubmit.app/f/fhydgy6ynj";
+
+      // Currency Rates & Definitions
+      const currencyRates = {
+        INR: {
+          code: 'INR',
+          symbol: '₹',
+          name: 'Indian Rupee',
+          countryName: 'India',
+          taxNoteMonthly: 'Billed monthly (excl. GST)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 60, annual: 45 },
+            pro: { monthly: 100, annual: 75 },
+            enterprise: { monthly: 180, annual: 140 }
+          },
+          addons: {
+            whatsapp: '₹999',
+            biometric: '₹1,499',
+            copilot: '₹1,299',
+            telephony: '₹1,999'
+          }
+        },
+        USD: {
+          code: 'USD',
+          symbol: '$',
+          name: 'US Dollar',
+          countryName: 'United States / Global',
+          taxNoteMonthly: 'Billed monthly (excl. local taxes)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 1.00, annual: 0.80 },
+            pro: { monthly: 1.80, annual: 1.40 },
+            enterprise: { monthly: 3.00, annual: 2.40 }
+          },
+          addons: {
+            whatsapp: '$14',
+            biometric: '$20',
+            copilot: '$18',
+            telephony: '$25'
+          }
+        },
+        GBP: {
+          code: 'GBP',
+          symbol: '£',
+          name: 'British Pound',
+          countryName: 'United Kingdom',
+          taxNoteMonthly: 'Billed monthly (excl. VAT)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 0.80, annual: 0.65 },
+            pro: { monthly: 1.40, annual: 1.10 },
+            enterprise: { monthly: 2.40, annual: 1.90 }
+          },
+          addons: {
+            whatsapp: '£11',
+            biometric: '£16',
+            copilot: '£14',
+            telephony: '£20'
+          }
+        },
+        EUR: {
+          code: 'EUR',
+          symbol: '€',
+          name: 'Euro',
+          countryName: 'European Union',
+          taxNoteMonthly: 'Billed monthly (excl. VAT)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 0.90, annual: 0.75 },
+            pro: { monthly: 1.60, annual: 1.30 },
+            enterprise: { monthly: 2.70, annual: 2.20 }
+          },
+          addons: {
+            whatsapp: '€12',
+            biometric: '€18',
+            copilot: '€16',
+            telephony: '€22'
+          }
+        },
+        AED: {
+          code: 'AED',
+          symbol: 'AED ',
+          name: 'UAE Dirham',
+          countryName: 'United Arab Emirates',
+          taxNoteMonthly: 'Billed monthly (excl. VAT)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 3.50, annual: 2.80 },
+            pro: { monthly: 6.50, annual: 5.00 },
+            enterprise: { monthly: 11.00, annual: 8.80 }
+          },
+          addons: {
+            whatsapp: 'AED 49',
+            biometric: 'AED 75',
+            copilot: 'AED 65',
+            telephony: 'AED 99'
+          }
+        },
+        SGD: {
+          code: 'SGD',
+          symbol: 'S$',
+          name: 'Singapore Dollar',
+          countryName: 'Singapore',
+          taxNoteMonthly: 'Billed monthly (excl. GST)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 1.35, annual: 1.05 },
+            pro: { monthly: 2.40, annual: 1.90 },
+            enterprise: { monthly: 4.00, annual: 3.20 }
+          },
+          addons: {
+            whatsapp: 'S$18',
+            biometric: 'S$26',
+            copilot: 'S$24',
+            telephony: 'S$34'
+          }
+        },
+        AUD: {
+          code: 'AUD',
+          symbol: 'A$',
+          name: 'Australian Dollar',
+          countryName: 'Australia',
+          taxNoteMonthly: 'Billed monthly (excl. GST)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 1.50, annual: 1.20 },
+            pro: { monthly: 2.70, annual: 2.15 },
+            enterprise: { monthly: 4.50, annual: 3.60 }
+          },
+          addons: {
+            whatsapp: 'A$20',
+            biometric: 'A$30',
+            copilot: 'A$26',
+            telephony: 'A$38'
+          }
+        },
+        CAD: {
+          code: 'CAD',
+          symbol: 'C$',
+          name: 'Canadian Dollar',
+          countryName: 'Canada',
+          taxNoteMonthly: 'Billed monthly (excl. GST/HST)',
+          taxNoteAnnual: 'Billed annually (Save 20%)',
+          plans: {
+            starter: { monthly: 1.35, annual: 1.10 },
+            pro: { monthly: 2.45, annual: 1.95 },
+            enterprise: { monthly: 4.10, annual: 3.25 }
+          },
+          addons: {
+            whatsapp: 'C$18',
+            biometric: 'C$27',
+            copilot: 'C$24',
+            telephony: 'C$35'
+          }
+        }
+      };
+
+      const countryToCurrency = {
+        IN: 'INR',
+        US: 'USD',
+        GB: 'GBP',
+        EU: 'EUR',
+        AE: 'AED',
+        SG: 'SGD',
+        AU: 'AUD',
+        CA: 'CAD',
+        GLOBAL: 'USD'
+      };
+
+      // DOM Elements
+      const pricingGateForm = document.getElementById('pricingGateForm');
+      const pricingCountry = document.getElementById('pricingCountry');
+      const pricingCurrency = document.getElementById('pricingCurrency');
+      const pricingSubmitBtn = document.getElementById('pricingSubmitBtn');
+      const pricingFormStatus = document.getElementById('pricingFormStatus');
+
+      // Step Elements
+      const pricingStep1Block = document.getElementById('pricingStep1Block');
+      const pricingStep2Block = document.getElementById('pricingStep2Block');
+      const btnSubmitStep1 = document.getElementById('btnSubmitStep1');
+      const btnBackToStep1 = document.getElementById('btnBackToStep1');
+      const step2SelectedRegion = document.getElementById('step2SelectedRegion');
+
+      const stepIndicator1 = document.getElementById('stepIndicator1');
+      const stepIndicator2 = document.getElementById('stepIndicator2');
+      const stepIndicator3 = document.getElementById('stepIndicator3');
+      const circleStep1 = document.getElementById('circleStep1');
+      const circleStep2 = document.getElementById('circleStep2');
+      const circleStep3 = document.getElementById('circleStep3');
+      const stepLine1 = document.getElementById('stepLine1');
+      const stepLine2 = document.getElementById('stepLine2');
+
+      const pricingSuccessBanner = document.getElementById('pricingSuccessBanner');
+      const pricingDetailsContainer = document.getElementById('pricingDetailsContainer');
+      const quickCurrencySwitch = document.getElementById('quickCurrencySwitch');
+      const btnEditDetails = document.getElementById('btnEditDetails');
+
+      const summaryCompany = document.getElementById('summaryCompany');
+      const summaryEmail = document.getElementById('summaryEmail');
+      const summaryCountry = document.getElementById('summaryCountry');
+      const summaryCurrency = document.getElementById('summaryCurrency');
+
+      const billingToggle = document.getElementById('billingToggle');
+      const labelMonthly = document.getElementById('labelMonthly');
+      const labelAnnual = document.getElementById('labelAnnual');
+
+      const cardCurrencyStarter = document.getElementById('cardCurrencyStarter');
+      const cardCurrencyPro = document.getElementById('cardCurrencyPro');
+      const cardCurrencyEnterprise = document.getElementById('cardCurrencyEnterprise');
+
+      const cardAmountStarter = document.getElementById('cardAmountStarter');
+      const cardAmountPro = document.getElementById('cardAmountPro');
+      const cardAmountEnterprise = document.getElementById('cardAmountEnterprise');
+
+      const cardNotes = document.querySelectorAll('.pricing-card__billing-note');
+
+      const addonWhatsapp = document.getElementById('addonWhatsappPrice');
+      const addonBiometric = document.getElementById('addonBiometricPrice');
+      const addonCopilot = document.getElementById('addonCopilotPrice');
+      const addonTelephony = document.getElementById('addonTelephonyPrice');
+
+      const employeeSlider = document.getElementById('employeeSlider');
+      const sliderValue = document.getElementById('sliderValue');
+      const calcStarterCost = document.getElementById('calcStarterCost');
+      const calcProCost = document.getElementById('calcProCost');
+      const calcEnterpriseCost = document.getElementById('calcEnterpriseCost');
+      const calcStarterPeriod = document.getElementById('calcStarterPeriod');
+      const calcProPeriod = document.getElementById('calcProPeriod');
+      const calcEnterprisePeriod = document.getElementById('calcEnterprisePeriod');
+
+      let currentCurrency = 'INR';
+
+      // 1. Auto-select Currency when Country changes
+      if (pricingCountry && pricingCurrency) {
+        pricingCountry.addEventListener('change', () => {
+          const cCode = pricingCountry.value;
+          const mappedCur = countryToCurrency[cCode] || 'USD';
+          pricingCurrency.value = mappedCur;
+        });
+      }
+
+      // 2. Render all pricing numbers and labels based on Currency and Billing
+      function renderPricing() {
+        const curData = currencyRates[currentCurrency] || currencyRates.INR;
+        const isAnnual = billingToggle ? billingToggle.checked : false;
+
+        // Update billing switcher labels
+        if (labelAnnual && labelMonthly) {
+          if (isAnnual) {
+            labelAnnual.classList.add('active');
+            labelMonthly.classList.remove('active');
+          } else {
+            labelMonthly.classList.add('active');
+            labelAnnual.classList.remove('active');
+          }
+        }
+
+        // Update Currency Symbols on Cards
+        if (cardCurrencyStarter) cardCurrencyStarter.textContent = curData.symbol;
+        if (cardCurrencyPro) cardCurrencyPro.textContent = curData.symbol;
+        if (cardCurrencyEnterprise) cardCurrencyEnterprise.textContent = curData.symbol;
+
+        // Update Amounts on Cards
+        const starterPrice = isAnnual ? curData.plans.starter.annual : curData.plans.starter.monthly;
+        const proPrice = isAnnual ? curData.plans.pro.annual : curData.plans.pro.monthly;
+        const enterprisePrice = isAnnual ? curData.plans.enterprise.annual : curData.plans.enterprise.monthly;
+
+        if (cardAmountStarter) {
+          cardAmountStarter.textContent = starterPrice;
+          cardAmountStarter.setAttribute('data-monthly', curData.plans.starter.monthly);
+          cardAmountStarter.setAttribute('data-annual', curData.plans.starter.annual);
+        }
+        if (cardAmountPro) {
+          cardAmountPro.textContent = proPrice;
+          cardAmountPro.setAttribute('data-monthly', curData.plans.pro.monthly);
+          cardAmountPro.setAttribute('data-annual', curData.plans.pro.annual);
+        }
+        if (cardAmountEnterprise) {
+          cardAmountEnterprise.textContent = enterprisePrice;
+          cardAmountEnterprise.setAttribute('data-monthly', curData.plans.enterprise.monthly);
+          cardAmountEnterprise.setAttribute('data-annual', curData.plans.enterprise.annual);
+        }
+
+        // Update Card Billing Notes
+        const noteText = isAnnual ? curData.taxNoteAnnual : curData.taxNoteMonthly;
+        cardNotes.forEach(el => {
+          if (el.textContent.includes('Tailored')) return;
+          el.textContent = noteText;
+        });
+
+        // Update Addon Prices
+        if (addonWhatsapp) addonWhatsapp.textContent = curData.addons.whatsapp;
+        if (addonBiometric) addonBiometric.textContent = curData.addons.biometric;
+        if (addonCopilot) addonCopilot.textContent = curData.addons.copilot;
+        if (addonTelephony) addonTelephony.textContent = curData.addons.telephony;
+
+        // Update Calculator
+        updateCalculator();
+      }
+
+      function updateCalculator() {
+        if (!employeeSlider) return;
+        const users = parseInt(employeeSlider.value, 10);
+        if (sliderValue) sliderValue.textContent = users >= 500 ? '500+' : users;
+
+        const curData = currencyRates[currentCurrency] || currencyRates.INR;
+        const isAnnual = billingToggle ? billingToggle.checked : false;
+
+        const starterRate = isAnnual ? curData.plans.starter.annual : curData.plans.starter.monthly;
+        const proRate = isAnnual ? curData.plans.pro.annual : curData.plans.pro.monthly;
+        const enterpriseRate = isAnnual ? curData.plans.enterprise.annual : curData.plans.enterprise.monthly;
+
+        const starterTotal = Math.round(users * starterRate);
+        const proTotal = Math.round(users * proRate);
+        const enterpriseTotal = Math.round(users * enterpriseRate);
+
+        const formatOptions = currentCurrency === 'INR' ? 'en-IN' : 'en-US';
+        if (calcStarterCost) calcStarterCost.textContent = curData.symbol + starterTotal.toLocaleString(formatOptions);
+        if (calcProCost) calcProCost.textContent = curData.symbol + proTotal.toLocaleString(formatOptions);
+        if (calcEnterpriseCost) calcEnterpriseCost.textContent = curData.symbol + enterpriseTotal.toLocaleString(formatOptions);
+
+        const periodLabel = isAnnual ? 'per month (billed annually)' : 'per month (billed monthly)';
+        if (calcStarterPeriod) calcStarterPeriod.textContent = periodLabel;
+        if (calcProPeriod) calcProPeriod.textContent = periodLabel;
+        if (calcEnterprisePeriod) calcEnterprisePeriod.textContent = periodLabel;
+      }
+
+      // Billing switcher events
+      if (billingToggle) {
+        billingToggle.addEventListener('change', renderPricing);
+      }
+      if (labelMonthly) {
+        labelMonthly.addEventListener('click', () => {
+          billingToggle.checked = false;
+          renderPricing();
+        });
+      }
+      if (labelAnnual) {
+        labelAnnual.addEventListener('click', () => {
+          billingToggle.checked = true;
+          renderPricing();
+        });
+      }
+      if (employeeSlider) {
+        employeeSlider.addEventListener('input', updateCalculator);
+      }
+
+      // 3. Quick Currency Switcher inside Revealed Price Bar
+      if (quickCurrencySwitch) {
+        quickCurrencySwitch.addEventListener('change', () => {
+          currentCurrency = quickCurrencySwitch.value;
+          const curData = currencyRates[currentCurrency] || currencyRates.INR;
+          if (summaryCurrency) summaryCurrency.textContent = curData.code + ' - ' + curData.symbol.trim();
+          renderPricing();
+        });
+      }
+
+      // 4. Step 1 Submit Handler (Choose Country & Currency)
+      if (btnSubmitStep1) {
+        btnSubmitStep1.addEventListener('click', () => {
+          const countryVal = pricingCountry ? pricingCountry.value : 'IN';
+          const currencyVal = pricingCurrency ? pricingCurrency.value : 'INR';
+          currentCurrency = currencyVal;
+
+          const curData = currencyRates[currentCurrency] || currencyRates.INR;
+          const countryOptText = pricingCountry.options[pricingCountry.selectedIndex]?.text || countryVal;
+
+          if (step2SelectedRegion) {
+            step2SelectedRegion.textContent = `${countryOptText} · ${currentCurrency} (${curData.symbol.trim()})`;
+          }
+
+          // Advance to Step 2
+          if (pricingStep1Block) pricingStep1Block.style.display = 'none';
+          if (pricingStep2Block) pricingStep2Block.style.display = 'block';
+
+          if (stepIndicator1) {
+            stepIndicator1.classList.remove('active');
+            stepIndicator1.classList.add('completed');
+          }
+          if (circleStep1) circleStep1.innerHTML = '✓';
+          if (stepLine1) stepLine1.classList.add('completed');
+          if (stepIndicator2) stepIndicator2.classList.add('active');
+
+          pricingGateForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // 5. Back to Step 1 Button (Change Country/Currency)
+      if (btnBackToStep1) {
+        btnBackToStep1.addEventListener('click', () => {
+          if (pricingStep2Block) pricingStep2Block.style.display = 'none';
+          if (pricingStep1Block) pricingStep1Block.style.display = 'block';
+
+          if (stepIndicator2) stepIndicator2.classList.remove('active');
+          if (stepLine1) stepLine1.classList.remove('completed');
+          if (stepIndicator1) {
+            stepIndicator1.classList.remove('completed');
+            stepIndicator1.classList.add('active');
+          }
+          if (circleStep1) circleStep1.textContent = '1';
+
+          pricingGateForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // 6. Edit Details Button (from revealed price banner)
+      if (btnEditDetails) {
+        btnEditDetails.addEventListener('click', () => {
+          pricingGateForm.style.display = 'block';
+          if (pricingStep2Block) pricingStep2Block.style.display = 'block';
+          if (pricingStep1Block) pricingStep1Block.style.display = 'none';
+          pricingSuccessBanner.style.display = 'none';
+
+          if (stepIndicator3) stepIndicator3.classList.remove('active', 'completed');
+          if (stepIndicator2) stepIndicator2.classList.add('active');
+
+          pricingGateForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // 7. Step 2 Form Submission Handler (Company Details -> Reveal Pricing)
+      if (pricingGateForm) {
+        pricingGateForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Validate required inputs
+          const countryVal = pricingCountry ? pricingCountry.value : 'IN';
+          const currencyVal = pricingCurrency ? pricingCurrency.value : 'INR';
+          const companyVal = document.getElementById('pricingCompanyName')?.value.trim();
+          const nameVal = document.getElementById('pricingFullName')?.value.trim();
+          const emailVal = document.getElementById('pricingWorkEmail')?.value.trim();
+          const phoneVal = document.getElementById('pricingPhone')?.value.trim();
+          const teamVal = document.getElementById('pricingTeamSize')?.value;
+          const interestVal = document.getElementById('pricingInterest')?.value || 'All Solutions';
+
+          if (!companyVal || !nameVal || !emailVal || !phoneVal || !teamVal) {
+            if (pricingFormStatus) {
+              pricingFormStatus.style.color = '#dc2626';
+              pricingFormStatus.textContent = 'Please fill in all required fields marked with *.';
+            }
+            return;
+          }
+
+          // Email format check
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+            if (pricingFormStatus) {
+              pricingFormStatus.style.color = '#dc2626';
+              pricingFormStatus.textContent = 'Please enter a valid work email address.';
+            }
+            return;
+          }
+
+          // UI Progress
+          if (pricingSubmitBtn) {
+            pricingSubmitBtn.disabled = true;
+            pricingSubmitBtn.innerHTML = '<span>Sending Details &amp; Unlocking...</span>';
+          }
+          if (pricingFormStatus) {
+            pricingFormStatus.style.color = '#2563eb';
+            pricingFormStatus.textContent = 'Submitting your quotation request...';
+          }
+
+          currentCurrency = currencyVal;
+          const curData = currencyRates[currentCurrency] || currencyRates.INR;
+          const countryOptText = pricingCountry.options[pricingCountry.selectedIndex]?.text || countryVal;
+
+          // Prepare FormData for FormSubmit.app
+          const formData = new FormData();
+          formData.append('_subject', `Pricing & Quotation Request - ${companyVal} (${countryVal} / ${currentCurrency})`);
+          formData.append('Company Name', companyVal);
+          formData.append('Contact Name', nameVal);
+          formData.append('Work Email', emailVal);
+          formData.append('Phone Number', phoneVal);
+          formData.append('Country', countryOptText);
+          formData.append('Currency', currentCurrency + ' (' + curData.symbol.trim() + ')');
+          formData.append('Team Size', teamVal);
+          formData.append('Solution Interest', interestVal);
+          formData.append('Submission Time', new Date().toLocaleString());
+          formData.append('_ts', String(Date.now()));
+
+          // Send email notification with quotation details in background
+          fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          }).catch(err => console.warn('Quotation submission notice:', err));
+
+          // Update Summary Banner
+          if (summaryCompany) summaryCompany.textContent = companyVal;
+          if (summaryEmail) summaryEmail.textContent = emailVal;
+          if (summaryCountry) summaryCountry.textContent = curData.countryName;
+          if (summaryCurrency) summaryCurrency.textContent = curData.code + ' - ' + curData.symbol.trim();
+          if (quickCurrencySwitch) quickCurrencySwitch.value = currentCurrency;
+
+          // Update Progress Indicator to Step 3 Completed
+          if (stepIndicator2) {
+            stepIndicator2.classList.remove('active');
+            stepIndicator2.classList.add('completed');
+          }
+          if (circleStep2) circleStep2.innerHTML = '✓';
+          if (stepLine2) stepLine2.classList.add('completed');
+          if (stepIndicator3) {
+            stepIndicator3.classList.add('active', 'completed');
+          }
+          if (circleStep3) circleStep3.innerHTML = '✓';
+
+          // Hide Form, Show Banner, Show Price Details
+          pricingGateForm.style.display = 'none';
+          if (pricingSuccessBanner) pricingSuccessBanner.style.display = 'flex';
+          if (pricingDetailsContainer) {
+            pricingDetailsContainer.style.display = 'block';
+            pricingDetailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+
+          // Render prices in chosen currency
+          renderPricing();
+
+          // Reset button
+          if (pricingSubmitBtn) {
+            pricingSubmitBtn.disabled = false;
+            pricingSubmitBtn.innerHTML = '<span>Submit Details &amp; Show Price</span> <span class="btn-arrow">→</span>';
+          }
+          if (pricingFormStatus) pricingFormStatus.textContent = '';
+        });
+      }
+
+      // Initial Pricing Setup
+      renderPricing();
+
+      // Dynamic Copyright Year
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

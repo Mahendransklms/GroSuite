@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="maint-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a6df4"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="maint-glass" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="maint-glow" x="-10" y="-10" width="84" height="84" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="url(#maint-grad)" opacity="0.25" filter="url(#maint-glow)"/>
+  <!-- Base Glass Card -->
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#0c1736" stroke="url(#maint-grad)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#maint-glass)"/>
+  <!-- Maintenance Wrench & Gear -->
+  <circle cx="28" cy="28" r="8" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 2"/>
+  <circle cx="28" cy="28" r="3" fill="#2a6df4"/>
+  <!-- 24/7 Support Orbit Shield -->
+  <path d="M42 22C46 25 48 30 46 36C44 42 38 46 32 46C26 46 22 43 20 40" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 20L44 22L42 26" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Live Signal Dot -->
+  <circle cx="48" cy="16" r="2.5" fill="#00f2fe"/>
+</svg>

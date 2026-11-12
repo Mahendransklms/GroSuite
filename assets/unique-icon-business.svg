@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="biz-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a6df4"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <linearGradient id="biz-glass" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="biz-glow" x="-10" y="-10" width="84" height="84" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Ambient Glow -->
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="url(#biz-grad)" opacity="0.25" filter="url(#biz-glow)"/>
+  <!-- Base Glass Card -->
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#0b1739" stroke="url(#biz-grad)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#biz-glass)"/>
+  <!-- Business Building / Modern Enterprise Hub Glyph -->
+  <path d="M18 46V22L32 14L46 22V46" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 46V34H38V46" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(0,210,255,0.15)"/>
+  <!-- Windows / Growth Nodes -->
+  <rect x="24" y="24" width="4" height="4" rx="1" fill="#70a6ff"/>
+  <rect x="36" y="24" width="4" height="4" rx="1" fill="#70a6ff"/>
+  <!-- Sparkle Accent -->
+  <circle cx="48" cy="14" r="2.5" fill="#00d2ff"/>
+  <circle cx="16" cy="18" r="1.5" fill="#2a6df4"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="test-qa-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="test-qa-glass" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="test-qa-glow" x="-10" y="-10" width="84" height="84" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="url(#test-qa-grad)" opacity="0.25" filter="url(#test-qa-glow)"/>
+  <!-- Base Glass Card -->
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#061e20" stroke="url(#test-qa-grad)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#test-qa-glass)"/>
+  <!-- Mobile Device Outline -->
+  <rect x="20" y="14" width="24" height="36" rx="5" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="32" cy="45" r="1.5" fill="#00f2fe"/>
+  <!-- Quality Assurance Verified Checkmark -->
+  <circle cx="38" cy="24" r="8" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+  <path d="M35 24L37.5 26.5L42 21" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ns-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="ns-glass" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="ns-glow" x="-10" y="-10" width="84" height="84" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="url(#ns-grad)" opacity="0.25" filter="url(#ns-glow)"/>
+  <!-- Base Glass Card -->
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#09142b" stroke="url(#ns-grad)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#ns-glass)"/>
+  <!-- Network Nodes & Connecting Mesh -->
+  <circle cx="32" cy="18" r="4" fill="#00f2fe"/>
+  <circle cx="19" cy="38" r="3.5" fill="#ef4444"/>
+  <circle cx="45" cy="38" r="3.5" fill="#ef4444"/>
+  <circle cx="32" cy="46" r="3" fill="#00f2fe"/>
+  <path d="M32 18L19 38M32 18L45 38M19 38L32 46M45 38L32 46M19 38L45 38" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8"/>
+  <!-- Central Shield Node -->
+  <polygon points="32,25 38,28 38,34 32,38 26,34 26,28" fill="#00f2fe" fill-opacity="0.3" stroke="#00f2fe" stroke-width="1.5"/>
+</svg>

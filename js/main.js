@@ -518,7 +518,7 @@ document.querySelectorAll(
 
         showFormMessage(
           form,
-          "Your job application was submitted successfully. Our team will contact you soon. Thank you!",
+          "Your job application was submitted successfully. Thank you!",
           "success"
         );
 
@@ -526,7 +526,7 @@ document.querySelectorAll(
 
         showFormMessage(
           form,
-          "Your enquiry was submitted successfully. Our team will contact you soon. Thank you!",
+          "Your enquiry was submitted successfully. Our team will contact you soon.",
           "success"
         );
 
@@ -745,3 +745,301 @@ document.querySelectorAll(
 /* ========================================
    END OF GROSUITE MAIN.JS
 ======================================== */
+
+
+/* ========================================
+   ENQUIRE PAGE URL PREFILL HELPER
+======================================== */
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const solution = urlParams.get('solution');
+  const plan = urlParams.get('plan');
+  const messageBox = document.getElementById('enquire-message');
+  const solutionSelect = document.getElementById('enquire-solution');
+
+  if (solutionSelect && solution) {
+    const s = solution.toLowerCase();
+    for (let i = 0; i < solutionSelect.options.length; i++) {
+      if (solutionSelect.options[i].value.toLowerCase() === s) {
+        solutionSelect.selectedIndex = i;
+        break;
+      }
+    }
+  }
+
+  if (messageBox && !messageBox.value) {
+    if (solution && solution.toLowerCase() === 'hrms') {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to start a 15-day Free Trial for GroSuite HRMS Solutions. Please set up our trial access and share the onboarding details.';
+    } else if (solution && solution.toLowerCase() === 'erp') {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to start a 15-day Free Trial for GroSuite ERP Solutions. Please set up our trial access and share the onboarding details.';
+    } else if (solution && solution.toLowerCase() === 'crm') {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to start a 15-day Free Trial for GroSuite CRM Solutions. Please set up our trial access and share the onboarding details.';
+    } else if (solution && (solution.toLowerCase() === 'automation' || solution.toLowerCase() === 'business-automation')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to start a 15-day Free Trial for GroSuite Business Automation Solutions. Please set up our trial access and share the onboarding details.';
+    } else if (solution && (solution.toLowerCase() === 'integration' || solution.toLowerCase() === 'system-integration')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to start a 15-day Free Trial for GroSuite System Integration Solutions. Please set up our trial access and share the onboarding details.';
+    } else if (solution && (solution.toLowerCase() === 'domain-management' || solution.toLowerCase() === 'domain' || solution.toLowerCase() === 'website-development')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about GroSuite Website Development, Design & Domain Management Services. Please share information regarding custom web design, web apps, and enterprise domain hosting.';
+    } else if (solution && (solution.toLowerCase() === 'website-design-development' || solution.toLowerCase() === 'web-design')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss a custom Website Development & Website Design project for our company. Please schedule an introductory consultation.';
+    } else if (solution && (solution.toLowerCase() === 'web-application-development' || solution.toLowerCase() === 'web-app')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss our requirements for Website Application Development (SaaS portal, client dashboard, or custom web app).';
+    } else if (solution && (solution.toLowerCase() === 'business-website')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI am interested in developing a professional Business Website with product/service showcases, lead capture, and customer engagement features.';
+    } else if (solution && (solution.toLowerCase() === 'ecommerce-website' || solution.toLowerCase() === 'ecommerce')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss developing a modern E-Commerce Website with product catalogs, shopping cart, and secure payment gateway integration.';
+    } else if (solution && (solution.toLowerCase() === 'portfolio-website' || solution.toLowerCase() === 'portfolio')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about building a high-impact Portfolio Website to showcase our projects, case studies, and creative works.';
+    } else if (solution && (solution.toLowerCase() === 'informational-website' || solution.toLowerCase() === 'informational')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss building an Informational Website with a resource library, knowledge base, and search capabilities.';
+    } else if (solution && (solution.toLowerCase() === 'api-integration' || solution.toLowerCase() === 'api')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss a project for GroSuite API & System Integration Services. Please share details on custom API architecture and data bridge capabilities.';
+    } else if (solution && (solution.toLowerCase() === 'whatsapp-integration' || solution.toLowerCase() === 'whatsapp')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about API & WhatsApp Business Integration. Please share details on automated notifications, messaging webhooks, and conversational bot setup.';
+    } else if (solution && (solution.toLowerCase() === 'database-integration' || solution.toLowerCase() === 'database')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Database Integration and data pipeline synchronization (SQL, NoSQL, Cache, Vector DB) for our application infrastructure.';
+    } else if (solution && (solution.toLowerCase() === 'cloud-platform-integration' || solution.toLowerCase() === 'cloud-integration')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Cloud & Platform Integration across AWS, Azure, GCP, and enterprise SaaS platforms.';
+    } else if (solution && (solution.toLowerCase() === 'api-security')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss API Security, tokenized authentication (OAuth 2.0/mTLS), rate limiting, and endpoint vulnerability protection.';
+    } else if (solution && (solution.toLowerCase() === 'api-testing' || solution.toLowerCase() === 'api-monitoring')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss API Testing & Real-Time Monitoring solutions to ensure endpoint uptime, synthetic testing, and latency alerting.';
+    } else if (solution && (solution.toLowerCase() === 'ai-chatbots' || solution.toLowerCase() === 'ai')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI am interested in GroSuite AI & Chatbot Development Services. Please connect with us to discuss conversational AI bots and LLM integration for our workflows.';
+    } else if (solution && (solution.toLowerCase() === 'ai-application-development' || solution.toLowerCase() === 'ai-app')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss a custom AI Application Development project with autonomous AI agents, LLM pipelines, and vector embeddings.';
+    } else if (solution && (solution.toLowerCase() === 'chatbot-development' || solution.toLowerCase() === 'chatbot')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Chatbot Development for omnichannel conversational AI across WhatsApp, web, and mobile.';
+    } else if (solution && (solution.toLowerCase() === 'ai-integration-automation' || solution.toLowerCase() === 'ai-automation')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss AI Integration & Automation to embed generative AI models into our existing software and operational workflows.';
+    } else if (solution && (solution.toLowerCase() === 'voice-ai-speech' || solution.toLowerCase() === 'voice-ai')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Voice AI & Speech Solutions (real-time speech recognition, voice bots, and text-to-speech synthesis).';
+    } else if (solution && (solution.toLowerCase() === 'ai-analytics-reporting' || solution.toLowerCase() === 'ai-analytics')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss AI Analytics & Reporting solutions for predictive insights, automated data summaries, and executive intelligence.';
+    } else if (solution && (solution.toLowerCase() === 'mobile-apps' || solution.toLowerCase() === 'mobile')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss our requirements for GroSuite Mobile App Development Services (iOS/Android/Cross-Platform). Please schedule an introductory call.';
+    } else if (solution && (solution.toLowerCase() === 'android-app-development' || solution.toLowerCase() === 'android-app')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss native Android App Development (Kotlin, Jetpack Compose, Android SDK) and cross-platform mobile solutions.';
+    } else if (solution && (solution.toLowerCase() === 'mobile-backend-api' || solution.toLowerCase() === 'backend-api-integration')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Backend & API Integration for mobile apps, real-time sync, and push notification architecture.';
+    } else if (solution && (solution.toLowerCase() === 'app-testing-qa' || solution.toLowerCase() === 'app-testing')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss App Testing & Quality Assurance across physical Android & iOS device matrix, automated UI tests, and performance benchmarking.';
+    } else if (solution && (solution.toLowerCase() === 'app-maintenance-support' || solution.toLowerCase() === 'app-maintenance')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about App Maintenance & 24/7 Support packages, OS version updates, crash analytics, and SLA monitoring.';
+    } else if (solution && (solution.toLowerCase() === 'cloud-development' || solution.toLowerCase() === 'cloud')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss GroSuite Cloud Development & DevOps Services. Please share more details on cloud migration, containerization, and infrastructure architecture.';
+    } else if (solution && (solution.toLowerCase() === 'business-integration' || solution.toLowerCase() === 'business')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about GroSuite Business Integration Services to harmonize our enterprise systems, data pipelines, and departmental workflows.';
+    } else if (solution && (solution.toLowerCase() === 'data-analytics')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Data Analytics solutions, real-time KPI dashboards, and predictive business intelligence for our organization.';
+    } else if (solution && (solution.toLowerCase() === 'data-engineering')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Data Engineering services, streaming ETL pipelines, data lakehouse architecture, and warehouse integration.';
+    } else if (solution && (solution.toLowerCase() === 'financial-integration' || solution.toLowerCase() === 'financial')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Financial Integration solutions for automated ledger sync, ERP/accounting bridging, and payment reconciliation.';
+    } else if (solution && (solution.toLowerCase() === 'business-analytics-reporting' || solution.toLowerCase() === 'business-analytics')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Business Analytics & Reporting services, executive KPI scorecards, and automated operational intelligence.';
+    } else if (solution && (solution.toLowerCase() === 'cyber-security' || solution.toLowerCase() === 'security')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss GroSuite Cyber Security Services, threat defense, and security assessment for our digital infrastructure.';
+    } else if (solution && (solution.toLowerCase() === 'security-testing' || solution.toLowerCase() === 'testing')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Security Testing services, including Vulnerability Assessments, Penetration Testing (VAPT), and code security reviews.';
+    } else if (solution && (solution.toLowerCase() === 'firewall-management' || solution.toLowerCase() === 'firewall')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Firewall Management, Next-Gen Firewall (NGFW) policies, WAF deployment, and DDoS mitigation strategies.';
+    } else if (solution && (solution.toLowerCase() === 'network-security')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Network Security architecture, zero-trust network access (ZTNA), VPNs, and micro-segmentation.';
+    } else if (solution && (solution.toLowerCase() === 'endpoint-security')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Endpoint Security solutions, Endpoint Detection & Response (EDR), device compliance, and malware defense.';
+    } else if (solution && (solution.toLowerCase() === 'report-security' || solution.toLowerCase() === 'security-reporting')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Security Reporting & Compliance Audits (ISO 27001, SOC 2, GDPR, HIPAA) and executive threat reports.';
+    } else if (solution && (solution.toLowerCase() === 'data-protection')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to discuss Data Protection services, end-to-end encryption, data loss prevention (DLP), and database access governance.';
+    } else if (solution && (solution.toLowerCase() === 'domain-security')) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about Domain Security solutions, DNSSEC enforcement, anti-spoofing protocols (DMARC, SPF, DKIM), and brand protection.';
+    } else if (plan) {
+      messageBox.value = 'Hi GroSuite Team,\n\nI would like to inquire about the ' + plan + ' plan for GroSuite. Please share more details.';
+    }
+  }
+})();
+
+
+/* ========================================
+   CAREER PAGE AUTO-SELECTION HELPER
+======================================== */
+(function() {
+  document.querySelectorAll('[data-apply-type]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const type = this.getAttribute('data-apply-type');
+      const catSelect = document.getElementById('career-category');
+      if (catSelect && type) {
+        for (let i = 0; i < catSelect.options.length; i++) {
+          if (catSelect.options[i].value.toLowerCase() === type.toLowerCase()) {
+            catSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-role-select]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const role = this.getAttribute('data-role-select');
+      const roleSelect = document.getElementById('career-role');
+      const catSelect = document.getElementById('career-category');
+      if (roleSelect && role) {
+        for (let i = 0; i < roleSelect.options.length; i++) {
+          if (roleSelect.options[i].value.toLowerCase() === role.toLowerCase()) {
+            roleSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      if (catSelect && role.toLowerCase().includes('trainee')) {
+        for (let i = 0; i < catSelect.options.length; i++) {
+          if (catSelect.options[i].value.toLowerCase() === 'internship') {
+            catSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
+  });
+})();
+
+
+/* ==========================================================================
+   SUBHEADINGS RESPECTIVE COLOR INTERACTION (INDUSTRIES & RESOURCES)
+   ========================================================================== */
+(function() {
+  function initSubheadingsColorSync() {
+    // 1. Header Dropdown Submenu Click Handling
+    document.querySelectorAll('.nav__submenu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        const submenu = this.closest('.nav__submenu');
+        if (submenu) {
+          submenu.querySelectorAll('a').forEach(function(a) {
+            a.classList.remove('is-active');
+          });
+          this.classList.add('is-active');
+        }
+
+        const href = this.getAttribute('href') || '';
+        // If clicking an industry hash on index.html
+        if (href.includes('#industry-')) {
+          const hashId = href.split('#')[1];
+          const targetCard = document.getElementById(hashId);
+          if (targetCard) {
+            document.querySelectorAll('.industry').forEach(function(c) {
+              c.classList.remove('is-active');
+            });
+            targetCard.classList.add('is-active');
+            setTimeout(function() {
+              targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
+        }
+      });
+    });
+
+    // 2. Direct Click on Industry Cards (index.html)
+    const industryCards = document.querySelectorAll('.industry');
+    if (industryCards.length > 0) {
+      industryCards.forEach(function(card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function() {
+          industryCards.forEach(function(c) {
+            c.classList.remove('is-active');
+          });
+          this.classList.add('is-active');
+          if (this.id) {
+            try {
+              history.replaceState(null, '', '#' + this.id);
+            } catch (err) {}
+            // Also sync active state in navbar submenu if present
+            const navSub = document.querySelector('.nav__submenu a[href*="' + this.id + '"]');
+            if (navSub) {
+              const p = navSub.closest('.nav__submenu');
+              if (p) {
+                p.querySelectorAll('a').forEach(function(a) { a.classList.remove('is-active'); });
+                navSub.classList.add('is-active');
+              }
+            }
+          }
+        });
+      });
+
+      // Synchronize hash on page load / hash change
+      function activateIndustryFromHash() {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#industry-')) {
+          const targetCard = document.querySelector(hash);
+          if (targetCard) {
+            industryCards.forEach(function(c) { c.classList.remove('is-active'); });
+            targetCard.classList.add('is-active');
+            const navSub = document.querySelector('.nav__submenu a[href*="' + hash.substring(1) + '"]');
+            if (navSub) {
+              const p = navSub.closest('.nav__submenu');
+              if (p) {
+                p.querySelectorAll('a').forEach(function(a) { a.classList.remove('is-active'); });
+                navSub.classList.add('is-active');
+              }
+            }
+          }
+        }
+      }
+
+      window.addEventListener('hashchange', activateIndustryFromHash);
+      if (window.location.hash && window.location.hash.startsWith('#industry-')) {
+        setTimeout(activateIndustryFromHash, 250);
+      }
+    }
+
+    // 3. Resource Page Subheadings & Filter Tabs (resource.html)
+    const resourceTabs = document.querySelectorAll('.resource-tab');
+    if (resourceTabs.length > 0) {
+      function syncResourceHash() {
+        const hash = window.location.hash;
+        if (!hash) return;
+        resourceTabs.forEach(function(tab) {
+          const href = tab.getAttribute('href');
+          if (href === hash || (href && href.endsWith(hash))) {
+            resourceTabs.forEach(function(t) { t.classList.remove('active'); });
+            tab.classList.add('active');
+            // Trigger tab filter display
+            const filter = tab.getAttribute('data-filter');
+            const items = document.querySelectorAll('[data-resource-item]');
+            if (items.length > 0 && filter) {
+              if (filter === 'all') {
+                items.forEach(function(item) { item.style.display = ''; });
+              } else {
+                items.forEach(function(item) {
+                  const itemCat = item.getAttribute('data-category') || '';
+                  item.style.display = (itemCat === filter) ? '' : 'none';
+                });
+              }
+            }
+          }
+        });
+
+        // Pulse / activate section block
+        const targetSec = document.querySelector(hash);
+        if (targetSec && targetSec.classList.contains('resource-block')) {
+          document.querySelectorAll('.resource-block').forEach(function(b) {
+            b.classList.remove('is-active');
+          });
+          targetSec.classList.add('is-active');
+        }
+      }
+
+      window.addEventListener('hashchange', syncResourceHash);
+      if (window.location.hash) {
+        setTimeout(syncResourceHash, 250);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSubheadingsColorSync);
+  } else {
+    initSubheadingsColorSync();
+  }
+})();

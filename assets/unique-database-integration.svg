@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" fill="none">
+  <defs>
+    <linearGradient id="db-bg" x1="0" y1="0" x2="540" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#091432"/>
+      <stop offset="50%" stop-color="#060c20"/>
+      <stop offset="100%" stop-color="#02040d"/>
+    </linearGradient>
+    <linearGradient id="db-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#2a6df4"/>
+    </linearGradient>
+    <linearGradient id="db-purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="db-shadow" x="-20" y="-20" width="580" height="420" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="#00f2fe" flood-opacity="0.22"/>
+    </filter>
+    <filter id="db-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glows -->
+  <circle cx="120" cy="180" r="100" fill="#2a6df4" opacity="0.22" filter="url(#db-glow)"/>
+  <circle cx="420" cy="180" r="100" fill="#00f2fe" opacity="0.22" filter="url(#db-glow)"/>
+
+  <!-- Database Console Window -->
+  <g filter="url(#db-shadow)">
+    <rect x="35" y="35" width="470" height="280" rx="18" fill="url(#db-bg)" stroke="rgba(0, 242, 254, 0.3)" stroke-width="1.5"/>
+    <rect x="35" y="35" width="470" height="280" rx="18" fill="rgba(255,255,255,0.03)"/>
+
+    <!-- Header Bar -->
+    <path d="M35 53C35 43.0589 43.0589 35 53 35H487C496.941 35 505 43.0589 505 53V68H35V53Z" fill="rgba(255,255,255,0.04)" stroke="rgba(0,242,254,0.15)" stroke-width="1"/>
+    <circle cx="56" cy="51.5" r="4.5" fill="#ef4444"/>
+    <circle cx="72" cy="51.5" r="4.5" fill="#f59e0b"/>
+    <circle cx="88" cy="51.5" r="4.5" fill="#10b981"/>
+
+    <text x="110" y="55" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Cluster Replication: In-Sync (P99 &lt; 2ms)</text>
+
+    <!-- Left DB Node: Relational SQL (Postgres / MySQL) -->
+    <g transform="translate(65, 95)">
+      <!-- Cylinder Base Rings -->
+      <rect x="0" y="0" width="105" height="150" rx="12" fill="rgba(42,109,244,0.15)" stroke="rgba(112,166,255,0.4)" stroke-width="1.2"/>
+      <ellipse cx="52.5" cy="24" rx="35" ry="12" fill="#0c2356" stroke="#70a6ff" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="55" rx="35" ry="12" fill="#0c2356" stroke="#70a6ff" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="86" rx="35" ry="12" fill="#0c2356" stroke="#70a6ff" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="117" rx="35" ry="12" fill="#0c2356" stroke="#70a6ff" stroke-width="1.8"/>
+      <text x="52.5" y="142" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="800">Relational SQL</text>
+    </g>
+
+    <!-- Center ETL Engine & Transformation Hub -->
+    <g transform="translate(195, 95)">
+      <rect x="0" y="0" width="150" height="150" rx="14" fill="#040b1e" stroke="rgba(0,242,254,0.4)" stroke-width="1.4"/>
+      <text x="75" y="26" text-anchor="middle" fill="#00f2fe" font-family="system-ui, sans-serif" font-size="10" font-weight="800">ETL Pipeline Engine</text>
+
+      <!-- Sync Rings / Processing Nodes -->
+      <circle cx="75" cy="72" r="32" stroke="url(#db-cyan)" stroke-width="2.5" stroke-dasharray="6 3" fill="none"/>
+      <circle cx="75" cy="72" r="16" fill="rgba(0,242,254,0.2)" stroke="#00f2fe" stroke-width="1.5"/>
+      <path d="M71 67L79 72L71 77Z" fill="#ffffff"/>
+
+      <text x="75" y="120" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="8.5">Stream: Kafka</text>
+      <text x="75" y="134" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="8" font-weight="700">Zero Data Loss</text>
+    </g>
+
+    <!-- Right DB Node: NoSQL & Cache (MongoDB / Redis) -->
+    <g transform="translate(370, 95)">
+      <rect x="0" y="0" width="105" height="150" rx="12" fill="rgba(168,85,247,0.15)" stroke="rgba(236,72,153,0.4)" stroke-width="1.2"/>
+      <ellipse cx="52.5" cy="24" rx="35" ry="12" fill="#240e3b" stroke="#ec4899" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="55" rx="35" ry="12" fill="#240e3b" stroke="#ec4899" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="86" rx="35" ry="12" fill="#240e3b" stroke="#ec4899" stroke-width="1.8"/>
+      <ellipse cx="52.5" cy="117" rx="35" ry="12" fill="#240e3b" stroke="#ec4899" stroke-width="1.8"/>
+      <text x="52.5" y="142" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="800">NoSQL &amp; Cache</text>
+    </g>
+
+    <!-- Connecting glowing pipelines -->
+    <line x1="170" y1="170" x2="195" y2="170" stroke="#00f2fe" stroke-width="3" stroke-dasharray="4 2"/>
+    <line x1="345" y1="170" x2="370" y2="170" stroke="#ec4899" stroke-width="3" stroke-dasharray="4 2"/>
+
+    <!-- Bottom Telemetry Metric Strip -->
+    <g transform="translate(55, 260)">
+      <rect x="0" y="0" width="430" height="42" rx="8" fill="rgba(15,23,42,0.8)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="20" y="25" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">CDC Log Reader: Active</text>
+      <text x="160" y="25" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="9">Throughput: 85,000 ops/sec</text>
+      <text x="320" y="25" fill="#34d399" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Sync: 100% In-Order</text>
+    </g>
+  </g>
+
+  <!-- Floating Badge -->
+  <g transform="translate(18, 12)" filter="url(#db-shadow)">
+    <rect x="0" y="0" width="145" height="38" rx="10" fill="#0b1739" stroke="rgba(112,166,255,0.5)" stroke-width="1.2"/>
+    <circle cx="18" cy="19" r="8" fill="#2a6df4"/>
+    <path d="M15 19L17 21L21 17" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="34" y="17" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700">Bi-Directional ETL</text>
+    <text x="34" y="28" fill="#70a6ff" font-family="system-ui, sans-serif" font-size="8" font-weight="600">Automated CDC</text>
+  </g>
+</svg>

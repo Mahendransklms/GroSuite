@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="rs-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#00d2fe"/>
+    </linearGradient>
+    <linearGradient id="rs-glass" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="rs-glow" x="-10" y="-10" width="84" height="84" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="url(#rs-grad)" opacity="0.25" filter="url(#rs-glow)"/>
+  <!-- Base Glass Card -->
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="#061e1b" stroke="url(#rs-grad)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#rs-glass)"/>
+  <!-- Report Document -->
+  <rect x="18" y="16" width="28" height="34" rx="3" stroke="#ffffff" stroke-width="1.8"/>
+  <path d="M23 23H35" stroke="#00d2fe" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M23 29H31" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.8"/>
+  <path d="M23 35H37" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.8"/>
+  <!-- Security Audit Badge Stamp -->
+  <circle cx="36" cy="40" r="7" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-width="1.6"/>
+  <path d="M33 40L35 42L39 38" stroke="#10b981" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
