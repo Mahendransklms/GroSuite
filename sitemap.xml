@@ -1,50 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://grosuite.in/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
+  <!-- Core Pages -->
   <url>
-       <loc>https://GroSuite.in/</loc>
-       <lastmod>2026-10-29</lastmod>
-       <priority>1.0</priority>
+    <loc>https://grosuite.in/resource.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/index.html</loc>
-       <lastmod>2026-10-29</lastmod>
-       <priority>0.8</priority>
+    <loc>https://grosuite.in/pricing.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/partnership.html</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.8</priority>
+    <loc>https://grosuite.in/partnership.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/career.html</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.8</priority>
+    <loc>https://grosuite.in/career.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/enquire.html</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.8</priority>
+    <loc>https://grosuite.in/enquire.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Career & Opportunities -->
+  <url>
+    <loc>https://grosuite.in/jobs.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-       <loc>https://GroSuite/enquire.html?interest=Partnership</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.7</priority>
+    <loc>https://grosuite.in/internships.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Solutions & Services -->
+  <url>
+    <loc>https://grosuite.in/hrms-solutions.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/enquire.html?interest=Referral%20Partner</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.7</priority>
+    <loc>https://grosuite.in/erp-solutions.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/enquire.html?interest=Business%20Partner</loc>
-       <lastmod>2026-10-30/lastmod>
-       <priority>0.6</priority>
+    <loc>https://grosuite.in/crm-solutions.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-       <loc>https://GroSuite/enquire.html?interest=Outsource%20Partner</loc>
-       <lastmod>2026-10-30</lastmod>
-       <priority>0.6</priority>
+    <loc>https://grosuite.in/business-automation.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://grosuite.in/ai-chatbot-development.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/cloud-development.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/mobile-app-development.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/cyber-security.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/api-system-integration.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/business-integration.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/system-integration.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://grosuite.in/domain-management.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

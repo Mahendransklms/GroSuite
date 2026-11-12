@@ -1,9 +1,23 @@
-# GroSuite website crawler instructions
+# ==========================================
+# GroSuite Crawler & Indexing Instructions
+# Website: https://grosuite.in
+# ==========================================
 
+# Default rules for all web crawlers
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /.claude/
+Disallow: /serve.js
+Disallow: /serve.mjs
 
+# AI & LLM Search Crawlers
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
@@ -18,7 +32,17 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+# Sitemap location
 Sitemap: https://grosuite.in/sitemap.xml
