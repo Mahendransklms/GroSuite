@@ -212,8 +212,8 @@ p {
   padding-block: 4px;
 }
 
-.nav__links a:hover,
-.nav__links a[aria-current="page"] {
+.nav__links a:not(.nav__trial):hover,
+.nav__links a:not(.nav__trial)[aria-current="page"] {
   color: var(--blue-bright, #70a6ff);
 }
 
@@ -304,13 +304,14 @@ p {
 }
 
 .nav__links .nav__trial {
+  position: relative;
   display: inline-flex;
   gap: .45rem;
   align-items: center;
   padding: .55rem 1.15rem;
   border: 1px solid var(--blue);
   border-radius: 999px;
-  color: white;
+  color: #ffffff;
   background: var(--blue);
   font-weight: 750;
   white-space: nowrap;
@@ -318,10 +319,27 @@ p {
   transition: all .2s ease;
 }
 
+/* Free Trial Current Page Active Style - Circular Glowing Outline Ring */
+.nav__links .nav__trial[aria-current="page"],
+.nav__links .nav__trial.active {
+  color: #ffffff !important;
+  border-color: #ffffff;
+  background: #1d4ed8;
+  box-shadow: 0 0 0 3px var(--blue-bright, #70a6ff), 0 0 18px rgba(112, 166, 255, 0.6);
+}
+
+.nav__links .nav__trial[aria-current="page"]:hover,
+.nav__links .nav__trial.active:hover {
+  border-color: #ffffff;
+  background: #2563eb;
+  box-shadow: 0 0 0 3px var(--blue-bright, #70a6ff), 0 0 22px rgba(112, 166, 255, 0.75);
+  transform: translateY(-1px);
+}
+
 .nav__links .nav__trial:hover {
   border-color: #245fca;
   background: #245fca;
-  color: white;
+  color: #ffffff;
   box-shadow: 0 4px 14px rgba(57, 124, 255, .35);
   transform: translateY(-1px);
 }
@@ -2053,7 +2071,7 @@ a.solution-item:focus-visible .solution-arrow {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.10rem;
+  gap: 0.25rem;
   color: #000000;
   text-decoration: none;
   text-align: center;
@@ -2061,13 +2079,13 @@ a.solution-item:focus-visible .solution-arrow {
 
 .footer__slogan {
   display: block;
-  margin-top: 0.35rem;
-  margin-inline: auto;
+  margin-top: 0.08rem;
   color: #1a3ae5;
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.01em;
-  line-height: 1.0;
+  font-size: 0.85rem;
+  font-weight: 990;
+  letter-spacing: 0em;
+  line-height: 0.8;
+  margin-left: -60px;
   text-align: center;
   white-space: nowrap;
 }
@@ -2846,56 +2864,58 @@ a.solution-item:focus-visible .solution-arrow {
   display: block;
   margin-top: 0.08rem;
   color: #1a3ae5;
-  font-size: 0.98rem;
-  font-weight: 950;
+  font-size: 0.85rem;
+  font-weight: 990;
   letter-spacing: 0em;
   line-height: 0.8;
-  margin-left: -50px;
+  margin-left: -60px;
   text-align: center;
   white-space: nowrap;
 }
 
-/* Footer logo & slogan - properly aligned under wordmark */
-.footer__logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  text-decoration: none;
-  line-height: 1;
-  color: #000000;
-  gap: 0.22rem;
-}
-
-.footer__logo .logo__wordmark {
-  justify-content: flex-start;
-}
-
-.footer__logo .logo__slogan,
-.footer__slogan {
-  display: block;
-  margin-top: 0.35rem;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  color: #1a3ae5;
-  font-size: 0.80rem;
-  font-weight: 850;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
-  text-align: left;
-  white-space: nowrap;
-}
-
-/* Footer logo */
+/* Footer logo & slogan - aligned and styled same as header logo */
 .footer__logo {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.25rem;
+  width: max-content;
+  color: #000000;
   text-decoration: none;
   line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.footer__logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer__logo .logo__wordmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.04em;
+  font-size: 2.65rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
   color: #000000;
-  gap: 0.22rem;
+  white-space: nowrap;
+}
+
+.footer__logo .logo__slogan,
+.footer__slogan {
+  display: block;
+  margin-top: 0.08rem;
+  color: #1a3ae5;
+  font-size: 0.85rem;
+  font-weight: 990;
+  letter-spacing: 0em;
+  line-height: 0.8;
+  margin-left: -60px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* Smaller screens */
@@ -2907,11 +2927,14 @@ a.solution-item:focus-visible .solution-arrow {
     border-radius: 8px;
   }
 
-  .logo__wordmark {
+  .logo__wordmark,
+  .footer__logo .logo__wordmark {
     font-size: 1.95rem;
   }
 
-  .logo.logo--with-slogan .logo__slogan {
+  .logo.logo--with-slogan .logo__slogan,
+  .footer__logo .logo__slogan,
+  .footer__slogan {
     font-size: 0.74rem;
     margin-left: -10px;
   }
@@ -3334,8 +3357,8 @@ a.solution-item:focus-visible .solution-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 36px;
+  height: 36px;
   border: 1px solid rgba(10, 18, 40, 0.15);
   border-radius: 50%;
   color: #4b5563;
@@ -3346,8 +3369,8 @@ a.solution-item:focus-visible .solution-arrow {
 }
 
 .footer__social a svg {
-  width: 22px;
-  height: 22px;
+  width: 17px;
+  height: 17px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -10429,11 +10452,17 @@ a.solution-item:focus-visible .solution-arrow {
 .services-header-intro {
   max-width: 1060px;
   margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.services-header-intro .eyebrow,
+#services .eyebrow {
+  justify-content: center;
 }
 
 .services-header-intro h2 {
   font-size: 2.15rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   color: var(--heading, #0f172a);
   letter-spacing: -0.02em;
   font-weight: 800;
@@ -10441,8 +10470,8 @@ a.solution-item:focus-visible .solution-arrow {
 }
 
 .workforce-highlights-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 1.25rem;
 }
@@ -10454,7 +10483,9 @@ a.solution-item:focus-visible .solution-arrow {
   padding: 1.35rem 1.6rem;
   transition: all 0.25s ease;
   position: relative;
-  text-align: left;
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
 }
 
 .workforce-highlight-box:hover {
@@ -10492,6 +10523,8 @@ a.solution-item:focus-visible .solution-arrow {
   font-size: 0.95rem;
   line-height: 1.55;
   color: #475569;
+  text-align: center;
+  margin-right: 0px;
   margin: 0;
 }
 
@@ -10513,7 +10546,8 @@ a.solution-item:focus-visible .solution-arrow {
 
 @media (max-width: 768px) {
   .workforce-highlights-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
 
@@ -10545,31 +10579,8 @@ a.solution-item:focus-visible .solution-arrow {
 .footer__brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
   width: fit-content;
-}
-
-.footer__logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.22rem;
-  color: #000000;
-  text-decoration: none;
-  text-align: left;
-}
-
-.footer__slogan {
-  display: block;
-  margin-top: 0.35rem;
-  color: #1a3ae5;
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.08em;
-  line-height: 1.0;
-  white-space: nowrap;
 }
 
 .footer__desc {
@@ -10621,17 +10632,39 @@ a.solution-item:focus-visible .solution-arrow {
   gap: 0.85rem;
 }
 
+/* Footer Partner / Parent Company Logo */
+.footer__partner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.25rem;
+}
+
+.footer__partner-logo {
+  display: block;
+  height: 85px;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer__partner-logo:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
 .footer__social {
   display: flex;
-  gap: .55rem;
+  gap: 0.45rem;
 }
 
 .footer__social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border: 1px solid rgba(10, 18, 40, .15);
   border-radius: 50%;
   color: #4b5563;
@@ -10640,11 +10673,31 @@ a.solution-item:focus-visible .solution-arrow {
   text-decoration: none;
 }
 
+.footer__social a svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer__social a svg .social-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
 .footer__social a:hover {
   color: #ffffff;
   background: var(--blue, #2563eb);
   border-color: var(--blue, #2563eb);
   transform: translateY(-2px);
+}
+
+.footer__social .social-x {
+  width: 14px;
+  height: 14px;
 }
 
 .social-whatsapp-link {
@@ -10661,13 +10714,13 @@ a.solution-item:focus-visible .solution-arrow {
 .footer__whatsapp-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.55rem 1.15rem;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
   background: #ffffff;
   border: 1.5px solid #25D366;
   border-radius: 9999px;
   color: #25D366;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 650;
   text-decoration: none;
   transition: all 0.22s ease;
@@ -10681,8 +10734,8 @@ a.solution-item:focus-visible .solution-arrow {
 }
 
 .footer__whatsapp-icon {
-  width: 19px;
-  height: 19px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }
 
@@ -10724,6 +10777,14 @@ a.solution-item:focus-visible .solution-arrow {
 
   .footer__actions {
     align-items: center;
+  }
+
+  .footer__partner {
+    justify-content: center;
+  }
+
+  .footer__partner-logo {
+    height: 70px;
   }
 
   .footer__links {

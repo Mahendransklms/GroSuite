@@ -1035,6 +1035,16 @@ document.querySelectorAll(
         setTimeout(syncResourceHash, 250);
       }
     }
+
+    // Ensure Free Trial nav button active indicator on enquire.html
+    const pathname = window.location.pathname.toLowerCase();
+    if (pathname.includes('enquire')) {
+      const trialBtn = document.querySelector('.nav__trial');
+      if (trialBtn) {
+        trialBtn.setAttribute('aria-current', 'page');
+        trialBtn.classList.add('active');
+      }
+    }
   }
 
   if (document.readyState === 'loading') {
