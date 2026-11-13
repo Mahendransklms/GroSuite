@@ -10568,7 +10568,7 @@ a.solution-item:focus-visible .solution-arrow {
 .footer__top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 2.2rem;
   border-bottom: 1px solid #f1f5f9;
   margin-bottom: 2.5rem;
@@ -10642,7 +10642,7 @@ a.solution-item:focus-visible .solution-arrow {
 
 .footer__partner-logo {
   display: block;
-  height: 85px;
+  height: 64px;
   width: auto;
   max-width: 250px;
   object-fit: contain;
@@ -10784,7 +10784,7 @@ a.solution-item:focus-visible .solution-arrow {
   }
 
   .footer__partner-logo {
-    height: 70px;
+    height: 56px;
   }
 
   .footer__links {
