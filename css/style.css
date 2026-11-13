@@ -10824,11 +10824,14 @@ a.solution-item:focus-visible .solution-arrow {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .enquire-qr-card:hover {
   transform: translateY(-2px);
+  border-color: #2563eb;
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
 }
 
@@ -10846,4 +10849,9 @@ a.solution-item:focus-visible .solution-arrow {
   color: #0f172a;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.enquire-qr-card:hover .enquire-qr-label {
+  color: #2563eb;
 }
