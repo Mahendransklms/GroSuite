@@ -10644,7 +10644,7 @@ a.solution-item:focus-visible .solution-arrow {
   display: block;
   height: 64px;
   width: auto;
-  max-width: 250px;
+  max-width: 300px;
   object-fit: contain;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
