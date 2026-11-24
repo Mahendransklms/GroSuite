@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" fill="none">
+  <defs>
+    <linearGradient id="int-bg" x1="0" y1="0" x2="540" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#081e2b"/>
+      <stop offset="50%" stop-color="#051520"/>
+      <stop offset="100%" stop-color="#02090f"/>
+    </linearGradient>
+    <linearGradient id="int-emerald" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="int-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="int-amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="int-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="int-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#10b981" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glows -->
+  <circle cx="100" cy="80" r="100" fill="#10b981" opacity="0.3" filter="blur(30px)"/>
+  <circle cx="440" cy="200" r="90" fill="#06b6d4" opacity="0.25" filter="blur(30px)"/>
+
+  <!-- Card Surface -->
+  <rect x="15" y="15" width="510" height="250" rx="16" fill="url(#int-bg)" stroke="rgba(52, 211, 153, 0.28)" stroke-width="1.2"/>
+  <rect x="15" y="15" width="510" height="250" rx="16" fill="url(#int-glass)"/>
+
+  <!-- Window Header Bar -->
+  <path d="M15 31C15 22.1634 22.1634 15 31 15H509C517.837 15 525 22.1634 525 31V48H15V31Z" fill="rgba(255,255,255,0.04)" stroke="rgba(52,211,153,0.15)" stroke-width="1"/>
+  <circle cx="34" cy="31" r="3.5" fill="#ef4444"/>
+  <circle cx="46" cy="31" r="3.5" fill="#f59e0b"/>
+  <circle cx="58" cy="31" r="3.5" fill="#10b981"/>
+  <rect x="80" y="24" width="140" height="14" rx="7" fill="rgba(255,255,255,0.07)"/>
+  <text x="92" y="34" fill="#a7f3d0" font-family="'Manrope', -apple-system, sans-serif" font-size="9" font-weight="700">GroSuite · Guided Internship</text>
+
+  <!-- Status Chip Right -->
+  <rect x="375" y="23" width="135" height="16" rx="8" fill="rgba(52, 211, 153, 0.18)" stroke="rgba(52, 211, 153, 0.4)" stroke-width="1"/>
+  <circle cx="387" cy="31" r="3" fill="#34d399"/>
+  <text x="397" y="34" fill="#a7f3d0" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">2026 COHORT OPEN</text>
+
+  <!-- Left Column: Internship Tracks -->
+  <!-- Track Item 1 -->
+  <g filter="url(#int-shadow)">
+    <rect x="30" y="60" width="280" height="54" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(52,211,153,0.22)"/>
+    <circle cx="55" cy="87" r="14" fill="url(#int-emerald)"/>
+    <text x="49" y="91" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="12" font-weight="800">UI</text>
+    <text x="78" y="80" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">Frontend &amp; UI/UX Intern</text>
+    <text x="78" y="96" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">Modern Web · React · Figma · Tailwind</text>
+    <rect x="235" y="77" width="65" height="18" rx="4" fill="rgba(16,185,129,0.22)"/>
+    <text x="242" y="89" fill="#a7f3d0" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">3 Months</text>
+  </g>
+
+  <!-- Track Item 2 -->
+  <g>
+    <rect x="30" y="122" width="280" height="54" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(52,211,153,0.16)"/>
+    <circle cx="55" cy="149" r="14" fill="url(#int-cyan)"/>
+    <text x="49" y="153" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="800">BE</text>
+    <text x="78" y="142" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">Backend &amp; API Development</text>
+    <text x="78" y="158" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">Node.js · Python · Database Engineering</text>
+    <rect x="235" y="139" width="65" height="18" rx="4" fill="rgba(6,182,212,0.22)"/>
+    <text x="242" y="151" fill="#67e8f9" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">6 Months</text>
+  </g>
+
+  <!-- Track Item 3 -->
+  <g>
+    <rect x="30" y="184" width="280" height="54" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(52,211,153,0.16)"/>
+    <circle cx="55" cy="211" r="14" fill="url(#int-amber)"/>
+    <text x="49" y="215" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="800">QA</text>
+    <text x="78" y="204" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">Software Testing &amp; DevOps</text>
+    <text x="78" y="220" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">Automated QA · CI/CD Pipelines</text>
+    <rect x="235" y="201" width="65" height="18" rx="4" fill="rgba(245,158,11,0.22)"/>
+    <text x="242" y="213" fill="#fde68a" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">Fast Track</text>
+  </g>
+
+  <!-- Right Column: Mentorship & Certificate Metrics -->
+  <g>
+    <!-- Metric 1: Mentorship -->
+    <rect x="325" y="60" width="185" height="85" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(52,211,153,0.2)"/>
+    <text x="340" y="80" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">MENTOR ALLOCATION</text>
+    <text x="340" y="108" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="22" font-weight="800">1-on-1</text>
+    <text x="340" y="128" fill="#34d399" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="650">Direct Senior Architect Guidance</text>
+    <circle cx="480" cy="100" r="16" stroke="rgba(52,211,153,0.2)" stroke-width="3" fill="none"/>
+    <circle cx="480" cy="100" r="16" stroke="#34d399" stroke-width="3" stroke-dasharray="80 20" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <!-- Metric 2: PPO Conversion -->
+    <rect x="325" y="153" width="185" height="85" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(6,182,212,0.22)"/>
+    <text x="340" y="173" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">PPO CONVERSION RATE</text>
+    <text x="340" y="201" fill="#38bdf8" font-family="'Manrope', sans-serif" font-size="22" font-weight="800">85%+</text>
+    <text x="340" y="221" fill="#bae6fd" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="650">Direct Transition to Full-Time</text>
+  </g>
+</svg>

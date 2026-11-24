@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" fill="none">
+  <defs>
+    <linearGradient id="jew-bg" x1="0" y1="0" x2="540" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#191508"/>
+      <stop offset="50%" stop-color="#0f0c05"/>
+      <stop offset="100%" stop-color="#060502"/>
+    </linearGradient>
+    <linearGradient id="jew-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="jew-shadow" x="-20" y="-20" width="580" height="420" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#f59e0b" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <circle cx="140" cy="110" r="95" fill="#f59e0b" opacity="0.2"/>
+  <circle cx="410" cy="250" r="105" fill="#eab308" opacity="0.18"/>
+
+  <g filter="url(#jew-shadow)">
+    <rect x="35" y="30" width="470" height="300" rx="16" fill="url(#jew-bg)" stroke="rgba(251, 191, 36, 0.35)" stroke-width="1.5"/>
+
+    <path d="M35 46C35 37.1634 42.1634 30 51 30H489C497.837 30 505 37.1634 505 46V62H35V46Z" fill="rgba(255,255,255,0.04)" stroke="rgba(251,191,36,0.15)" stroke-width="1"/>
+    <circle cx="56" cy="46" r="4" fill="#ef4444"/>
+    <circle cx="70" cy="46" r="4" fill="#f59e0b"/>
+    <circle cx="84" cy="46" r="4" fill="#10b981"/>
+    <text x="120" y="49" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="8" font-weight="600">Grojew · Jewellery ERP &amp; Retail POS</text>
+
+    <!-- Top Rate Tickers -->
+    <rect x="55" y="75" width="135" height="55" rx="8" fill="rgba(251,191,36,0.06)" stroke="rgba(251,191,36,0.3)"/>
+    <text x="68" y="93" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">GOLD 24K (999)</text>
+    <text x="68" y="117" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="18" font-weight="800">₹7,250 / g</text>
+
+    <rect x="200" y="75" width="135" height="55" rx="8" fill="rgba(251,191,36,0.06)" stroke="rgba(251,191,36,0.3)"/>
+    <text x="213" y="93" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">GOLD 22K (916)</text>
+    <text x="213" y="117" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="18" font-weight="800">₹6,650 / g</text>
+
+    <rect x="345" y="75" width="140" height="55" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="358" y="93" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">SILVER 1 KG</text>
+    <text x="358" y="117" fill="#e2e8f0" font-family="'Manrope', sans-serif" font-size="18" font-weight="800">₹92,400</text>
+
+    <!-- Left: Item Tag & Weight Details -->
+    <rect x="55" y="142" width="265" height="168" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="70" y="164" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">RFID Tag #GJW-8842</text>
+    <text x="70" y="180" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Product: 22K Antique Necklace</text>
+
+    <g transform="translate(70, 195)">
+      <text x="0" y="12" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Gross Weight:</text>
+      <text x="120" y="12" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">42.500 g</text>
+
+      <text x="0" y="32" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Stone Deduct:</text>
+      <text x="120" y="32" fill="#ef4444" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">- 2.300 g</text>
+
+      <text x="0" y="52" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Net Gold Weight:</text>
+      <text x="120" y="52" fill="#10b981" font-family="'Manrope', sans-serif" font-size="10" font-weight="800">40.200 g</text>
+
+      <text x="0" y="72" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Wastage / VA (8%):</text>
+      <text x="120" y="72" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">3.216 g</text>
+
+      <text x="0" y="94" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="10" font-weight="700">Total Taxable Value:</text>
+      <text x="120" y="94" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="11" font-weight="800">₹2,88,716</text>
+    </g>
+
+    <!-- Right Side: Karigar & Scheme Card -->
+    <rect x="330" y="142" width="160" height="168" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(251,191,36,0.2)"/>
+    <text x="342" y="164" fill="#e2e8f0" font-family="'Manrope', sans-serif" font-size="10" font-weight="700">Karigar Artisan Sync</text>
+    <rect x="342" y="176" width="136" height="36" rx="6" fill="rgba(251,191,36,0.1)"/>
+    <text x="350" y="192" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">Ramesh Goldsmith</text>
+    <text x="350" y="204" fill="#fbbf24" font-family="'Manrope', sans-serif" font-size="8">50g Issued · Due: 18th Nov</text>
+
+    <text x="342" y="235" fill="#e2e8f0" font-family="'Manrope', sans-serif" font-size="10" font-weight="700">Monthly Gold Scheme</text>
+    <rect x="342" y="246" width="136" height="10" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <rect x="342" y="246" width="105" height="10" rx="5" fill="url(#jew-gold)"/>
+    <text x="342" y="272" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Month 10 of 11 (₹5,000/mo)</text>
+    <text x="342" y="294" fill="#10b981" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">● Eligible for Bonus</text>
+  </g>
+</svg>

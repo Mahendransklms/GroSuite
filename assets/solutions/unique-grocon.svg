@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" fill="none">
+  <defs>
+    <linearGradient id="con-bg" x1="0" y1="0" x2="540" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141824"/>
+      <stop offset="50%" stop-color="#0d101a"/>
+      <stop offset="100%" stop-color="#04060a"/>
+    </linearGradient>
+    <filter id="con-shadow" x="-20" y="-20" width="580" height="420" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#f59e0b" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <circle cx="150" cy="110" r="90" fill="#f59e0b" opacity="0.22"/>
+  <circle cx="410" cy="250" r="100" fill="#2563eb" opacity="0.18"/>
+
+  <g filter="url(#con-shadow)">
+    <rect x="35" y="30" width="470" height="300" rx="16" fill="url(#con-bg)" stroke="rgba(245, 158, 11, 0.35)" stroke-width="1.5"/>
+
+    <path d="M35 46C35 37.1634 42.1634 30 51 30H489C497.837 30 505 37.1634 505 46V62H35V46Z" fill="rgba(255,255,255,0.04)" stroke="rgba(245,158,11,0.15)" stroke-width="1"/>
+    <circle cx="56" cy="46" r="4" fill="#ef4444"/>
+    <circle cx="70" cy="46" r="4" fill="#f59e0b"/>
+    <circle cx="84" cy="46" r="4" fill="#10b981"/>
+    <text x="120" y="49" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="8" font-weight="600">Grocon · Construction Project &amp; Material Management</text>
+
+    <!-- Top KPIs -->
+    <rect x="55" y="75" width="135" height="55" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(245,158,11,0.3)"/>
+    <text x="68" y="93" fill="#f59e0b" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">OVERALL PROJECT</text>
+    <text x="68" y="117" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="20" font-weight="800">76.4% Done</text>
+
+    <rect x="200" y="75" width="135" height="55" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(37,99,235,0.3)"/>
+    <text x="213" y="93" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">BUDGET TRACKER</text>
+    <text x="213" y="117" fill="#38bdf8" font-family="'Manrope', sans-serif" font-size="18" font-weight="800">Within Budget</text>
+
+    <rect x="345" y="75" width="140" height="55" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(16,185,129,0.3)"/>
+    <text x="358" y="93" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">DAILY SITE LABORS</text>
+    <text x="358" y="117" fill="#10b981" font-family="'Manrope', sans-serif" font-size="20" font-weight="800">148 Workers</text>
+
+    <!-- Project Gantt & Milestone Timeline -->
+    <rect x="55" y="142" width="280" height="168" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="70" y="164" fill="#e2e8f0" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">Project Milestone Timeline</text>
+
+    <g transform="translate(70, 180)">
+      <text x="0" y="12" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Excavation &amp; Footing</text>
+      <rect x="130" y="2" width="110" height="12" rx="6" fill="rgba(16,185,129,0.2)"/>
+      <rect x="130" y="2" width="110" height="12" rx="6" fill="#10b981"/>
+      <text x="245" y="12" fill="#10b981" font-family="'Manrope', sans-serif" font-size="8" font-weight="700">100%</text>
+
+      <text x="0" y="36" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">RCC Structure (5th Floor)</text>
+      <rect x="130" y="26" width="110" height="12" rx="6" fill="rgba(245,158,11,0.2)"/>
+      <rect x="130" y="26" width="85" height="12" rx="6" fill="#f59e0b"/>
+      <text x="245" y="36" fill="#f59e0b" font-family="'Manrope', sans-serif" font-size="8" font-weight="700">77%</text>
+
+      <text x="0" y="60" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Brickwork &amp; Plastering</text>
+      <rect x="130" y="50" width="110" height="12" rx="6" fill="rgba(56,189,248,0.2)"/>
+      <rect x="130" y="50" width="48" height="12" rx="6" fill="#38bdf8"/>
+      <text x="245" y="60" fill="#38bdf8" font-family="'Manrope', sans-serif" font-size="8" font-weight="700">44%</text>
+
+      <text x="0" y="84" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9">Electrical &amp; Plumbing</text>
+      <rect x="130" y="74" width="110" height="12" rx="6" fill="rgba(255,255,255,0.1)"/>
+      <rect x="130" y="74" width="22" height="12" rx="6" fill="#818cf8"/>
+      <text x="245" y="84" fill="#818cf8" font-family="'Manrope', sans-serif" font-size="8" font-weight="700">20%</text>
+    </g>
+
+    <!-- Right Side: Material & RA Bill -->
+    <rect x="345" y="142" width="140" height="168" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(245,158,11,0.2)"/>
+    <text x="358" y="164" fill="#e2e8f0" font-family="'Manrope', sans-serif" font-size="10" font-weight="700">Site Materials (GRN)</text>
+    <text x="358" y="184" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="8">CEMENT (PPC):</text>
+    <text x="358" y="198" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">450 Bags Remaining</text>
+
+    <text x="358" y="218" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="8">TMT STEEL (12mm):</text>
+    <text x="358" y="232" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">14.2 Tons In-Stock</text>
+
+    <rect x="358" y="254" width="115" height="42" rx="6" fill="rgba(245,158,11,0.15)"/>
+    <text x="366" y="270" fill="#f59e0b" font-family="'Manrope', sans-serif" font-size="8" font-weight="700">RA BILL #04</text>
+    <text x="366" y="284" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">₹4,85,000 Verified</text>
+  </g>
+</svg>

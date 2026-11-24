@@ -21,12 +21,15 @@
 
 ## Enterprise Solutions
 
-- [HRMS Solutions](https://grosuite.in/hrms-solutions.html): Comprehensive Human Resource Management System covering onboarding, attendance tracking, leave management, automated payroll, employee self-service, and multi-branch access.
-- [ERP Solutions](https://grosuite.in/erp-solutions.html): Centralized Enterprise Resource Planning platform unifying finance, procurement, inventory management, production, sales, and executive analytics.
-- [CRM Solutions](https://grosuite.in/crm-solutions.html): Customer Relationship Management software featuring sales pipeline visualization, lead scoring, automated follow-ups, and customer lifecycle management.
-- [Business Automation](https://grosuite.in/business-automation.html): Automated digital workflows, approval routing, document processing, and rule-based tasks to reduce operational manual effort.
-- [System Integration](https://grosuite.in/system-integration.html): Unified connectivity across existing databases, on-premise platforms, and SaaS applications to eliminate data silos.
-- [Business Integration](https://grosuite.in/business-integration.html): End-to-end strategic integration solutions bridging cross-departmental operations and business systems.
+- [Grohrms](https://grosuite.in/grohrms.html): Smart HR & Business Solutions — Comprehensive HR management covering recruitment, biometric/GPS attendance, leave workflows, 1-click automated payroll, employee self-service (ESS), and mobile apps.
+- [Grolog](https://grosuite.in/grolog.html): Call Log Management Software — Centralized company SIM sync, missed call alerts, automated customer follow-ups, AI call summaries, and telecaller activity reports.
+- [Grotrk](https://grosuite.in/grotrk.html): Tracking Management System — Real-time live GPS tracking for fleet, vehicles, field staff, and mobile assets with geofencing and route playback.
+- [Groinn](https://grosuite.in/groinn.html): Hotel Management Software — Room availability matrix, restaurant/bar POS, KOT synchronization, reservation calendar, guest history, and billing.
+- [Grojew](https://grosuite.in/grojew.html): Jewellery Management Software — Jewellery business intelligence & ERP with gross/net weight calculation, hallmarking, barcode/RFID, and chit schemes.
+- [Grocon](https://grosuite.in/grocon.html): Construction Management Software — Project planning, Gantt schedules, material & site inventory, cost control, subcontractor RA billing, and daily progress reports.
+- [Grohub](https://grosuite.in/grohub.html): Parking Management Software — Automated barrier entry/exit, ANPR license plate recognition, real-time slot counters, FASTag/UPI payments, and valet management.
+- [Grofit](https://grosuite.in/grofit.html): Gym Management Software — Member registrations, biometric turnstile access, subscription plan billing, trainer scheduling, and mobile member portal.
+- [Gropro](https://grosuite.in/gropro.html): Textile Billing Software — High-speed barcode checkout, matrix sizing, fabric roll meters, multi-store stock distribution, and vendor purchase management.
 
 ## Custom Development & Engineering Services
 

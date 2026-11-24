@@ -1107,6 +1107,29 @@ a.solution-item:focus-visible .solution-arrow {
   }
 }
 
+.industry-image-wrap {
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f1f5f9;
+  position: relative;
+  flex-shrink: 0;
+  margin-bottom: 0.15rem;
+}
+
+.industry-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.industry:hover .industry-img {
+  transform: scale(1.06);
+}
+
 .industry-header {
   display: flex;
   align-items: center;
@@ -1697,6 +1720,91 @@ a.solution-item:focus-visible .solution-arrow {
 
 .page-hero--compact {
   padding-bottom: 4.7rem;
+}
+
+/* Split Page Hero (e.g. Careers Hero with Visual Card) */
+.page-hero__inner--split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.page-hero__inner--split .page-hero__text {
+  flex: 1;
+  max-width: 620px;
+}
+
+.page-hero__inner--split .page-hero__visual {
+  flex: 0 0 420px;
+  max-width: 440px;
+}
+
+.career-hero-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(112, 166, 255, 0.28);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 32px rgba(42, 109, 244, 0.22);
+  background: rgba(14, 23, 50, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.career-hero-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.career-hero-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.95rem;
+  background: rgba(7, 11, 25, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(112, 166, 255, 0.25);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  flex-shrink: 0;
+  animation: pulseDotGreen 2s infinite;
+}
+
+@keyframes pulseDotGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@media (max-width: 900px) {
+  .page-hero__inner--split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .page-hero__inner--split .page-hero__visual {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .career-hero-img {
+    height: 210px;
+  }
 }
 
 /* Career and partnership content */
@@ -2856,6 +2964,39 @@ a.solution-item:focus-visible .solution-arrow {
 }
 
 .logo__ring path:nth-child(4) {
+  stroke: var(--amber);
+}
+
+/* Four-colour O ring for lowercase 'o' in product names like Grohrms */
+.gro-brand-word {
+  display: inline;
+  white-space: nowrap;
+}
+
+.gro-o-ring {
+  display: inline-block;
+  width: 0.58em;
+  height: 0.58em;
+  margin-inline: 0.02em;
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: butt;
+  vertical-align: -0.04em;
+}
+
+.gro-o-ring path:nth-child(1) {
+  stroke: var(--red);
+}
+
+.gro-o-ring path:nth-child(2) {
+  stroke: var(--green);
+}
+
+.gro-o-ring path:nth-child(3) {
+  stroke: var(--ring-blue);
+}
+
+.gro-o-ring path:nth-child(4) {
   stroke: var(--amber);
 }
 
@@ -4218,6 +4359,43 @@ a.solution-item:focus-visible .solution-arrow {
   text-transform: uppercase;
 }
 
+/* Pricing Product Navigation Tabs */
+.pricing-product-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing-product-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.pricing-product-tab:hover,
+.pricing-product-tab.active {
+  background: linear-gradient(135deg, rgba(42, 109, 244, 0.22) 0%, rgba(26, 58, 229, 0.35) 100%);
+  border-color: #2a6df4;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(42, 109, 244, 0.25);
+}
+
+.pricing-product-header {
+  text-align: center;
+}
+
 /* Pricing Grid */
 .pricing-section {
   padding-block: 2rem 5rem;
@@ -4891,6 +5069,43 @@ a.solution-item:focus-visible .solution-arrow {
   border-radius: 999px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+/* Pricing Product Navigation Tabs */
+.pricing-product-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing-product-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.pricing-product-tab:hover,
+.pricing-product-tab.active {
+  background: linear-gradient(135deg, rgba(42, 109, 244, 0.22) 0%, rgba(26, 58, 229, 0.35) 100%);
+  border-color: #2a6df4;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(42, 109, 244, 0.25);
+}
+
+.pricing-product-header {
+  text-align: center;
 }
 
 /* Pricing Grid */
@@ -8351,6 +8566,30 @@ a.solution-item:focus-visible .solution-arrow {
   box-shadow: 0 28px 65px rgba(0, 0, 0, 0.6), 0 0 45px rgba(42, 109, 244, 0.45);
 }
 
+.career-choice-card__media {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.8rem;
+  background: rgba(14, 23, 50, 0.4);
+  position: relative;
+  border: 1px solid rgba(112, 166, 255, 0.22);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.career-choice-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.career-choice-card:hover .career-choice-card__img {
+  transform: scale(1.06);
+}
+
 .career-choice-card__icon {
   display: inline-flex;
   align-items: center;
@@ -8964,12 +9203,14 @@ a.solution-item:focus-visible .solution-arrow {
   top: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%) translateY(8px);
-  min-width: 260px;
+  min-width: 165px;
+  width: max-content;
+  max-width: 280px;
   background: #091129;
   border: 1px solid rgba(112, 166, 255, 0.28);
-  border-radius: 14px;
-  padding: 0.55rem 0.45rem;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(42, 109, 244, 0.16);
+  border-radius: 10px;
+  padding: 0.35rem 0.3rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(42, 109, 244, 0.16);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -9032,13 +9273,13 @@ a.solution-item:focus-visible .solution-arrow {
 .nav__submenu a {
   display: flex !important;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.65rem 0.95rem;
+  justify-content: flex-start;
+  padding: 0.38rem 0.75rem;
   color: #cbd5e1 !important;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   white-space: nowrap;
   transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
@@ -10642,9 +10883,9 @@ a.solution-item:focus-visible .solution-arrow {
 
 .footer__partner-logo {
   display: block;
-  height: 64px;
+  height: 74px;
   width: auto;
-  max-width: 300px;
+  max-width: 320px;
   object-fit: contain;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -10784,7 +11025,7 @@ a.solution-item:focus-visible .solution-arrow {
   }
 
   .footer__partner-logo {
-    height: 56px;
+    height: 64px;
   }
 
   .footer__links {
@@ -10854,4 +11095,17 @@ a.solution-item:focus-visible .solution-arrow {
 
 .enquire-qr-card:hover .enquire-qr-label {
   color: #2563eb;
+}
+/* 2-Column Centered Grid for Groinn & Dual Offerings */
+.pricing-grid--2col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 520px));
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+@media (max-width: 960px) {
+  .pricing-grid--2col {
+    grid-template-columns: 1fr;
+  }
 }

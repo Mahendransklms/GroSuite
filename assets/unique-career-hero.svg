@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" fill="none">
+  <defs>
+    <linearGradient id="ch-bg" x1="0" y1="0" x2="540" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b1b42"/>
+      <stop offset="50%" stop-color="#07122e"/>
+      <stop offset="100%" stop-color="#03081a"/>
+    </linearGradient>
+    <linearGradient id="ch-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="ch-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="ch-emerald" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="ch-purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="ch-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.65"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#2563eb" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glows -->
+  <circle cx="120" cy="90" r="110" fill="#2563eb" opacity="0.3" filter="blur(35px)"/>
+  <circle cx="430" cy="220" r="100" fill="#10b981" opacity="0.22" filter="blur(35px)"/>
+
+  <!-- Main Container -->
+  <rect x="15" y="15" width="510" height="290" rx="18" fill="url(#ch-bg)" stroke="rgba(112, 166, 255, 0.3)" stroke-width="1.2"/>
+
+  <!-- Top Bar -->
+  <path d="M15 33C15 23.0589 23.0589 15 33 15H507C516.941 15 525 23.0589 525 33V50H15V33Z" fill="rgba(255,255,255,0.05)" stroke="rgba(112,166,255,0.15)" stroke-width="1"/>
+  <circle cx="35" cy="32" r="3.5" fill="#ef4444"/>
+  <circle cx="47" cy="32" r="3.5" fill="#f59e0b"/>
+  <circle cx="59" cy="32" r="3.5" fill="#10b981"/>
+  <text x="82" y="36" fill="#93c5fd" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">GroSuite · Engineering &amp; People Hub</text>
+
+  <!-- Live Pulse Pill -->
+  <rect x="370" y="24" width="140" height="18" rx="9" fill="rgba(16,185,129,0.18)" stroke="rgba(16,185,129,0.35)"/>
+  <circle cx="382" cy="33" r="3.5" fill="#10b981"/>
+  <text x="393" y="36" fill="#6ee7b7" font-family="'Manrope', sans-serif" font-size="9" font-weight="750">2026 RECRUITMENT LIVE</text>
+
+  <!-- Central Visual: Team Talent Cards -->
+  <!-- Card 1: Engineering Hub -->
+  <g filter="url(#ch-shadow)">
+    <rect x="32" y="66" width="225" height="110" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(112,166,255,0.25)"/>
+    <text x="46" y="88" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">ENGINEERING TEAMS</text>
+    <text x="46" y="118" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="24" font-weight="800">40+ Devs</text>
+    <!-- Avatar Group -->
+    <circle cx="58" cy="148" r="13" fill="url(#ch-blue)" stroke="#0b1b42" stroke-width="2"/>
+    <text x="53" y="152" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="800">AK</text>
+    <circle cx="80" cy="148" r="13" fill="url(#ch-purple)" stroke="#0b1b42" stroke-width="2"/>
+    <text x="75" y="152" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="800">MR</text>
+    <circle cx="102" cy="148" r="13" fill="url(#ch-emerald)" stroke="#0b1b42" stroke-width="2"/>
+    <text x="98" y="152" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="9" font-weight="800">TS</text>
+    <circle cx="124" cy="148" r="13" fill="url(#ch-cyan)" stroke="#0b1b42" stroke-width="2"/>
+    <text x="120" y="152" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="8" font-weight="800">+37</text>
+  </g>
+
+  <!-- Card 2: Innovation & Speed -->
+  <g filter="url(#ch-shadow)">
+    <rect x="270" y="66" width="235" height="110" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(16,185,129,0.25)"/>
+    <text x="286" y="88" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">MENTORSHIP &amp; RETENTION</text>
+    <text x="286" y="118" fill="#34d399" font-family="'Manrope', sans-serif" font-size="24" font-weight="800">96.5%</text>
+    <text x="286" y="142" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="10" font-weight="600">Continuous Growth &amp; Promotion</text>
+    <!-- Mini progress track -->
+    <rect x="286" y="152" width="180" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="286" y="152" width="160" height="6" rx="3" fill="url(#ch-emerald)"/>
+  </g>
+
+  <!-- Bottom Row: Tech Stack Pills -->
+  <rect x="32" y="192" width="473" height="92" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(112,166,255,0.15)"/>
+  <text x="48" y="214" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">MODERN PRODUCTION TECH STACK</text>
+  
+  <g transform="translate(48, 226)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="80" height="28" rx="8" fill="rgba(37,99,235,0.2)" stroke="rgba(37,99,235,0.4)"/>
+    <text x="14" y="18" fill="#93c5fd" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">React.js</text>
+    <!-- Pill 2 -->
+    <rect x="88" y="0" width="80" height="28" rx="8" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.4)"/>
+    <text x="100" y="18" fill="#6ee7b7" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">Node.js</text>
+    <!-- Pill 3 -->
+    <rect x="176" y="0" width="75" height="28" rx="8" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)"/>
+    <text x="190" y="18" fill="#fde68a" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">Python</text>
+    <!-- Pill 4 -->
+    <rect x="259" y="0" width="95" height="28" rx="8" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.4)"/>
+    <text x="270" y="18" fill="#c4b5fd" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">Cloud / AWS</text>
+    <!-- Pill 5 -->
+    <rect x="362" y="0" width="75" height="28" rx="8" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.4)"/>
+    <text x="375" y="18" fill="#67e8f9" font-family="'Manrope', sans-serif" font-size="11" font-weight="700">AI / RAG</text>
+  </g>
+</svg>

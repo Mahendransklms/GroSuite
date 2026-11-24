@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" fill="none">
+  <defs>
+    <linearGradient id="jobs-bg" x1="0" y1="0" x2="540" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a1538"/>
+      <stop offset="50%" stop-color="#070e28"/>
+      <stop offset="100%" stop-color="#030716"/>
+    </linearGradient>
+    <linearGradient id="jobs-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="jobs-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="jobs-purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="jobs-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="jobs-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#2563eb" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glows -->
+  <circle cx="100" cy="80" r="100" fill="#2563eb" opacity="0.3" filter="blur(30px)"/>
+  <circle cx="440" cy="200" r="90" fill="#8b5cf6" opacity="0.25" filter="blur(30px)"/>
+
+  <!-- Card Surface -->
+  <rect x="15" y="15" width="510" height="250" rx="16" fill="url(#jobs-bg)" stroke="rgba(112, 166, 255, 0.28)" stroke-width="1.2"/>
+  <rect x="15" y="15" width="510" height="250" rx="16" fill="url(#jobs-glass)"/>
+
+  <!-- Window Header Bar -->
+  <path d="M15 31C15 22.1634 22.1634 15 31 15H509C517.837 15 525 22.1634 525 31V48H15V31Z" fill="rgba(255,255,255,0.04)" stroke="rgba(112,166,255,0.15)" stroke-width="1"/>
+  <circle cx="34" cy="31" r="3.5" fill="#ef4444"/>
+  <circle cx="46" cy="31" r="3.5" fill="#f59e0b"/>
+  <circle cx="58" cy="31" r="3.5" fill="#10b981"/>
+  <rect x="80" y="24" width="130" height="14" rx="7" fill="rgba(255,255,255,0.07)"/>
+  <text x="92" y="34" fill="#93c5fd" font-family="'Manrope', -apple-system, sans-serif" font-size="9" font-weight="700">GroSuite · Career Track</text>
+
+  <!-- Status Chip Right -->
+  <rect x="390" y="23" width="120" height="16" rx="8" fill="rgba(16, 185, 129, 0.18)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1"/>
+  <circle cx="402" cy="31" r="3" fill="#10b981"/>
+  <text x="412" y="34" fill="#6ee7b7" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">15+ FULL-TIME ROLES</text>
+
+  <!-- Left Column: Featured Roles -->
+  <!-- Role Item 1 -->
+  <g filter="url(#jobs-shadow)">
+    <rect x="30" y="60" width="280" height="54" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(112,166,255,0.22)"/>
+    <circle cx="55" cy="87" r="14" fill="url(#jobs-blue)"/>
+    <text x="50" y="91" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="12" font-weight="800">&lt;/&gt;</text>
+    <text x="78" y="80" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">Senior Full-Stack Engineer</text>
+    <text x="78" y="96" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">React · Node.js · Cloud Architecture</text>
+    <rect x="235" y="77" width="65" height="18" rx="4" fill="rgba(59,130,246,0.22)"/>
+    <text x="242" y="89" fill="#93c5fd" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">Full-Time</text>
+  </g>
+
+  <!-- Role Item 2 -->
+  <g>
+    <rect x="30" y="122" width="280" height="54" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(112,166,255,0.16)"/>
+    <circle cx="55" cy="149" r="14" fill="url(#jobs-purple)"/>
+    <text x="49" y="153" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="800">AI</text>
+    <text x="78" y="142" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">AI &amp; Automation Developer</text>
+    <text x="78" y="158" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">Python · LLMs · Intelligent RAG</text>
+    <rect x="235" y="139" width="65" height="18" rx="4" fill="rgba(139,92,246,0.22)"/>
+    <text x="242" y="151" fill="#c4b5fd" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">Hybrid</text>
+  </g>
+
+  <!-- Role Item 3 -->
+  <g>
+    <rect x="30" y="184" width="280" height="54" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(112,166,255,0.16)"/>
+    <circle cx="55" cy="211" r="14" fill="url(#jobs-cyan)"/>
+    <text x="48" y="215" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11" font-weight="800">DB</text>
+    <text x="78" y="204" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="11.5" font-weight="750">Enterprise Solutions Architect</text>
+    <text x="78" y="220" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="600">ERP · Microservices · REST APIs</text>
+    <rect x="235" y="201" width="65" height="18" rx="4" fill="rgba(6,182,212,0.22)"/>
+    <text x="242" y="213" fill="#67e8f9" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="700">On-Site</text>
+  </g>
+
+  <!-- Right Column: Career Growth Stats & Metrics -->
+  <g>
+    <!-- Metric 1: Growth Velocity -->
+    <rect x="325" y="60" width="185" height="85" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(112,166,255,0.2)"/>
+    <text x="340" y="80" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">ANNUAL APPRAISAL &amp; HIKE</text>
+    <text x="340" y="108" fill="#ffffff" font-family="'Manrope', sans-serif" font-size="22" font-weight="800">Top 10%</text>
+    <text x="340" y="128" fill="#38bdf8" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="650">Competitive Industry Packages</text>
+    <!-- Mini sparkline -->
+    <path d="M435 110L455 98L475 105L495 90" stroke="#38bdf8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="495" cy="90" r="3.5" fill="#38bdf8"/>
+  </g>
+
+  <g>
+    <!-- Metric 2: Team Culture -->
+    <rect x="325" y="153" width="185" height="85" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(16,185,129,0.22)"/>
+    <text x="340" y="173" fill="#94a3b8" font-family="'Manrope', sans-serif" font-size="9" font-weight="700">HEALTH &amp; PERKS</text>
+    <text x="340" y="201" fill="#34d399" font-family="'Manrope', sans-serif" font-size="20" font-weight="800">100% Covered</text>
+    <text x="340" y="221" fill="#a7f3d0" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="650">Insurance · Learning Budget</text>
+  </g>
+</svg>
