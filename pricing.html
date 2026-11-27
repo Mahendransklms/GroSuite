@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5.0">
 
   <script src="js/main.js" defer></script>
 </head>
@@ -142,31 +142,12 @@
 
           <div class="pricing-gate-card__body">
 
-            <!-- Step Progress Indicator -->
-            <!-- <div class="pricing-step-progress" id="pricingStepProgress">
-              <div class="pricing-step-item active" id="stepIndicator1">
-                <span class="step-circle" id="circleStep1">1</span>
-                <span class="step-text">1. Choose Country &amp; Currency</span>
-              </div>
-              <div class="pricing-step-line" id="stepLine1"></div>
-              <div class="pricing-step-item" id="stepIndicator2">
-                <span class="step-circle" id="circleStep2">2</span>
-                <span class="step-text">2. Company &amp; Contact Details</span>
-              </div>
-              <div class="pricing-step-line" id="stepLine2"></div>
-              <div class="pricing-step-item" id="stepIndicator3">
-                <span class="step-circle" id="circleStep3">3</span>
-                <span class="step-text">3. Price Details</span>
-              </div>
-            </div> -->
-
             <!-- The Form -->
             <form id="pricingGateForm" class="pricing-gate-form" novalidate>
 
               <!-- STEP 1: Country & Currency Block -->
               <div id="pricingStep1Block" class="pricing-step-container">
                 <div class="pricing-gate-header">
-                  <!-- <span class="pricing-gate-step-badge">STEP 1 OF 2</span> -->
                   <h2>Choose Your Country &amp; Currency</h2>
                   <p>Select your operating country and regional currency to configure personalized subscription rates.
                   </p>
@@ -205,23 +186,22 @@
                   </div>
                 </div>
 
-                <!-- Submit Step 1 Button (Directly unlocks pricing while Step 2 is temporarily disabled) -->
+                <!-- Submit Step 1 Button -->
                 <div class="pricing-gate-actions">
                   <button type="button" id="btnSubmitStep1" class="btn-pricing-submit">
-                    <span>View Pricing Plans</span>
+                    <span>Submit</span>
                     <span class="btn-arrow" aria-hidden="true">→</span>
                   </button>
-                  <p class="pricing-gate-privacy">
-                    Country &amp; Currency choice configures your transparent billing rates instantly.
-                  </p>
+
                 </div>
               </div>
 
-              <!-- STEP 2: Company & Contact Details Block (Disabled / commented out per request - can be re-enabled anytime)
+              <!-- STEP 2: Company & Contact Details Block (Hidden initially) -->
               <div id="pricingStep2Block" class="pricing-step-container" style="display: none;">
                 <div class="pricing-gate-header">
                   <h2>Fill Company &amp; Contact Details</h2>
-                  <p>Provide your business and contact information to unlock transparent pricing and receive an official quotation.</p>
+                  <p>Provide your business and contact information to unlock transparent pricing and receive an official
+                    quotation.</p>
                 </div>
 
                 <div class="step2-selection-bar">
@@ -233,23 +213,32 @@
                   <div class="pricing-gate-grid-2">
                     <div class="pricing-field-group">
                       <label for="pricingCompanyName">Company Name *</label>
-                      <input type="text" id="pricingCompanyName" name="company_name" class="pricing-input" placeholder="e.g. Acme Technologies">
+                      <input type="text" id="pricingCompanyName" name="company_name" class="pricing-input"
+                        placeholder="e.g. Acme Technologies" required>
+                    </div>
+                    <div class="pricing-field-group">
+                      <label for="pricingCompanyLocation">Company Location *</label>
+                      <input type="text" id="pricingCompanyLocation" name="company_location" class="pricing-input"
+                        placeholder="e.g. Chennai, Tamil Nadu" required>
                     </div>
                     <div class="pricing-field-group">
                       <label for="pricingFullName">Your Full Name *</label>
-                      <input type="text" id="pricingFullName" name="full_name" class="pricing-input" placeholder="e.g. Rahul Sharma">
+                      <input type="text" id="pricingFullName" name="full_name" class="pricing-input"
+                        placeholder="e.g. Rahul Sharma" required>
                     </div>
                     <div class="pricing-field-group">
                       <label for="pricingWorkEmail">Work Email *</label>
-                      <input type="email" id="pricingWorkEmail" name="work_email" class="pricing-input" placeholder="e.g. rahul@company.com">
+                      <input type="email" id="pricingWorkEmail" name="work_email" class="pricing-input"
+                        placeholder="e.g. rahul@company.com" required>
                     </div>
                     <div class="pricing-field-group">
                       <label for="pricingPhone">Phone / WhatsApp Number *</label>
-                      <input type="tel" id="pricingPhone" name="phone" class="pricing-input" placeholder="e.g. +91 98765 43210">
+                      <input type="tel" id="pricingPhone" name="phone" class="pricing-input"
+                        placeholder="e.g. +91 98765 43210" required>
                     </div>
                     <div class="pricing-field-group">
                       <label for="pricingTeamSize">Number of Employees *</label>
-                      <select id="pricingTeamSize" name="employee_count" class="pricing-input pricing-select">
+                      <select id="pricingTeamSize" name="employee_count" class="pricing-input pricing-select" required>
                         <option value="" disabled selected>Select employee count</option>
                         <option value="1-10">1 - 10 Employees</option>
                         <option value="11-50">11 - 50 Employees</option>
@@ -258,13 +247,25 @@
                         <option value="500+">500+ Employees</option>
                       </select>
                     </div>
-                    <div class="pricing-field-group">
+                    <div class="pricing-field-group" style="grid-column: 1 / -1;">
                       <label for="pricingInterest">Solution of Interest *</label>
-                      <select id="pricingInterest" name="solution_interest" class="pricing-input pricing-select">
-                        <option value="All GroSuite Solutions">All GroSuite Solutions (HRMS, ERP, CRM)</option>
-                        <option value="HRMS Solutions">HRMS Solutions</option>
-                        <option value="ERP Solutions">ERP Solutions</option>
-                        <option value="CRM Solutions">CRM Solutions</option>
+                      <select id="pricingInterest" name="solution_interest" class="pricing-input pricing-select"
+                        required>
+                        <option value="All GroSuite Solutions" selected>All GroSuite Solutions</option>
+                        <option value="Grohrms - Smart HR &amp; Business Solutions">Grohrms - Smart HR &amp; Business
+                          Solutions</option>
+                        <option value="Grolog - Call Log Management Software">Grolog - Call Log Management Software
+                        </option>
+                        <option value="Grotrk - Tracking Management System">Grotrk - Tracking Management System</option>
+                        <option value="Groinn - Hotel Management Software">Groinn - Hotel Management Software</option>
+                        <option value="Grojew - Jewellery Management Software">Grojew - Jewellery Management Software
+                        </option>
+                        <option value="Grocon - Construction Management Software">Grocon - Construction Management
+                          Software</option>
+                        <option value="Grohub - Parking Management software">Grohub - Parking Management software
+                        </option>
+                        <option value="Grofit - Gym Management Software">Grofit - Gym Management Software</option>
+                        <option value="Gropro - Textile Billing Software">Gropro - Textile Billing Software</option>
                       </select>
                     </div>
                   </div>
@@ -281,8 +282,6 @@
                   <div id="pricingFormStatus" class="pricing-form-status" role="status" aria-live="polite"></div>
                 </div>
               </div>
-              -->
-
             </form>
 
             <!-- Success Confirmation Bar (shown after submission) -->
@@ -326,15 +325,7 @@
       <section class="pricing-controls-section" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
         <div class="section-wrap">
 
-          <div class="billing-switcher" role="group" aria-label="Billing cycle selector">
-            <span class="billing-switcher__label active" id="labelMonthly">Monthly Billing</span>
-            <label class="billing-toggle-switch" for="billingToggle" aria-label="Toggle annual billing discount">
-              <input type="checkbox" id="billingToggle">
-              <span class="slider"></span>
-            </label>
-            <span class="billing-switcher__label" id="labelAnnual">Annual Billing</span>
-            <span class="discount-pill">Save 20%</span>
-          </div>
+          <!-- Product Switcher Navigation Tabs -->
 
           <!-- Product Switcher Navigation Tabs -->
           <div class="pricing-product-tabs" role="tablist" aria-label="GroSuite Products Pricing">
@@ -342,47 +333,34 @@
               aria-selected="true">
               <span class="gro-brand-word" aria-label="Grohrms">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
                   aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
+                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
                 </svg>hrms</span>
-              <span>(HR &amp; Payroll)</span>
-            </a>
-            <a href="#groinn-pricing" class="pricing-product-tab" id="tabGroinn" role="tab" aria-selected="false">
-              <span class="gro-brand-word" aria-label="Groinn">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
-                  aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                </svg>inn</span>
-              <span>(Hotel Management)</span>
+              <span></span>
             </a>
             <a href="#grolog-pricing" class="pricing-product-tab" id="tabGrolog" role="tab" aria-selected="false">
               <span class="gro-brand-word" aria-label="Grolog">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
                   aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
+                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
                 </svg>log</span>
-              <span>(Call Log Management)</span>
+              <span></span>
+            </a>
+            <a href="#groinn-pricing" class="pricing-product-tab" id="tabGroinn" role="tab" aria-selected="false">
+              <span class="gro-brand-word" aria-label="Groinn">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
+                  aria-label="o" role="img">
+                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
+                </svg>inn</span>
+              <span></span>
             </a>
           </div>
-
         </div>
       </section>
 
@@ -392,27 +370,41 @@
       <section class="pricing-section" id="grohrms-pricing" style="padding-top: 1rem;">
         <div class="section-wrap">
 
-          <div class="pricing-product-header" style="text-align: center; margin-bottom: 2.2rem;">
-            <p class="eyebrow"
-              style="color: var(--blue, #2a6df4); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.4rem;">
-              HR &amp; PAYROLL MANAGEMENT SUITE</p>
-            <h2 style="font-size: 2.2rem; margin: 0 0 0.5rem;">
-              <span class="gro-brand-word" aria-label="Grohrms">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
-                  aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                </svg>hrms</span> Pricing Plans
-            </h2>
-            <p style="color: var(--muted, #94a3b8); max-width: 620px; margin: 0 auto; font-size: 1rem;">
+          <div class="pricing-product-header">
+            <span class="eyebrow">HR &amp; PAYROLL MANAGEMENT SUITE</span>
+            <div class="product-title-wrap">
+              <span class="product-title-badge">
+                <span class="gro-brand-word" aria-label="Grohrms">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
+                    aria-label="o" role="img">
+                    <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                    <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                    <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                    <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
+                  </svg>hrms</span>
+              </span>
+            </div>
+            <p class="pricing-product-subheading">
               Scalable HRMS with employee self-service, biometric attendance, automated payroll &amp; statutory
               compliance.
             </p>
+            <!-- Separate Monthly / Annually Control & Discount for Grohrms -->
+            <div class="product-billing-control">
+              <div class="billing-btn-group" role="group" aria-label="Grohrms billing frequency">
+                <button type="button" class="billing-btn active" id="btnMonthlyGrohrms" data-product="grohrms"
+                  data-period="monthly" aria-pressed="true">
+                  <span>Monthly</span>
+                </button>
+                <button type="button" class="billing-btn" id="btnHalflyGrohrms" data-product="grohrms"
+                  data-period="halfly" aria-pressed="false">
+                  <span>Half-Yearly</span>
+                </button>
+                <button type="button" class="billing-btn" id="btnAnnualGrohrms" data-product="grohrms"
+                  data-period="annual" aria-pressed="false">
+                  <span>Annually</span>
+
+                </button>
+              </div>
+            </div>
           </div>
 
           <div class="pricing-grid">
@@ -424,17 +416,23 @@
                 <p class="pricing-card__desc">Essential HR directory, leave management, and employee self-service for
                   growing teams.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyBasic">₹</span>
-                <span class="pricing-card__amount" id="cardAmountBasic" data-monthly="15" data-annual="12">15</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountBasic" data-monthly="15" data-annual="180">15</span>
+                <span class="pricing-card__original-price" id="cardOriginalBasic" style="display: none;">15</span>
+                <span class="pricing-card__period" id="cardPeriodBasic">/ user / mo</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNoteBasic"
-                data-monthly-note="Yearly: ₹180 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹144 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹180 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNoteBasic">Yearly: ₹180 / user / yr (Billed monthly)</p>
+              <div class="pricing-card__employee-count">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Employee Count: <strong>20</strong></span>
+              </div>
 
               <p class="pricing-card__features-title">What's included:</p>
               <ul class="pricing-card__features">
@@ -468,7 +466,6 @@
                   </svg>
                   <span>Mobile check-in with GPS location</span>
                 </li>
-                <li>
               </ul>
 
               <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=grohrms-basic">
@@ -485,17 +482,24 @@
                 <p class="pricing-card__desc">Complete HRMS with biometric attendance, automated payroll, shifts, and
                   statutory compliance.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyStandard">₹</span>
-                <span class="pricing-card__amount" id="cardAmountStandard" data-monthly="30" data-annual="24">30</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountStandard" data-monthly="30"
+                  data-annual="324">30</span><span class="pricing-card__original-price" id="cardOriginalStandard"
+                  style="display: none;">360</span>
+                <span class="pricing-card__period" id="cardPeriodStandard">/ user / mo</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNoteStandard"
-                data-monthly-note="Yearly: ₹360 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹288 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹360 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNoteStandard">Yearly: ₹360 / user / yr (Billed monthly)</p>
+              <div class="pricing-card__employee-count">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Employee Count: <strong>60</strong></span>
+              </div>
 
               <p class="pricing-card__features-title">Everything in Basic, plus:</p>
               <ul class="pricing-card__features">
@@ -535,12 +539,6 @@
                   </svg>
                   <span>PDF payslip delivery</span>
                 </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Recruitment Management</span>
-                </li>
               </ul>
 
               <a class="pricing-card__btn pricing-card__btn--primary" href="enquire.html?plan=grohrms-standard">
@@ -555,17 +553,24 @@
                 <p class="pricing-card__desc">For fast-growing organizations requiring multi-branch control, appraisals,
                   and advanced analytics.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyPrime">₹</span>
-                <span class="pricing-card__amount" id="cardAmountPrime" data-monthly="60" data-annual="48">60</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountPrime" data-monthly="60"
+                  data-annual="576">60</span><span class="pricing-card__original-price" id="cardOriginalPrime"
+                  style="display: none;">720</span>
+                <span class="pricing-card__period" id="cardPeriodPrime">/ user / mo</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNotePrime"
-                data-monthly-note="Yearly: ₹720 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹576 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹720 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNotePrime">Yearly: ₹720 / user / yr (Billed monthly)</p>
+              <div class="pricing-card__employee-count">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Employee Count: <strong>120</strong></span>
+              </div>
 
               <p class="pricing-card__features-title">Everything in Standard, plus:</p>
               <ul class="pricing-card__features">
@@ -597,7 +602,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Advanced workforce analytics &amp; custom dashboard</span>
+                  <span>Recruitment management</span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -620,10 +625,20 @@
                   workflows, and dedicated pods.</p>
               </div>
 
-              <div class="pricing-card__price-box">
-                <span class="pricing-card__amount" style="font-size: 2.1rem; line-height: 1.2;">Custom Quote</span>
+              <div class="pricing-card__price-box pricing-card__price-box--quote">
+                <span class="pricing-card__amount pricing-card__amount--quote">Client Requirement</span>
               </div>
               <p class="pricing-card__billing-note">Tailored project scope &amp; milestones</p>
+              <div class="pricing-card__employee-count">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Employee Count: <strong>120+</strong></span>
+              </div>
 
               <p class="pricing-card__features-title">Tailored deliverables:</p>
               <ul class="pricing-card__features">
@@ -676,202 +691,46 @@
       </section>
 
       <!-- ========================================================================= -->
-      <!-- PRODUCT 2: GROINN (Hotel Management System)                               -->
-      <!-- ========================================================================= -->
-      <section class="pricing-section" id="groinn-pricing"
-        style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
-        <div class="section-wrap">
-
-          <div class="pricing-product-header" style="text-align: center; margin-bottom: 2.2rem;">
-            <p class="eyebrow"
-              style="color: var(--blue, #2a6df4); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.4rem;">
-              HOTEL &amp; HOSPITALITY MANAGEMENT</p>
-            <h2 style="font-size: 2.2rem; margin: 0 0 0.5rem;">
-              <span class="gro-brand-word" aria-label="Groinn">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
-                  aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                </svg>inn</span> Hotel Management Pricing
-            </h2>
-            <p style="color: var(--muted, #94a3b8); max-width: 620px; margin: 0 auto; font-size: 1rem;">
-              Complete hotel operating system for front desk, reservation bookings, restaurant &amp; bar POS, guest CRM
-              &amp; instant billing.
-            </p>
-          </div>
-
-          <div class="pricing-grid pricing-grid--2col">
-
-            <!-- Groinn Standard Plan: ₹1000/month (Yearly: ₹12,000) -->
-            <article class="pricing-card pricing-card--popular" style="max-width: 540px; margin: 0 auto; width: 100%;">
-              <span class="popular-badge">All-In-One Hotel Suite</span>
-
-              <div class="pricing-card__header">
-                <h3>Groinn Hotel Suite</h3>
-                <p class="pricing-card__desc">Complete software suite designed for independent hotels, boutique resorts,
-                  lodges, and restaurants.</p>
-              </div>
-
-              <div class="pricing-card__price-box">
-                <span class="pricing-card__currency" id="cardCurrencyGroinn">₹</span>
-                <span class="pricing-card__amount" id="cardAmountGroinn" data-monthly="1000"
-                  data-annual="800">1000</span>
-                <span class="pricing-card__period">/ month</span>
-              </div>
-              <p class="pricing-card__billing-note" id="cardNoteGroinn"
-                data-monthly-note="Yearly: ₹12,000 / year (Billed monthly)"
-                data-annual-note="Yearly: ₹9,600 / year (Save 20% Billed Annually)">
-                Yearly: ₹12,000 / year (Billed monthly)
-              </p>
-
-              <p class="pricing-card__features-title">Everything included in Groinn:</p>
-              <ul class="pricing-card__features">
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Front Desk &amp; Room Management</b> (Check-in/Check-out, Room grid, Housekeeping
-                    status)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Direct Booking Engine</b> (Website booking widget, calendar availability)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Restaurant &amp; Bar POS</b> (Table orders, kitchen KOT, split bills)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Guest CRM &amp; History</b> (Guest profiles, preferences, VIP tags, ID upload)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Instant GST Billing &amp; Invoicing</b> (Thermal print, email &amp; WhatsApp bills)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>RevPAR &amp; Occupancy Analytics</b> (Daily revenue, night audit, occupancy rates)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>24/7 Hospitality Support &amp; On-premise / Cloud Deployment</span>
-                </li>
-              </ul>
-
-              <a class="pricing-card__btn pricing-card__btn--primary" href="enquire.html?plan=groinn-suite">
-                Start 15-Day Free Hotel Trial <span>→</span>
-              </a>
-            </article>
-
-            <!-- Groinn Enterprise / Chain Plan -->
-            <article class="pricing-card" style="max-width: 540px; margin: 0 auto; width: 100%;">
-              <div class="pricing-card__header">
-                <h3>Multi-Property &amp; Chains</h3>
-                <p class="pricing-card__desc">For hotel chains, luxury resort groups, and franchisees requiring
-                  centralized control &amp; channel manager sync.</p>
-              </div>
-
-              <div class="pricing-card__price-box">
-                <span class="pricing-card__amount" style="font-size: 2.1rem; line-height: 1.2;">Custom Quote</span>
-              </div>
-              <p class="pricing-card__billing-note">Tailored per-property pricing &amp; volume tiers</p>
-
-              <p class="pricing-card__features-title">Enterprise capabilities:</p>
-              <ul class="pricing-card__features">
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span><b>Central Reservation System (CRS)</b> across multi-properties</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>OTA Channel Manager 2-way sync (MakeMyTrip, Booking.com, Agoda)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Centralized Inventory &amp; Procurement across properties</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Keycard door lock integrations (Vingcard, Salto)</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Custom accounting ERP integration &amp; consolidated ledger</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Dedicated Hospitality Solution Architect &amp; 99.9% uptime SLA</span>
-                </li>
-              </ul>
-
-              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=groinn-enterprise">
-                Contact Hospitality Team <span>→</span>
-              </a>
-            </article>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ========================================================================= -->
-      <!-- PRODUCT 3: GROLOG (Call Log Management Software)                          -->
+      <!-- PRODUCT 2: GROLOG (Call Log Management Software)                          -->
       <!-- ========================================================================= -->
       <section class="pricing-section" id="grolog-pricing"
         style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
         <div class="section-wrap">
 
           <div class="pricing-product-header" style="text-align: center; margin-bottom: 2.2rem;">
-            <p class="eyebrow"
-              style="color: var(--blue, #2a6df4); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.4rem;">
-              CALL LOG MANAGEMENT SOFTWARE</p>
-            <h2 style="font-size: 2.2rem; margin: 0 0 0.5rem;">
-              <span class="gro-brand-word" aria-label="Grolog">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
-                  aria-label="o" role="img">
-                  <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" fill="none" stroke-width="8"
-                    stroke-linecap="butt" />
-                  <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                  <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" fill="none"
-                    stroke-width="8" stroke-linecap="butt" />
-                </svg>log</span> Call Log Management Pricing
-            </h2>
-            <p style="color: var(--muted, #94a3b8); max-width: 650px; margin: 0 auto; font-size: 1rem;">
+            <span class="eyebrow">CALL LOG MANAGEMENT SOFTWARE</span>
+            <div class="product-title-wrap">
+              <span class="product-title-badge">
+                <span class="gro-brand-word" aria-label="Grolog">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
+                    aria-label="o" role="img">
+                    <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                    <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                    <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                    <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
+                  </svg>log</span>
+              </span>
+            </div>
+            <p class="pricing-product-subheading">
               Smart Call Tracking, Mobile SIM Sync, AI Transcription &amp; Telephony Analytics for high-performing sales
               &amp; support teams.
             </p>
+            <!-- Separate Monthly / Annually Control & Discount for Grolog -->
+            <div class="product-billing-control">
+              <div class="billing-btn-group" role="group" aria-label="Grolog billing frequency">
+                <button type="button" class="billing-btn" id="btnMonthlyGrolog" data-product="grolog"
+                  data-period="monthly" aria-pressed="false" style="display: none;">
+                  <span>Monthly</span>
+                </button>
+                <button type="button" class="billing-btn" id="btnHalflyGrolog" data-product="grolog"
+                  data-period="halfly" aria-pressed="false">
+                  <span>Half-Yearly</span>
+                </button>
+                <button type="button" class="billing-btn active" id="btnAnnualGrolog" data-product="grolog"
+                  data-period="annual" aria-pressed="true">
+                  <span>Annually</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div class="pricing-grid">
@@ -883,18 +742,14 @@
                 <p class="pricing-card__desc">Ideal for small sales desks, boutique agencies, and startups tracking
                   incoming &amp; outgoing client calls.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyGrolog1">₹</span>
-                <span class="pricing-card__amount" id="cardAmountGrolog1" data-monthly="299"
-                  data-annual="239">299</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountGrolog1" data-monthly="350"
+                  data-annual="3990">3,990</span><span class="pricing-card__original-price" id="cardOriginalGrolog1"
+                  style="display: inline;">4,200</span>
+                <span class="pricing-card__period" id="cardPeriodGrolog1">/ user / yr</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNoteGrolog1"
-                data-monthly-note="Yearly: ₹3,588 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹2,868 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹3,588 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNoteGrolog1">Monthly Pack: ₹350 / user / mo</p>
 
               <p class="pricing-card__features-title">What's included:</p>
               <ul class="pricing-card__features">
@@ -932,7 +787,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Email &amp; standard ticketing support</span>
+                  <span>Agent productivity dashboard</span>
                 </li>
               </ul>
 
@@ -946,22 +801,18 @@
               <span class="popular-badge">Most Popular</span>
 
               <div class="pricing-card__header">
-                <h3>5 – 10 Users</h3>
+                <h3>Up to 10 Users</h3>
                 <p class="pricing-card__desc">For fast-growing sales teams needing missed call follow-up, recording
                   sync, and agent leaderboards.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyGrolog2">₹</span>
-                <span class="pricing-card__amount" id="cardAmountGrolog2" data-monthly="249"
-                  data-annual="199">249</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountGrolog2" data-monthly="300"
+                  data-annual="3240">3,780</span><span class="pricing-card__original-price" id="cardOriginalGrolog2"
+                  style="display: inline;">4,200</span>
+                <span class="pricing-card__period" id="cardPeriodGrolog2">/ user / yr</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNoteGrolog2"
-                data-monthly-note="Yearly: ₹2,988 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹2,388 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹2,988 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNoteGrolog2">Monthly Pack: ₹350 / user / mo</p>
 
               <p class="pricing-card__features-title">Everything in Up to 5 Users, plus:</p>
               <ul class="pricing-card__features">
@@ -999,7 +850,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Priority WhatsApp &amp; phone desk support</span>
+                  <span>Priority desk support</span>
                 </li>
               </ul>
 
@@ -1008,25 +859,21 @@
               </a>
             </article>
 
-            <!-- Tier 3: 10 - 25 Users (₹199/user/mo, Yearly: ₹2,388) -->
+            <!-- Tier 3: upto 15 Users (₹199/user/mo, Yearly: ₹2,388) -->
             <article class="pricing-card">
               <div class="pricing-card__header">
-                <h3>10 – 25 Users</h3>
+                <h3>Up to 15 Users</h3>
                 <p class="pricing-card__desc">For larger telecalling operations, customer service centers, and
                   high-volume outbound campaigns.</p>
               </div>
-
               <div class="pricing-card__price-box">
                 <span class="pricing-card__currency" id="cardCurrencyGrolog3">₹</span>
-                <span class="pricing-card__amount" id="cardAmountGrolog3" data-monthly="199"
-                  data-annual="159">199</span>
-                <span class="pricing-card__period">/ user / mo</span>
+                <span class="pricing-card__amount" id="cardAmountGrolog3" data-monthly="250"
+                  data-annual="2400">3,570</span><span class="pricing-card__original-price" id="cardOriginalGrolog3"
+                  style="display: inline;">4,200</span>
+                <span class="pricing-card__period" id="cardPeriodGrolog3">/ user / yr</span>
               </div>
-              <p class="pricing-card__billing-note" id="cardNoteGrolog3"
-                data-monthly-note="Yearly: ₹2,388 / user / yr (Billed monthly)"
-                data-annual-note="Yearly: ₹1,908 / user / yr (Save 20% Billed Annually)">
-                Yearly: ₹2,388 / user / yr (Billed monthly)
-              </p>
+              <p class="pricing-card__billing-note" id="cardNoteGrolog3">Monthly Pack: ₹350 / user / mo</p>
 
               <p class="pricing-card__features-title">Everything in 5–10 Users, plus:</p>
               <ul class="pricing-card__features">
@@ -1034,19 +881,19 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>10 to 25 active agents &amp; multi-SIM tracking</b></span>
+                  <span><b>10 to 15 active agents &amp; multi-SIM tracking</b></span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>AI call summary &amp; sentiment analysis</b></span>
+                  <span><b>AI call summary</b></span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><b>Automated CRM lead creation &amp; field mapping</b></span>
+                  <span><b>Automated CRM lead creation</b></span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1058,7 +905,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Custom webhook integrations &amp; REST API access</span>
+                  <span>Multi-branch management</span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1068,7 +915,7 @@
                 </li>
               </ul>
 
-              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=grolog-25users">
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=grolog-15users">
                 Start Free Trial <span>→</span>
               </a>
             </article>
@@ -1076,13 +923,13 @@
             <!-- Tier 4: 25+ Users / Enterprise Custom -->
             <article class="pricing-card">
               <div class="pricing-card__header">
-                <h3>25+ Users / Enterprise</h3>
+                <h3>15+ Users / Enterprise</h3>
                 <p class="pricing-card__desc">For contact centers, multi-city branches, and enterprises needing IVR sync
                   &amp; private cloud telephony.</p>
               </div>
 
-              <div class="pricing-card__price-box">
-                <span class="pricing-card__amount" style="font-size: 2.1rem; line-height: 1.2;">Custom Quote</span>
+              <div class="pricing-card__price-box pricing-card__price-box--quote">
+                <span class="pricing-card__amount pricing-card__amount--quote">Client Requirement</span>
               </div>
               <p class="pricing-card__billing-note">Volume tiered pricing &amp; enterprise SLA</p>
 
@@ -1110,7 +957,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Custom CRM 2-way dialer sync (Salesforce, Zoho, HubSpot)</span>
+                  <span>Custom CRM 2-way dialer sync</span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1128,6 +975,340 @@
 
               <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=grolog-enterprise">
                 Contact Enterprise Team <span>→</span>
+              </a>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- PRODUCT 3: GROINN (Hotel Management System)                               -->
+      <!-- ========================================================================= -->
+      <section class="pricing-section" id="groinn-pricing"
+        style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="section-wrap">
+
+          <div class="pricing-product-header">
+            <span class="eyebrow">HOTEL &amp; HOSPITALITY MANAGEMENT</span>
+            <div class="product-title-wrap">
+              <span class="product-title-badge">
+                <span class="gro-brand-word" aria-label="Groinn">Gr<svg class="gro-o-ring" viewBox="0 0 40 40"
+                    aria-label="o" role="img">
+                    <path d="M18.8 4.05 A16 16 0 0 0 4.05 18.8" stroke="var(--red, #d7263d)" />
+                    <path d="M21.2 4.05 A16 16 0 0 1 35.95 18.8" stroke="var(--green, #17a34a)" />
+                    <path d="M35.95 21.2 A16 16 0 0 1 21.2 35.95" stroke="var(--ring-blue, #2a6df4)" />
+                    <path d="M4.05 21.2 A16 16 0 0 0 18.8 35.95" stroke="var(--amber, #dba21e)" />
+                  </svg>inn</span>
+              </span>
+            </div>
+            <p class="pricing-product-subheading">
+              Complete hotel operating system for front desk, reservation bookings, restaurant &amp; bar POS, guest CRM
+              &amp; instant billing.
+            </p>
+            <!-- Separate Monthly / Annually Control & Discount for Groinn -->
+            <div class="product-billing-control" style="display: none;">
+              <div class="billing-btn-group" role="group" aria-label="Groinn billing frequency">
+                <button type="button" class="billing-btn active" id="btnMonthlyGroinn" data-product="groinn"
+                  data-period="monthly" aria-pressed="true">
+                  <span>Monthly</span>
+                </button>
+                <button type="button" class="billing-btn" id="btnAnnualGroinn" data-product="groinn"
+                  data-period="annual" aria-pressed="false">
+                  <span>Annually</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+
+            <!-- Category 1: Basic -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Basic</h3>
+                <p class="pricing-card__desc">Essential hotel management for small hotels &amp; lodges.</p>
+              </div>
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyGroinn1">₹</span>
+                <span class="pricing-card__amount" id="cardAmountGroinn1" data-monthly="1000"
+                  data-annual="12000">12,000</span>
+                <span class="pricing-card__original-price" id="cardOriginalGroinn1" style="display: none;">12,000</span>
+                <span class="pricing-card__period" id="cardPeriodGroinn1">/ year</span>
+              </div>
+              <p class="pricing-card__billing-note" id="cardNoteGroinn1">Monthly Pack: ₹1,000 / month</p>
+
+              <p class="pricing-card__features-title">What's included:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Basic overview</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Room availability check</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Check-in / Check-out</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Reservation management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Guest profiles management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Room cleaning status</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Calculate room pricing</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Customer enquiries</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Basic reports</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=groinn-basic">
+                Start Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Category 2: Standard -->
+            <article class="pricing-card pricing-card--popular">
+              <span class="popular-badge">Most Popular</span>
+
+              <div class="pricing-card__header">
+                <h3>Standard</h3>
+                <p class="pricing-card__desc">Complete hotel management for growing hotels &amp; resorts.</p>
+              </div>
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyGroinn2">₹</span>
+                <span class="pricing-card__amount" id="cardAmountGroinn2" data-monthly="2000"
+                  data-annual="20000">20,000</span><span class="pricing-card__original-price" id="cardOriginalGroinn2"
+                  style="display: inline;">24,000</span>
+                <span class="pricing-card__period" id="cardPeriodGroinn2">/ year</span>
+              </div>
+              <p class="pricing-card__billing-note" id="cardNoteGroinn2">Monthly Pack: ₹2,000 / month</p>
+
+              <p class="pricing-card__features-title">Everything in Basic, plus:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Stock management</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Hall booking status</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Attendance management(up to 20 employees)</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Advance payment booking management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Financial management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>GST records</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Staff management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Advanced reports</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Housekeeping Task assignment</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--primary" href="enquire.html?plan=groinn-standard">
+                Start 15-Day Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Category 3: Prime -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Prime</h3>
+                <p class="pricing-card__desc">Advanced hotel management for large hotels &amp; luxury resorts.</p>
+              </div>
+              <div class="pricing-card__price-box">
+                <span class="pricing-card__currency" id="cardCurrencyGroinn3">₹</span>
+                <span class="pricing-card__amount" id="cardAmountGroinn3" data-monthly="3000"
+                  data-annual="28000">28,000</span><span class="pricing-card__original-price" id="cardOriginalGroinn3"
+                  style="display: inline;">36,000</span>
+                <span class="pricing-card__period" id="cardPeriodGroinn3">/ year</span>
+              </div>
+              <p class="pricing-card__billing-note" id="cardNoteGroinn3">Monthly Pack: ₹3,000 / month</p>
+
+              <p class="pricing-card__features-title">Everything in Standard, plus:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Advanced analytics</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Advanced room planning</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Call log management(2 users)</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Inventory advanced stock tracking</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Banquet halls advanced event management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Revenue and occupancy analytics</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Staff advanced role-based permissions</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=groinn-prime">
+                Start Free Trial <span>→</span>
+              </a>
+            </article>
+
+            <!-- Category 4: Custom Quote -->
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3>Enterprise</h3>
+                <p class="pricing-card__desc">For hotel chains, luxury resorts, and organizations requiring customized
+                  hotel management solutions.</p>
+              </div>
+
+              <div class="pricing-card__price-box pricing-card__price-box--quote">
+                <span class="pricing-card__amount pricing-card__amount--quote">Client Requirement</span>
+              </div>
+              <p class="pricing-card__billing-note">Tailored per-property pricing &amp; volume tiers</p>
+
+              <p class="pricing-card__features-title">Everything in Prime, plus:</p>
+              <ul class="pricing-card__features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Multi-property and multi-branch management</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span><b>Centralized hotel dashboard</b></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Central Reservation System (CRS)</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Centralized inventory management</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Multi-property financial consolidation</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Custom ERP / CRM integration</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Dedicated technical support &amp; custom SLA</span>
+                </li>
+              </ul>
+
+              <a class="pricing-card__btn pricing-card__btn--secondary" href="enquire.html?plan=groinn-enterprise">
+                Contact Hospitality Team <span>→</span>
               </a>
             </article>
 
@@ -1167,13 +1348,14 @@
         </div>
       </section>
 
+
       <!-- FAQ Accordion Section -->
       <section class="pricing-faq">
         <div class="section-wrap">
 
-          <p class="eyebrow" style="text-align: center;">HAVE QUESTIONS?</p>
-          <h2 style="text-align: center; margin: 0.5rem 0 0.8rem;">Frequently Asked Questions</h2>
-          <p style="text-align: center; color: var(--on-dark-muted); max-width: 600px; margin-inline: auto;">
+          <p class="eyebrow">HAVE QUESTIONS?</p>
+          <h2>Frequently Asked Questions</h2>
+          <p class="faq-subheading">
             Everything you need to know about GroSuite's billing, trial, and implementation.
           </p>
 
@@ -1393,11 +1575,15 @@
 
         <div>
           <b>Solutions</b>
-          <a href="hrms-solutions.html">HRMS Solutions</a>
-          <a href="erp-solutions.html">ERP Solutions</a>
-          <a href="crm-solutions.html">CRM Solutions</a>
-          <a href="business-automation.html">Business Automation</a>
-          <a href="system-integration.html">System Integration</a>
+          <a href="grohrms.html">Grohrms</a>
+          <a href="grolog.html">Grolog</a>
+          <a href="grotrk.html">Grotrk</a>
+          <a href="groinn.html">Groinn</a>
+          <a href="grojew.html">Grojew</a>
+          <a href="grocon.html">Grocon</a>
+          <a href="grohub.html">Grohub</a>
+          <a href="grofit.html">Grofit</a>
+          <a href="gropro.html">Gropro</a>
         </div>
 
         <div>
@@ -1445,7 +1631,7 @@
   <script>
     (function () {
       const FORM_ENDPOINT = "https://formsubmit.app/f/fhydgy6ynj";
-      const STEP_2_ENABLED = false; // Step 2 (Company Details) temporarily disabled per request; Step 1 unlocks pricing directly
+      const STEP_2_ENABLED = true; // Step 2 (Company & Contact Details) enabled
 
       // Comprehensive Multi-Currency Rates for Grohrms, Groinn, and Grolog
       const currencyRates = {
@@ -1457,18 +1643,19 @@
           taxNoteMonthly: 'Billed monthly (excl. GST)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 15, annual: 12 },
-            standard: { monthly: 30, annual: 24 },
+            basic: { monthly: 15, annual: 15 },
+            standard: { monthly: 30, annual: 27 },
             prime: { monthly: 60, annual: 48 }
           },
           groinn: {
-            monthly: 1000,
-            annual: 800
+            tier1: { monthly: 1000, annual: 12000 },
+            tier2: { monthly: 2000, annual: 20000, originalAnnual: 24000 },
+            tier3: { monthly: 3000, annual: 28000, originalAnnual: 36000 }
           },
           grolog: {
-            tier1: { monthly: 299, annual: 239 },
-            tier2: { monthly: 249, annual: 199 },
-            tier3: { monthly: 199, annual: 159 }
+            tier1: { monthly: 350, annual: 332.5 },
+            tier2: { monthly: 350, annual: 315 },
+            tier3: { monthly: 350, annual: 297.5 }
           },
           addons: {
             whatsapp: '₹999',
@@ -1485,18 +1672,19 @@
           taxNoteMonthly: 'Billed monthly (excl. local taxes)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.25, annual: 0.20 },
-            standard: { monthly: 0.50, annual: 0.40 },
+            basic: { monthly: 0.25, annual: 0.25 },
+            standard: { monthly: 0.50, annual: 0.45 },
             prime: { monthly: 1.00, annual: 0.80 }
           },
           groinn: {
-            monthly: 15.00,
-            annual: 12.00
+            tier1: { monthly: 15.00, annual: 150.00 },
+            tier2: { monthly: 25.00, annual: 250.00, originalAnnual: 300.00 },
+            tier3: { monthly: 40.00, annual: 400.00, originalAnnual: 480.00 }
           },
           grolog: {
-            tier1: { monthly: 4.00, annual: 3.20 },
-            tier2: { monthly: 3.50, annual: 2.80 },
-            tier3: { monthly: 2.80, annual: 2.20 }
+            tier1: { monthly: 4.50, annual: 4.28 },
+            tier2: { monthly: 4.00, annual: 3.60 },
+            tier3: { monthly: 3.20, annual: 2.56 }
           },
           addons: {
             whatsapp: '$14',
@@ -1513,18 +1701,19 @@
           taxNoteMonthly: 'Billed monthly (excl. VAT)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.20, annual: 0.16 },
-            standard: { monthly: 0.40, annual: 0.32 },
+            basic: { monthly: 0.20, annual: 0.20 },
+            standard: { monthly: 0.40, annual: 0.36 },
             prime: { monthly: 0.80, annual: 0.64 }
           },
           groinn: {
-            monthly: 12.00,
-            annual: 9.60
+            tier1: { monthly: 12.00, annual: 120.00 },
+            tier2: { monthly: 20.00, annual: 200.00, originalAnnual: 240.00 },
+            tier3: { monthly: 32.00, annual: 320.00, originalAnnual: 384.00 }
           },
           grolog: {
-            tier1: { monthly: 3.20, annual: 2.50 },
-            tier2: { monthly: 2.80, annual: 2.20 },
-            tier3: { monthly: 2.20, annual: 1.80 }
+            tier1: { monthly: 3.60, annual: 3.42 },
+            tier2: { monthly: 3.20, annual: 2.88 },
+            tier3: { monthly: 2.50, annual: 2.00 }
           },
           addons: {
             whatsapp: '£11',
@@ -1541,18 +1730,19 @@
           taxNoteMonthly: 'Billed monthly (excl. VAT)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.22, annual: 0.18 },
-            standard: { monthly: 0.45, annual: 0.36 },
+            basic: { monthly: 0.22, annual: 0.22 },
+            standard: { monthly: 0.45, annual: 0.40 },
             prime: { monthly: 0.90, annual: 0.72 }
           },
           groinn: {
-            monthly: 14.00,
-            annual: 11.20
+            tier1: { monthly: 14.00, annual: 140.00 },
+            tier2: { monthly: 24.00, annual: 240.00, originalAnnual: 288.00 },
+            tier3: { monthly: 36.00, annual: 360.00, originalAnnual: 432.00 }
           },
           grolog: {
-            tier1: { monthly: 3.60, annual: 2.90 },
-            tier2: { monthly: 3.10, annual: 2.50 },
-            tier3: { monthly: 2.50, annual: 2.00 }
+            tier1: { monthly: 4.00, annual: 3.80 },
+            tier2: { monthly: 3.50, annual: 3.15 },
+            tier3: { monthly: 2.80, annual: 2.24 }
           },
           addons: {
             whatsapp: '€12',
@@ -1569,18 +1759,19 @@
           taxNoteMonthly: 'Billed monthly (excl. VAT)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 1.00, annual: 0.80 },
-            standard: { monthly: 2.00, annual: 1.60 },
+            basic: { monthly: 1.00, annual: 1.00 },
+            standard: { monthly: 2.00, annual: 1.80 },
             prime: { monthly: 4.00, annual: 3.20 }
           },
           groinn: {
-            monthly: 55.00,
-            annual: 44.00
+            tier1: { monthly: 55.00, annual: 550.00 },
+            tier2: { monthly: 95.00, annual: 950.00, originalAnnual: 1140.00 },
+            tier3: { monthly: 145.00, annual: 1450.00, originalAnnual: 1740.00 }
           },
           grolog: {
-            tier1: { monthly: 15.00, annual: 12.00 },
-            tier2: { monthly: 12.00, annual: 10.00 },
-            tier3: { monthly: 10.00, annual: 8.00 }
+            tier1: { monthly: 16.00, annual: 15.20 },
+            tier2: { monthly: 14.00, annual: 12.60 },
+            tier3: { monthly: 11.00, annual: 8.80 }
           },
           addons: {
             whatsapp: 'AED 50',
@@ -1597,18 +1788,19 @@
           taxNoteMonthly: 'Billed monthly (excl. GST)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.35, annual: 0.28 },
-            standard: { monthly: 0.70, annual: 0.56 },
+            basic: { monthly: 0.35, annual: 0.35 },
+            standard: { monthly: 0.70, annual: 0.63 },
             prime: { monthly: 1.40, annual: 1.12 }
           },
           groinn: {
-            monthly: 20.00,
-            annual: 16.00
+            tier1: { monthly: 20.00, annual: 200.00 },
+            tier2: { monthly: 35.00, annual: 350.00, originalAnnual: 420.00 },
+            tier3: { monthly: 55.00, annual: 550.00, originalAnnual: 660.00 }
           },
           grolog: {
-            tier1: { monthly: 5.50, annual: 4.40 },
-            tier2: { monthly: 4.60, annual: 3.70 },
-            tier3: { monthly: 3.70, annual: 3.00 }
+            tier1: { monthly: 6.00, annual: 5.70 },
+            tier2: { monthly: 5.20, annual: 4.68 },
+            tier3: { monthly: 4.20, annual: 3.36 }
           },
           addons: {
             whatsapp: 'S$18',
@@ -1625,18 +1817,19 @@
           taxNoteMonthly: 'Billed monthly (excl. GST)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.40, annual: 0.32 },
-            standard: { monthly: 0.80, annual: 0.64 },
+            basic: { monthly: 0.40, annual: 0.40 },
+            standard: { monthly: 0.80, annual: 0.72 },
             prime: { monthly: 1.60, annual: 1.28 }
           },
           groinn: {
-            monthly: 22.00,
-            annual: 17.60
+            tier1: { monthly: 22.00, annual: 220.00 },
+            tier2: { monthly: 38.00, annual: 380.00, originalAnnual: 456.00 },
+            tier3: { monthly: 60.00, annual: 600.00, originalAnnual: 720.00 }
           },
           grolog: {
-            tier1: { monthly: 6.00, annual: 4.80 },
-            tier2: { monthly: 5.00, annual: 4.00 },
-            tier3: { monthly: 4.00, annual: 3.20 }
+            tier1: { monthly: 6.50, annual: 6.18 },
+            tier2: { monthly: 5.60, annual: 5.04 },
+            tier3: { monthly: 4.50, annual: 3.60 }
           },
           addons: {
             whatsapp: 'A$20',
@@ -1653,18 +1846,19 @@
           taxNoteMonthly: 'Billed monthly (excl. HST/PST)',
           taxNoteAnnual: 'Billed annually (Save 20%)',
           hrms: {
-            basic: { monthly: 0.35, annual: 0.28 },
-            standard: { monthly: 0.70, annual: 0.56 },
+            basic: { monthly: 0.35, annual: 0.35 },
+            standard: { monthly: 0.70, annual: 0.63 },
             prime: { monthly: 1.40, annual: 1.12 }
           },
           groinn: {
-            monthly: 20.00,
-            annual: 16.00
+            tier1: { monthly: 20.00, annual: 200.00 },
+            tier2: { monthly: 35.00, annual: 350.00, originalAnnual: 420.00 },
+            tier3: { monthly: 55.00, annual: 550.00, originalAnnual: 660.00 }
           },
           grolog: {
-            tier1: { monthly: 5.50, annual: 4.40 },
-            tier2: { monthly: 4.60, annual: 3.70 },
-            tier3: { monthly: 3.70, annual: 3.00 }
+            tier1: { monthly: 6.00, annual: 5.70 },
+            tier2: { monthly: 5.20, annual: 4.68 },
+            tier3: { monthly: 4.20, annual: 3.36 }
           },
           addons: {
             whatsapp: 'C$18',
@@ -1675,9 +1869,13 @@
         }
       };
 
-      // State Management
+      // State Management - Separate Independent Billing Cycles
       let currentCurrency = 'INR';
-      let isAnnual = false;
+      let isAnnualGrohrms = false;
+      let grohrmsBillingCycle = 'monthly';
+      let isAnnualGrolog = true;
+      let grologBillingCycle = 'annual';
+      let isAnnualGroinn = true;
 
       // DOM Elements - Navigation & Gate
       const pricingGateForm = document.getElementById('pricingGateForm');
@@ -1724,32 +1922,63 @@
       // Grohrms Card Elements
       const cardCurrencyBasic = document.getElementById('cardCurrencyBasic');
       const cardAmountBasic = document.getElementById('cardAmountBasic');
+      const cardOriginalBasic = document.getElementById('cardOriginalBasic');
+      const cardPeriodBasic = document.getElementById('cardPeriodBasic');
       const cardNoteBasic = document.getElementById('cardNoteBasic');
 
       const cardCurrencyStandard = document.getElementById('cardCurrencyStandard');
       const cardAmountStandard = document.getElementById('cardAmountStandard');
+      const cardOriginalStandard = document.getElementById('cardOriginalStandard');
+      const cardPeriodStandard = document.getElementById('cardPeriodStandard');
       const cardNoteStandard = document.getElementById('cardNoteStandard');
 
       const cardCurrencyPrime = document.getElementById('cardCurrencyPrime');
       const cardAmountPrime = document.getElementById('cardAmountPrime');
+      const cardOriginalPrime = document.getElementById('cardOriginalPrime');
+      const cardPeriodPrime = document.getElementById('cardPeriodPrime');
       const cardNotePrime = document.getElementById('cardNotePrime');
 
       // Groinn Card Elements
-      const cardCurrencyGroinn = document.getElementById('cardCurrencyGroinn');
-      const cardAmountGroinn = document.getElementById('cardAmountGroinn');
-      const cardNoteGroinn = document.getElementById('cardNoteGroinn');
+      const cardCurrencyGroinn1 = document.getElementById('cardCurrencyGroinn1');
+      const cardAmountGroinn1 = document.getElementById('cardAmountGroinn1');
+      const cardOriginalGroinn1 = document.getElementById('cardOriginalGroinn1');
+      const cardPeriodGroinn1 = document.getElementById('cardPeriodGroinn1');
+      const cardNoteGroinn1 = document.getElementById('cardNoteGroinn1');
+
+      const cardCurrencyGroinn2 = document.getElementById('cardCurrencyGroinn2');
+      const cardAmountGroinn2 = document.getElementById('cardAmountGroinn2');
+      const cardOriginalGroinn2 = document.getElementById('cardOriginalGroinn2');
+      const cardPeriodGroinn2 = document.getElementById('cardPeriodGroinn2');
+      const cardNoteGroinn2 = document.getElementById('cardNoteGroinn2');
+
+      const cardCurrencyGroinn3 = document.getElementById('cardCurrencyGroinn3');
+      const cardAmountGroinn3 = document.getElementById('cardAmountGroinn3');
+      const cardOriginalGroinn3 = document.getElementById('cardOriginalGroinn3');
+      const cardPeriodGroinn3 = document.getElementById('cardPeriodGroinn3');
+      const cardNoteGroinn3 = document.getElementById('cardNoteGroinn3');
+
+      // Compatibility fallback
+      const cardCurrencyGroinn = cardCurrencyGroinn1;
+      const cardAmountGroinn = cardAmountGroinn1;
+      const cardNoteGroinn = cardNoteGroinn1;
 
       // Grolog Card Elements
       const cardCurrencyGrolog1 = document.getElementById('cardCurrencyGrolog1');
       const cardAmountGrolog1 = document.getElementById('cardAmountGrolog1');
+      const cardOriginalGrolog1 = document.getElementById('cardOriginalGrolog1');
+      const cardPeriodGrolog1 = document.getElementById('cardPeriodGrolog1');
       const cardNoteGrolog1 = document.getElementById('cardNoteGrolog1');
 
       const cardCurrencyGrolog2 = document.getElementById('cardCurrencyGrolog2');
       const cardAmountGrolog2 = document.getElementById('cardAmountGrolog2');
+      const cardOriginalGrolog2 = document.getElementById('cardOriginalGrolog2');
+      const cardPeriodGrolog2 = document.getElementById('cardPeriodGrolog2');
       const cardNoteGrolog2 = document.getElementById('cardNoteGrolog2');
 
       const cardCurrencyGrolog3 = document.getElementById('cardCurrencyGrolog3');
       const cardAmountGrolog3 = document.getElementById('cardAmountGrolog3');
+      const cardOriginalGrolog3 = document.getElementById('cardOriginalGrolog3');
+      const cardPeriodGrolog3 = document.getElementById('cardPeriodGrolog3');
       const cardNoteGrolog3 = document.getElementById('cardNoteGrolog3');
 
       // Format Numbers
@@ -1760,108 +1989,292 @@
         return val;
       }
 
-      // Render Pricing function
-      function renderPricing() {
+      // Separate Render Pricing functions for each product
+      function renderPricingGrohrms() {
         const cur = currencyRates[currentCurrency] || currencyRates.INR;
         const sym = cur.symbol.trim();
 
-        // 1. Grohrms Plans (Basic ₹15, Standard ₹30, Prime ₹60)
+        // Basic: No discount (15 / mo, 90 / 6 mo, 180 / yr)
         const hrmsBasicMonthly = cur.hrms.basic.monthly;
-        const hrmsBasicAnnual = cur.hrms.basic.annual;
-        const hrmsBasicActive = isAnnual ? hrmsBasicAnnual : hrmsBasicMonthly;
+        const hrmsBasicHalfly = (cur.code === 'INR') ? Math.round(hrmsBasicMonthly * 6) : +(hrmsBasicMonthly * 6).toFixed(2);
+        const hrmsBasicAnnual = (cur.code === 'INR') ? Math.round(hrmsBasicMonthly * 12) : +(hrmsBasicMonthly * 12).toFixed(2);
 
+        // Standard: 5% discount on halfly, 10% discount on annual
         const hrmsStdMonthly = cur.hrms.standard.monthly;
-        const hrmsStdAnnual = cur.hrms.standard.annual;
-        const hrmsStdActive = isAnnual ? hrmsStdAnnual : hrmsStdMonthly;
+        const hrmsStdHalflyTotal = (cur.code === 'INR') ? Math.round(hrmsStdMonthly * 6) : +(hrmsStdMonthly * 6).toFixed(2);
+        const hrmsStdHalflyDiscounted = (cur.code === 'INR') ? Math.round(hrmsStdHalflyTotal * 0.95) : +(hrmsStdHalflyTotal * 0.95).toFixed(2);
+        const hrmsStdAnnualTotal = (cur.code === 'INR') ? Math.round(hrmsStdMonthly * 12) : +(hrmsStdMonthly * 12).toFixed(2);
+        const hrmsStdAnnualDiscounted = (cur.code === 'INR') ? Math.round(hrmsStdAnnualTotal * 0.90) : +(hrmsStdAnnualTotal * 0.90).toFixed(2);
 
+        // Prime: 10% discount on halfly, 20% discount on annual
         const hrmsPrimeMonthly = cur.hrms.prime.monthly;
-        const hrmsPrimeAnnual = cur.hrms.prime.annual;
-        const hrmsPrimeActive = isAnnual ? hrmsPrimeAnnual : hrmsPrimeMonthly;
+        const hrmsPrimeHalflyTotal = (cur.code === 'INR') ? Math.round(hrmsPrimeMonthly * 6) : +(hrmsPrimeMonthly * 6).toFixed(2);
+        const hrmsPrimeHalflyDiscounted = (cur.code === 'INR') ? Math.round(hrmsPrimeHalflyTotal * 0.90) : +(hrmsPrimeHalflyTotal * 0.90).toFixed(2);
+        const hrmsPrimeAnnualTotal = (cur.code === 'INR') ? Math.round(hrmsPrimeMonthly * 12) : +(hrmsPrimeMonthly * 12).toFixed(2);
+        const hrmsPrimeAnnualDiscounted = (cur.code === 'INR') ? Math.round(hrmsPrimeAnnualTotal * 0.80) : +(hrmsPrimeAnnualTotal * 0.80).toFixed(2);
 
-        if (cardCurrencyBasic) cardCurrencyBasic.textContent = sym;
-        if (cardAmountBasic) cardAmountBasic.textContent = formatNum(hrmsBasicActive);
-        if (cardNoteBasic) {
-          const yearlyTotal = formatNum(hrmsBasicActive * 12);
-          cardNoteBasic.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
+        if (grohrmsBillingCycle === 'annual') {
+          // Basic Plan - Annually (180 / user / yr)
+          if (cardCurrencyBasic) cardCurrencyBasic.textContent = sym;
+          if (cardAmountBasic) cardAmountBasic.textContent = formatNum(hrmsBasicAnnual);
+          if (cardOriginalBasic) cardOriginalBasic.style.display = 'none';
+          if (cardPeriodBasic) cardPeriodBasic.textContent = '/ user / yr';
+          if (cardNoteBasic) {
+            cardNoteBasic.textContent = `Yearly: ${sym}${formatNum(hrmsBasicAnnual)} / user / yr (Billed Annually)`;
+          }
+
+          // Standard Plan - Annually (324 with 360 struck)
+          if (cardCurrencyStandard) cardCurrencyStandard.textContent = sym;
+          if (cardAmountStandard) cardAmountStandard.textContent = formatNum(hrmsStdAnnualDiscounted);
+          if (cardOriginalStandard) {
+            cardOriginalStandard.textContent = formatNum(hrmsStdAnnualTotal);
+            cardOriginalStandard.style.display = 'inline';
+          }
+          if (cardPeriodStandard) cardPeriodStandard.textContent = '/ user / yr';
+          if (cardNoteStandard) {
+            cardNoteStandard.textContent = `Yearly: ${sym}${formatNum(hrmsStdAnnualDiscounted)} / user / yr (Save 10% Billed Annually)`;
+          }
+
+          // Prime Plan - Annually (576 with 720 struck)
+          if (cardCurrencyPrime) cardCurrencyPrime.textContent = sym;
+          if (cardAmountPrime) cardAmountPrime.textContent = formatNum(hrmsPrimeAnnualDiscounted);
+          if (cardOriginalPrime) {
+            cardOriginalPrime.textContent = formatNum(hrmsPrimeAnnualTotal);
+            cardOriginalPrime.style.display = 'inline';
+          }
+          if (cardPeriodPrime) cardPeriodPrime.textContent = '/ user / yr';
+          if (cardNotePrime) {
+            cardNotePrime.textContent = `Yearly: ${sym}${formatNum(hrmsPrimeAnnualDiscounted)} / user / yr (Save 20% Billed Annually)`;
+          }
+        } else if (grohrmsBillingCycle === 'halfly') {
+          // Basic Plan - Half-Yearly (90 / user / 6 mo)
+          if (cardCurrencyBasic) cardCurrencyBasic.textContent = sym;
+          if (cardAmountBasic) cardAmountBasic.textContent = formatNum(hrmsBasicHalfly);
+          if (cardOriginalBasic) cardOriginalBasic.style.display = 'none';
+          if (cardPeriodBasic) cardPeriodBasic.textContent = '/ user / 6 mo';
+          if (cardNoteBasic) {
+            cardNoteBasic.textContent = `Half-Yearly: ${sym}${formatNum(hrmsBasicHalfly)} / user / 6 mo (Billed half-yearly)`;
+          }
+
+          // Standard Plan - Half-Yearly (171 with 180 struck)
+          if (cardCurrencyStandard) cardCurrencyStandard.textContent = sym;
+          if (cardAmountStandard) cardAmountStandard.textContent = formatNum(hrmsStdHalflyDiscounted);
+          if (cardOriginalStandard) {
+            cardOriginalStandard.textContent = formatNum(hrmsStdHalflyTotal);
+            cardOriginalStandard.style.display = 'inline';
+          }
+          if (cardPeriodStandard) cardPeriodStandard.textContent = '/ user / 6 mo';
+          if (cardNoteStandard) {
+            cardNoteStandard.textContent = `Half-Yearly: ${sym}${formatNum(hrmsStdHalflyDiscounted)} / user / 6 mo (Save 5% Billed Half-Yearly)`;
+          }
+
+          // Prime Plan - Half-Yearly (324 with 360 struck)
+          if (cardCurrencyPrime) cardCurrencyPrime.textContent = sym;
+          if (cardAmountPrime) cardAmountPrime.textContent = formatNum(hrmsPrimeHalflyDiscounted);
+          if (cardOriginalPrime) {
+            cardOriginalPrime.textContent = formatNum(hrmsPrimeHalflyTotal);
+            cardOriginalPrime.style.display = 'inline';
+          }
+          if (cardPeriodPrime) cardPeriodPrime.textContent = '/ user / 6 mo';
+          if (cardNotePrime) {
+            cardNotePrime.textContent = `Half-Yearly: ${sym}${formatNum(hrmsPrimeHalflyDiscounted)} / user / 6 mo (Save 10% Billed Half-Yearly)`;
+          }
+        } else {
+          // Basic Plan - Monthly (15 / user / mo)
+          if (cardCurrencyBasic) cardCurrencyBasic.textContent = sym;
+          if (cardAmountBasic) cardAmountBasic.textContent = formatNum(hrmsBasicMonthly);
+          if (cardOriginalBasic) cardOriginalBasic.style.display = 'none';
+          if (cardPeriodBasic) cardPeriodBasic.textContent = '/ user / mo';
+          if (cardNoteBasic) {
+            cardNoteBasic.textContent = `Yearly: ${sym}${formatNum(hrmsBasicAnnual)} / user / yr (Billed monthly)`;
+          }
+
+          // Standard Plan - Monthly (30 / user / mo)
+          if (cardCurrencyStandard) cardCurrencyStandard.textContent = sym;
+          if (cardAmountStandard) cardAmountStandard.textContent = formatNum(hrmsStdMonthly);
+          if (cardOriginalStandard) cardOriginalStandard.style.display = 'none';
+          if (cardPeriodStandard) cardPeriodStandard.textContent = '/ user / mo';
+          if (cardNoteStandard) {
+            cardNoteStandard.textContent = `Yearly: ${sym}${formatNum(hrmsStdAnnualTotal)} / user / yr (Billed monthly)`;
+          }
+
+          // Prime Plan - Monthly (60 / user / mo)
+          if (cardCurrencyPrime) cardCurrencyPrime.textContent = sym;
+          if (cardAmountPrime) cardAmountPrime.textContent = formatNum(hrmsPrimeMonthly);
+          if (cardOriginalPrime) cardOriginalPrime.style.display = 'none';
+          if (cardPeriodPrime) cardPeriodPrime.textContent = '/ user / mo';
+          if (cardNotePrime) {
+            cardNotePrime.textContent = `Yearly: ${sym}${formatNum(hrmsPrimeAnnualTotal)} / user / yr (Billed monthly)`;
+          }
         }
+      }
 
-        if (cardCurrencyStandard) cardCurrencyStandard.textContent = sym;
-        if (cardAmountStandard) cardAmountStandard.textContent = formatNum(hrmsStdActive);
-        if (cardNoteStandard) {
-          const yearlyTotal = formatNum(hrmsStdActive * 12);
-          cardNoteStandard.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
-        }
+      function renderPricingGrolog() {
+        const cur = currencyRates[currentCurrency] || currencyRates.INR;
+        const sym = cur.symbol.trim();
 
-        if (cardCurrencyPrime) cardCurrencyPrime.textContent = sym;
-        if (cardAmountPrime) cardAmountPrime.textContent = formatNum(hrmsPrimeActive);
-        if (cardNotePrime) {
-          const yearlyTotal = formatNum(hrmsPrimeActive * 12);
-          cardNotePrime.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
-        }
-
-        // 2. Groinn Hotel Management Plan (₹1000/month, ₹12,000/year; Annual save 20%: ₹800/mo, ₹9,600/year)
-        const groinnMonthly = cur.groinn.monthly;
-        const groinnAnnual = cur.groinn.annual;
-        const groinnActive = isAnnual ? groinnAnnual : groinnMonthly;
-
-        if (cardCurrencyGroinn) cardCurrencyGroinn.textContent = sym;
-        if (cardAmountGroinn) cardAmountGroinn.textContent = formatNum(groinnActive);
-        if (cardNoteGroinn) {
-          const yearlyTotal = formatNum(groinnActive * 12);
-          cardNoteGroinn.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / year (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / year (Billed monthly)`;
-        }
-
-        // 3. Grolog Call Log Management Plans
-        // Tier 1 (Up to 5 Users): ₹299 / user / mo, Yearly: ₹3,588 (Annual Save 20%: ₹239 / mo, ₹2,868/yr)
-        // Tier 2 (5-10 Users): ₹249 / user / mo, Yearly: ₹2,988 (Annual Save 20%: ₹199 / mo, ₹2,388/yr)
-        // Tier 3 (10-25 Users): ₹199 / user / mo, Yearly: ₹2,388 (Annual Save 20%: ₹159 / mo, ₹1,908/yr)
+        // Tier 1: Up to 5 users (350/mo, 2100/6mo base, 5% discount => 1995/6mo; 4200/yr base, 5% discount => 3990/yr)
         const grolog1Monthly = cur.grolog.tier1.monthly;
-        const grolog1Annual = cur.grolog.tier1.annual;
-        const grolog1Active = isAnnual ? grolog1Annual : grolog1Monthly;
+        const grolog1HalflyTotal = (cur.code === 'INR') ? Math.round(grolog1Monthly * 6) : +(grolog1Monthly * 6).toFixed(2);
+        const grolog1HalflyDiscounted = (cur.code === 'INR') ? Math.round(grolog1HalflyTotal * 0.95) : +(grolog1HalflyTotal * 0.95).toFixed(2);
+        const grolog1AnnualTotal = (cur.code === 'INR') ? Math.round(grolog1Monthly * 12) : +(grolog1Monthly * 12).toFixed(2);
+        const grolog1AnnualDiscounted = (cur.code === 'INR') ? Math.round(grolog1AnnualTotal * 0.95) : +(grolog1AnnualTotal * 0.95).toFixed(2);
 
+        // Tier 2: 10 users (350/mo, 2100/6mo base, 10% discount => 1890/6mo; 4200/yr base, 10% discount => 3780/yr)
         const grolog2Monthly = cur.grolog.tier2.monthly;
-        const grolog2Annual = cur.grolog.tier2.annual;
-        const grolog2Active = isAnnual ? grolog2Annual : grolog2Monthly;
+        const grolog2HalflyTotal = (cur.code === 'INR') ? Math.round(grolog2Monthly * 6) : +(grolog2Monthly * 6).toFixed(2);
+        const grolog2HalflyDiscounted = (cur.code === 'INR') ? Math.round(grolog2HalflyTotal * 0.90) : +(grolog2HalflyTotal * 0.90).toFixed(2);
+        const grolog2AnnualTotal = (cur.code === 'INR') ? Math.round(grolog2Monthly * 12) : +(grolog2Monthly * 12).toFixed(2);
+        const grolog2AnnualDiscounted = (cur.code === 'INR') ? Math.round(grolog2AnnualTotal * 0.90) : +(grolog2AnnualTotal * 0.90).toFixed(2);
 
+        // Tier 3: 15 users (350/mo, 2100/6mo base, 15% discount => 1785/6mo; 4200/yr base, 15% discount => 3570/yr)
         const grolog3Monthly = cur.grolog.tier3.monthly;
-        const grolog3Annual = cur.grolog.tier3.annual;
-        const grolog3Active = isAnnual ? grolog3Annual : grolog3Monthly;
+        const grolog3HalflyTotal = (cur.code === 'INR') ? Math.round(grolog3Monthly * 6) : +(grolog3Monthly * 6).toFixed(2);
+        const grolog3HalflyDiscounted = (cur.code === 'INR') ? Math.round(grolog3HalflyTotal * 0.85) : +(grolog3HalflyTotal * 0.85).toFixed(2);
+        const grolog3AnnualTotal = (cur.code === 'INR') ? Math.round(grolog3Monthly * 12) : +(grolog3Monthly * 12).toFixed(2);
+        const grolog3AnnualDiscounted = (cur.code === 'INR') ? Math.round(grolog3AnnualTotal * 0.85) : +(grolog3AnnualTotal * 0.85).toFixed(2);
 
-        if (cardCurrencyGrolog1) cardCurrencyGrolog1.textContent = sym;
-        if (cardAmountGrolog1) cardAmountGrolog1.textContent = formatNum(grolog1Active);
-        if (cardNoteGrolog1) {
-          const yearlyTotal = formatNum(grolog1Active * 12);
-          cardNoteGrolog1.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
+        if (grologBillingCycle === 'halfly') {
+          // Tier 1 - Halfly (1,995 with 2,100 struck)
+          if (cardCurrencyGrolog1) cardCurrencyGrolog1.textContent = sym;
+          if (cardAmountGrolog1) cardAmountGrolog1.textContent = formatNum(grolog1HalflyDiscounted);
+          if (cardOriginalGrolog1) {
+            cardOriginalGrolog1.textContent = formatNum(grolog1HalflyTotal);
+            cardOriginalGrolog1.style.display = 'inline';
+          }
+          if (cardPeriodGrolog1) cardPeriodGrolog1.textContent = '/ user / 6 mo';
+          if (cardNoteGrolog1) cardNoteGrolog1.textContent = `Monthly Pack: ${sym}${formatNum(grolog1Monthly)} / user / mo`;
+
+          // Tier 2 - Halfly (1,890 with 2,100 struck)
+          if (cardCurrencyGrolog2) cardCurrencyGrolog2.textContent = sym;
+          if (cardAmountGrolog2) cardAmountGrolog2.textContent = formatNum(grolog2HalflyDiscounted);
+          if (cardOriginalGrolog2) {
+            cardOriginalGrolog2.textContent = formatNum(grolog2HalflyTotal);
+            cardOriginalGrolog2.style.display = 'inline';
+          }
+          if (cardPeriodGrolog2) cardPeriodGrolog2.textContent = '/ user / 6 mo';
+          if (cardNoteGrolog2) cardNoteGrolog2.textContent = `Monthly Pack: ${sym}${formatNum(grolog2Monthly)} / user / mo`;
+
+          // Tier 3 - Halfly (1,785 with 2,100 struck)
+          if (cardCurrencyGrolog3) cardCurrencyGrolog3.textContent = sym;
+          if (cardAmountGrolog3) cardAmountGrolog3.textContent = formatNum(grolog3HalflyDiscounted);
+          if (cardOriginalGrolog3) {
+            cardOriginalGrolog3.textContent = formatNum(grolog3HalflyTotal);
+            cardOriginalGrolog3.style.display = 'inline';
+          }
+          if (cardPeriodGrolog3) cardPeriodGrolog3.textContent = '/ user / 6 mo';
+          if (cardNoteGrolog3) cardNoteGrolog3.textContent = `Monthly Pack: ${sym}${formatNum(grolog3Monthly)} / user / mo`;
+
+        } else if (grologBillingCycle === 'monthly') {
+          // Tier 1 - Monthly
+          if (cardCurrencyGrolog1) cardCurrencyGrolog1.textContent = sym;
+          if (cardAmountGrolog1) cardAmountGrolog1.textContent = formatNum(grolog1Monthly);
+          if (cardOriginalGrolog1) cardOriginalGrolog1.style.display = 'none';
+          if (cardPeriodGrolog1) cardPeriodGrolog1.textContent = '/ user / mo';
+          if (cardNoteGrolog1) cardNoteGrolog1.textContent = `Monthly Pack: ${sym}${formatNum(grolog1Monthly)} / user / mo`;
+
+          // Tier 2 - Monthly
+          if (cardCurrencyGrolog2) cardCurrencyGrolog2.textContent = sym;
+          if (cardAmountGrolog2) cardAmountGrolog2.textContent = formatNum(grolog2Monthly);
+          if (cardOriginalGrolog2) cardOriginalGrolog2.style.display = 'none';
+          if (cardPeriodGrolog2) cardPeriodGrolog2.textContent = '/ user / mo';
+          if (cardNoteGrolog2) cardNoteGrolog2.textContent = `Monthly Pack: ${sym}${formatNum(grolog2Monthly)} / user / mo`;
+
+          // Tier 3 - Monthly
+          if (cardCurrencyGrolog3) cardCurrencyGrolog3.textContent = sym;
+          if (cardAmountGrolog3) cardAmountGrolog3.textContent = formatNum(grolog3Monthly);
+          if (cardOriginalGrolog3) cardOriginalGrolog3.style.display = 'none';
+          if (cardPeriodGrolog3) cardPeriodGrolog3.textContent = '/ user / mo';
+          if (cardNoteGrolog3) cardNoteGrolog3.textContent = `Monthly Pack: ${sym}${formatNum(grolog3Monthly)} / user / mo`;
+
+        } else {
+          // Annual (default)
+          // Tier 1 - Annually (3,990 with 4,200 struck)
+          if (cardCurrencyGrolog1) cardCurrencyGrolog1.textContent = sym;
+          if (cardAmountGrolog1) cardAmountGrolog1.textContent = formatNum(grolog1AnnualDiscounted);
+          if (cardOriginalGrolog1) {
+            cardOriginalGrolog1.textContent = formatNum(grolog1AnnualTotal);
+            cardOriginalGrolog1.style.display = 'inline';
+          }
+          if (cardPeriodGrolog1) cardPeriodGrolog1.textContent = '/ user / yr';
+          if (cardNoteGrolog1) cardNoteGrolog1.textContent = `Monthly Pack: ${sym}${formatNum(grolog1Monthly)} / user / mo`;
+
+          // Tier 2 - Annually (3,780 with 4,200 struck)
+          if (cardCurrencyGrolog2) cardCurrencyGrolog2.textContent = sym;
+          if (cardAmountGrolog2) cardAmountGrolog2.textContent = formatNum(grolog2AnnualDiscounted);
+          if (cardOriginalGrolog2) {
+            cardOriginalGrolog2.textContent = formatNum(grolog2AnnualTotal);
+            cardOriginalGrolog2.style.display = 'inline';
+          }
+          if (cardPeriodGrolog2) cardPeriodGrolog2.textContent = '/ user / yr';
+          if (cardNoteGrolog2) cardNoteGrolog2.textContent = `Monthly Pack: ${sym}${formatNum(grolog2Monthly)} / user / mo`;
+
+          // Tier 3 - Annually (3,570 with 4,200 struck)
+          if (cardCurrencyGrolog3) cardCurrencyGrolog3.textContent = sym;
+          if (cardAmountGrolog3) cardAmountGrolog3.textContent = formatNum(grolog3AnnualDiscounted);
+          if (cardOriginalGrolog3) {
+            cardOriginalGrolog3.textContent = formatNum(grolog3AnnualTotal);
+            cardOriginalGrolog3.style.display = 'inline';
+          }
+          if (cardPeriodGrolog3) cardPeriodGrolog3.textContent = '/ user / yr';
+          if (cardNoteGrolog3) cardNoteGrolog3.textContent = `Monthly Pack: ${sym}${formatNum(grolog3Monthly)} / user / mo`;
         }
+      }
 
-        if (cardCurrencyGrolog2) cardCurrencyGrolog2.textContent = sym;
-        if (cardAmountGrolog2) cardAmountGrolog2.textContent = formatNum(grolog2Active);
-        if (cardNoteGrolog2) {
-          const yearlyTotal = formatNum(grolog2Active * 12);
-          cardNoteGrolog2.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
+      function renderPricingGroinn() {
+        const cur = currencyRates[currentCurrency] || currencyRates.INR;
+        const sym = cur.symbol.trim();
+
+        // Tier 1: Basic (12000/year, Monthly pack: 1000/month)
+        const groinn1Monthly = (cur.groinn && cur.groinn.tier1) ? cur.groinn.tier1.monthly : 1000;
+        const groinn1Annual = (cur.groinn && cur.groinn.tier1) ? cur.groinn.tier1.annual : 12000;
+
+        // Tier 2: Standard (20000/year, Monthly pack: 2000/month, Regular: 24000/year)
+        const groinn2Monthly = (cur.groinn && cur.groinn.tier2) ? cur.groinn.tier2.monthly : 2000;
+        const groinn2Annual = (cur.groinn && cur.groinn.tier2) ? cur.groinn.tier2.annual : 20000;
+        const groinn2RegularAnnual = (cur.groinn && cur.groinn.tier2 && cur.groinn.tier2.originalAnnual)
+          ? cur.groinn.tier2.originalAnnual
+          : ((cur.code === 'INR') ? Math.round(groinn2Monthly * 12) : +(groinn2Monthly * 12).toFixed(2));
+
+        // Tier 3: Prime (28000/year, Monthly pack: 3000/month, Regular: 36000/year)
+        const groinn3Monthly = (cur.groinn && cur.groinn.tier3) ? cur.groinn.tier3.monthly : 3000;
+        const groinn3Annual = (cur.groinn && cur.groinn.tier3) ? cur.groinn.tier3.annual : 28000;
+        const groinn3RegularAnnual = (cur.groinn && cur.groinn.tier3 && cur.groinn.tier3.originalAnnual)
+          ? cur.groinn.tier3.originalAnnual
+          : ((cur.code === 'INR') ? Math.round(groinn3Monthly * 12) : +(groinn3Monthly * 12).toFixed(2));
+
+        // Tier 1 - Basic: Show Annually plan amount in main price (12,000 / year), Monthly pack in marked box (1,000 / month)
+        if (cardCurrencyGroinn1) cardCurrencyGroinn1.textContent = sym;
+        if (cardAmountGroinn1) cardAmountGroinn1.textContent = formatNum(groinn1Annual);
+        if (cardOriginalGroinn1) cardOriginalGroinn1.style.display = 'none';
+        if (cardPeriodGroinn1) cardPeriodGroinn1.textContent = '/ year';
+        if (cardNoteGroinn1) cardNoteGroinn1.textContent = `Monthly Pack: ${sym}${formatNum(groinn1Monthly)} / month`;
+
+        // Tier 2 - Standard: Show Annually plan amount in main price (20,000 / year with 24,000 struck), Monthly pack in marked box (2,000 / month)
+        if (cardCurrencyGroinn2) cardCurrencyGroinn2.textContent = sym;
+        if (cardAmountGroinn2) cardAmountGroinn2.textContent = formatNum(groinn2Annual);
+        if (cardOriginalGroinn2) {
+          cardOriginalGroinn2.textContent = formatNum(groinn2RegularAnnual);
+          cardOriginalGroinn2.style.display = 'inline';
         }
+        if (cardPeriodGroinn2) cardPeriodGroinn2.textContent = '/ year';
+        if (cardNoteGroinn2) cardNoteGroinn2.textContent = `Monthly Pack: ${sym}${formatNum(groinn2Monthly)} / month`;
 
-        if (cardCurrencyGrolog3) cardCurrencyGrolog3.textContent = sym;
-        if (cardAmountGrolog3) cardAmountGrolog3.textContent = formatNum(grolog3Active);
-        if (cardNoteGrolog3) {
-          const yearlyTotal = formatNum(grolog3Active * 12);
-          cardNoteGrolog3.textContent = isAnnual
-            ? `Yearly: ${sym}${yearlyTotal} / user / yr (Save 20% Billed Annually)`
-            : `Yearly: ${sym}${yearlyTotal} / user / yr (Billed monthly)`;
+        // Tier 3 - Prime: Show Annually plan amount in main price (28,000 / year with 36,000 struck), Monthly pack in marked box (3,000 / month)
+        if (cardCurrencyGroinn3) cardCurrencyGroinn3.textContent = sym;
+        if (cardAmountGroinn3) cardAmountGroinn3.textContent = formatNum(groinn3Annual);
+        if (cardOriginalGroinn3) {
+          cardOriginalGroinn3.textContent = formatNum(groinn3RegularAnnual);
+          cardOriginalGroinn3.style.display = 'inline';
         }
+        if (cardPeriodGroinn3) cardPeriodGroinn3.textContent = '/ year';
+        if (cardNoteGroinn3) cardNoteGroinn3.textContent = `Monthly Pack: ${sym}${formatNum(groinn3Monthly)} / month`;
+      }
 
+      function renderPricing() {
+        renderPricingGrohrms();
+        renderPricingGrolog();
+        renderPricingGroinn();
       }
 
       // 1. Country & Currency Selector Linking
@@ -1896,15 +2309,86 @@
         });
       }
 
-      // 2. Billing Toggle Handler
-      if (billingToggle) {
-        billingToggle.addEventListener('change', () => {
-          isAnnual = billingToggle.checked;
-          if (labelMonthly) labelMonthly.classList.toggle('active', !isAnnual);
-          if (labelAnnual) labelAnnual.classList.toggle('active', isAnnual);
-          renderPricing();
-        });
+      // 2. Separate Billing Frequency Switchers & Separate Discounts
+      function setGrohrmsBilling(cycle) {
+        if (cycle === true) grohrmsBillingCycle = 'annual';
+        else if (cycle === false) grohrmsBillingCycle = 'monthly';
+        else grohrmsBillingCycle = cycle;
+
+        isAnnualGrohrms = (grohrmsBillingCycle === 'annual');
+
+        const btnM = document.getElementById('btnMonthlyGrohrms');
+        const btnH = document.getElementById('btnHalflyGrohrms');
+        const btnA = document.getElementById('btnAnnualGrohrms');
+
+        if (btnM) {
+          btnM.classList.toggle('active', grohrmsBillingCycle === 'monthly');
+          btnM.setAttribute('aria-pressed', grohrmsBillingCycle === 'monthly');
+        }
+        if (btnH) {
+          btnH.classList.toggle('active', grohrmsBillingCycle === 'halfly');
+          btnH.setAttribute('aria-pressed', grohrmsBillingCycle === 'halfly');
+        }
+        if (btnA) {
+          btnA.classList.toggle('active', grohrmsBillingCycle === 'annual');
+          btnA.setAttribute('aria-pressed', grohrmsBillingCycle === 'annual');
+        }
+        renderPricingGrohrms();
       }
+
+      function setGrologBilling(cycle) {
+        if (cycle === true) grologBillingCycle = 'annual';
+        else if (cycle === false) grologBillingCycle = 'monthly';
+        else grologBillingCycle = cycle;
+
+        isAnnualGrolog = (grologBillingCycle === 'annual');
+
+        const btnM = document.getElementById('btnMonthlyGrolog');
+        const btnH = document.getElementById('btnHalflyGrolog');
+        const btnA = document.getElementById('btnAnnualGrolog');
+
+        if (btnM) {
+          btnM.classList.toggle('active', grologBillingCycle === 'monthly');
+          btnM.setAttribute('aria-pressed', grologBillingCycle === 'monthly');
+        }
+        if (btnH) {
+          btnH.classList.toggle('active', grologBillingCycle === 'halfly');
+          btnH.setAttribute('aria-pressed', grologBillingCycle === 'halfly');
+        }
+        if (btnA) {
+          btnA.classList.toggle('active', grologBillingCycle === 'annual');
+          btnA.setAttribute('aria-pressed', grologBillingCycle === 'annual');
+        }
+        renderPricingGrolog();
+      }
+
+      function setGroinnBilling(annual) {
+        isAnnualGroinn = annual;
+        const btnM = document.getElementById('btnMonthlyGroinn');
+        const btnA = document.getElementById('btnAnnualGroinn');
+        if (btnM) { btnM.classList.toggle('active', !annual); btnM.setAttribute('aria-pressed', !annual); }
+        if (btnA) { btnA.classList.toggle('active', annual); btnA.setAttribute('aria-pressed', annual); }
+        renderPricingGroinn();
+      }
+
+      const btnMGrohrms = document.getElementById('btnMonthlyGrohrms');
+      const btnHGrohrms = document.getElementById('btnHalflyGrohrms');
+      const btnAGrohrms = document.getElementById('btnAnnualGrohrms');
+      if (btnMGrohrms) btnMGrohrms.addEventListener('click', () => setGrohrmsBilling('monthly'));
+      if (btnHGrohrms) btnHGrohrms.addEventListener('click', () => setGrohrmsBilling('halfly'));
+      if (btnAGrohrms) btnAGrohrms.addEventListener('click', () => setGrohrmsBilling('annual'));
+
+      const btnMGrolog = document.getElementById('btnMonthlyGrolog');
+      const btnHGrolog = document.getElementById('btnHalflyGrolog');
+      const btnAGrolog = document.getElementById('btnAnnualGrolog');
+      if (btnMGrolog) btnMGrolog.addEventListener('click', () => setGrologBilling('monthly'));
+      if (btnHGrolog) btnHGrolog.addEventListener('click', () => setGrologBilling('halfly'));
+      if (btnAGrolog) btnAGrolog.addEventListener('click', () => setGrologBilling('annual'));
+
+      const btnMGroinn = document.getElementById('btnMonthlyGroinn');
+      const btnAGroinn = document.getElementById('btnAnnualGroinn');
+      if (btnMGroinn) btnMGroinn.addEventListener('click', () => setGroinnBilling(false));
+      if (btnAGroinn) btnAGroinn.addEventListener('click', () => setGroinnBilling(true));
 
       // 3. Product Tabs Switching
       function setActiveProductTab(activeTabId) {
@@ -1932,7 +2416,7 @@
         });
       }
 
-      // 4. Step 1 Submit Handler (Country & Currency -> Directly Unlocks Pricing)
+      // 4. Step 1 Submit Handler (Country & Currency -> Advance to Step 2)
       if (btnSubmitStep1) {
         btnSubmitStep1.addEventListener('click', () => {
           const countryVal = pricingCountry ? pricingCountry.value : 'IN';
@@ -1943,20 +2427,29 @@
           const countryOptText = pricingCountry.options[pricingCountry.selectedIndex]?.text || countryVal;
 
           if (STEP_2_ENABLED && pricingStep2Block) {
-            // If Step 2 were enabled, advance to Step 2
+            // Advance to Step 2
             if (pricingStep1Block) pricingStep1Block.style.display = 'none';
             pricingStep2Block.style.display = 'block';
             if (step2SelectedRegion) {
               step2SelectedRegion.textContent = `${countryOptText} · ${currentCurrency} (${curData.symbol.trim()})`;
             }
+
+            if (stepIndicator1) {
+              stepIndicator1.classList.remove('active');
+              stepIndicator1.classList.add('completed');
+            }
+            if (circleStep1) circleStep1.innerHTML = '✓';
+            if (stepLine1) stepLine1.classList.add('completed');
+            if (stepIndicator2) stepIndicator2.classList.add('active');
+
+            pricingStep2Block.scrollIntoView({ behavior: 'smooth', block: 'start' });
           } else {
-            // Step 2 is disabled: immediately unlock pricing details!
+            // Fallback if Step 2 is ever disabled
             if (summaryCompany) summaryCompany.textContent = 'GroSuite Products';
             if (summaryCountry) summaryCountry.textContent = curData.countryName;
             if (summaryCurrency) summaryCurrency.textContent = curData.code + ' - ' + curData.symbol.trim();
             if (quickCurrencySwitch) quickCurrencySwitch.value = currentCurrency;
 
-            // Update Progress Bar
             if (stepIndicator1) {
               stepIndicator1.classList.remove('active');
               stepIndicator1.classList.add('completed');
@@ -1972,7 +2465,6 @@
             if (stepIndicator3) stepIndicator3.classList.add('active', 'completed');
             if (circleStep3) circleStep3.innerHTML = '✓';
 
-            // Hide form, reveal banner and pricing container
             if (pricingGateForm) pricingGateForm.style.display = 'none';
             if (pricingSuccessBanner) pricingSuccessBanner.style.display = 'flex';
             if (pricingDetailsContainer) {
@@ -1990,6 +2482,15 @@
         btnBackToStep1.addEventListener('click', () => {
           if (pricingStep2Block) pricingStep2Block.style.display = 'none';
           if (pricingStep1Block) pricingStep1Block.style.display = 'block';
+
+          if (stepIndicator2) stepIndicator2.classList.remove('active');
+          if (stepLine1) stepLine1.classList.remove('completed');
+          if (stepIndicator1) {
+            stepIndicator1.classList.remove('completed');
+            stepIndicator1.classList.add('active');
+          }
+          if (circleStep1) circleStep1.textContent = '1';
+
           pricingGateForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       }
@@ -1998,36 +2499,121 @@
       if (btnEditDetails) {
         btnEditDetails.addEventListener('click', () => {
           if (pricingGateForm) pricingGateForm.style.display = 'block';
-          if (pricingStep1Block) pricingStep1Block.style.display = 'block';
           if (pricingStep2Block) pricingStep2Block.style.display = 'none';
+          if (pricingStep1Block) pricingStep1Block.style.display = 'block';
           if (pricingSuccessBanner) pricingSuccessBanner.style.display = 'none';
+
+          if (stepIndicator3) stepIndicator3.classList.remove('active', 'completed');
+          if (stepIndicator2) stepIndicator2.classList.remove('active', 'completed');
+          if (stepIndicator1) {
+            stepIndicator1.classList.remove('completed');
+            stepIndicator1.classList.add('active');
+          }
+          if (circleStep1) circleStep1.textContent = '1';
+          if (circleStep2) circleStep2.textContent = '2';
+          if (circleStep3) circleStep3.textContent = '3';
+          if (stepLine1) stepLine1.classList.remove('completed');
+          if (stepLine2) stepLine2.classList.remove('completed');
+
           pricingGateForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       }
 
-      // 7. Step 2 Form Submission Handler (if re-enabled in the future)
+      // 7. Step 2 Form Submission Handler (Company Details -> Reveal Pricing)
       if (pricingGateForm) {
         pricingGateForm.addEventListener('submit', async (e) => {
           e.preventDefault();
-          if (!STEP_2_ENABLED) return;
 
           const countryVal = pricingCountry ? pricingCountry.value : 'IN';
           const currencyVal = pricingCurrency ? pricingCurrency.value : 'INR';
-          const companyVal = document.getElementById('pricingCompanyName')?.value.trim() || 'GroSuite Client';
-          const nameVal = document.getElementById('pricingFullName')?.value.trim() || 'Client';
+          const companyVal = document.getElementById('pricingCompanyName')?.value.trim();
+          const locationVal = document.getElementById('pricingCompanyLocation')?.value.trim();
+          const nameVal = document.getElementById('pricingFullName')?.value.trim();
           const emailVal = document.getElementById('pricingWorkEmail')?.value.trim();
           const phoneVal = document.getElementById('pricingPhone')?.value.trim();
-          const teamVal = document.getElementById('pricingTeamSize')?.value || '1-10';
-          const interestVal = document.getElementById('pricingInterest')?.value || 'All Solutions';
+          const teamVal = document.getElementById('pricingTeamSize')?.value;
+          const interestVal = document.getElementById('pricingInterest')?.value || 'All GroSuite Solutions';
+
+          if (!companyVal || !locationVal || !nameVal || !emailVal || !phoneVal || !teamVal || !interestVal) {
+            if (pricingFormStatus) {
+              pricingFormStatus.style.color = '#dc2626';
+              pricingFormStatus.textContent = 'Please fill in all required fields marked with *.';
+            }
+            return;
+          }
+
+          // Email format check
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+            if (pricingFormStatus) {
+              pricingFormStatus.style.color = '#dc2626';
+              pricingFormStatus.textContent = 'Please enter a valid work email address.';
+            }
+            return;
+          }
+
+          // UI Progress
+          if (pricingSubmitBtn) {
+            pricingSubmitBtn.disabled = true;
+            pricingSubmitBtn.innerHTML = '<span>Sending Details &amp; Unlocking...</span>';
+          }
+          if (pricingFormStatus) {
+            pricingFormStatus.style.color = '#2563eb';
+            pricingFormStatus.textContent = 'Submitting your quotation request...';
+          }
 
           currentCurrency = currencyVal;
           const curData = currencyRates[currentCurrency] || currencyRates.INR;
+          const countryOptText = pricingCountry.options[pricingCountry.selectedIndex]?.text || countryVal;
 
+          // Prepare FormData for FormSubmit.app
+          const formData = new FormData();
+          formData.append('_subject', `Pricing & Quotation Request - ${companyVal} (${countryVal} / ${currentCurrency})`);
+          formData.append('Company Name', companyVal);
+          formData.append('Company Location', locationVal);
+          formData.append('Contact Name', nameVal);
+          formData.append('Work Email', emailVal);
+          formData.append('email', emailVal);
+          formData.append('_replyto', emailVal);
+          formData.append('Phone Number', phoneVal);
+          formData.append('Country', countryOptText);
+          formData.append('Currency', currentCurrency + ' (' + curData.symbol.trim() + ')');
+          formData.append('Team Size', teamVal);
+          formData.append('Solution Interest', interestVal);
+          formData.append('_autoresponse', 'Thank you for your pricing inquiry! The GroSuite team will review your requirements and follow up with you shortly.');
+          formData.append('Submission Time', new Date().toLocaleString());
+          formData.append('_ts', String(Date.now()));
+
+          // Send email notification with quotation details in background
+          try {
+            fetch(FORM_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: formData
+            }).catch(err => console.warn('Quotation submission notice:', err));
+          } catch (err) {
+            console.warn('Form submission notice:', err);
+          }
+
+          // Update Summary Banner
           if (summaryCompany) summaryCompany.textContent = companyVal;
+          if (summaryEmail) summaryEmail.textContent = emailVal;
           if (summaryCountry) summaryCountry.textContent = curData.countryName;
           if (summaryCurrency) summaryCurrency.textContent = curData.code + ' - ' + curData.symbol.trim();
           if (quickCurrencySwitch) quickCurrencySwitch.value = currentCurrency;
 
+          // Update Progress Indicator to Step 3 Completed
+          if (stepIndicator2) {
+            stepIndicator2.classList.remove('active');
+            stepIndicator2.classList.add('completed');
+          }
+          if (circleStep2) circleStep2.innerHTML = '✓';
+          if (stepLine2) stepLine2.classList.add('completed');
+          if (stepIndicator3) {
+            stepIndicator3.classList.add('active', 'completed');
+          }
+          if (circleStep3) circleStep3.innerHTML = '✓';
+
+          // Hide Form, Show Banner, Show Price Details
           pricingGateForm.style.display = 'none';
           if (pricingSuccessBanner) pricingSuccessBanner.style.display = 'flex';
           if (pricingDetailsContainer) {
@@ -2035,8 +2621,38 @@
             pricingDetailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
 
+          // Render prices in chosen currency
           renderPricing();
+
+          // Reset button
+          if (pricingSubmitBtn) {
+            pricingSubmitBtn.disabled = false;
+            pricingSubmitBtn.innerHTML = '<span>Show Price</span> <span class="btn-arrow" aria-hidden="true">→</span>';
+          }
+          if (pricingFormStatus) pricingFormStatus.textContent = '';
         });
+      }
+
+      // Initial Render Pricing
+      renderPricing();
+
+      // Check URL Query Parameters (e.g. ?billing=annual or ?unlocked=1)
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('unlocked') === '1' || urlParams.get('billing')) {
+          if (pricingGateForm) pricingGateForm.style.display = 'none';
+          if (pricingDetailsContainer) pricingDetailsContainer.style.display = 'block';
+        }
+        if (urlParams.get('billing') === 'annual') {
+          setGrohrmsBilling('annual');
+          setGrologBilling(true);
+          setGroinnBilling(true);
+        } else if (urlParams.get('billing') === 'halfly' || urlParams.get('billing') === 'half-yearly') {
+          setGrohrmsBilling('halfly');
+          setGrologBilling('halfly');
+        }
+      } catch (e) {
+        console.warn('URL params parsing failed', e);
       }
 
       // Dynamic Copyright Year

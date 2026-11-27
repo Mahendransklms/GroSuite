@@ -1,0 +1,5 @@
+with open('css/style.css', 'r', encoding='utf-8') as f:
+    text = f.read()
+
+idx = text.find('.pricing-gate-grid-2')
+print(text[idx:idx+500])
